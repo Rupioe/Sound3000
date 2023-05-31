@@ -5,24 +5,17 @@
 USE bddSound;
 
 #------------------------------------------------------------
-# Table: artiste
+# Table: compte
 #------------------------------------------------------------
 
-CREATE TABLE artiste(
-        nom Varchar (50) NOT NULL
-	,CONSTRAINT artiste_PK PRIMARY KEY (nom)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: image_profil
-#------------------------------------------------------------
-
-CREATE TABLE image_profil(
-        id          Int NOT NULL ,
-        chemin      Varchar (100) NOT NULL ,
-        nom_fichier Varchar (50) NOT NULL
-	,CONSTRAINT image_profil_PK PRIMARY KEY (id)
+CREATE TABLE compte(
+        email          Varchar (50) NOT NULL ,
+        nom            Varchar (50) NOT NULL ,
+        prenom         Varchar (50) NOT NULL ,
+        date_naissance Date NOT NULL ,
+        password       Varchar (30) NOT NULL ,
+        chemin_image   Varchar (100) NOT NULL
+	,CONSTRAINT compte_PK PRIMARY KEY (email,nom)
 )ENGINE=InnoDB;
 
 
@@ -31,33 +24,8 @@ CREATE TABLE image_profil(
 #------------------------------------------------------------
 
 CREATE TABLE types(
-        type Varchar (50) NOT NULL ,
-        nom  Varchar (50) NOT NULL
+        type Bool NOT NULL
 	,CONSTRAINT types_PK PRIMARY KEY (type)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: morceau
-#------------------------------------------------------------
-
-CREATE TABLE morceau(
-        titre Varchar (50) NOT NULL ,
-        duree Int NOT NULL
-	,CONSTRAINT morceau_PK PRIMARY KEY (titre)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: album
-#------------------------------------------------------------
-
-CREATE TABLE album(
-        titre         Varchar (50) NOT NULL ,
-        date_parution Date NOT NULL ,
-        chemin_image  Varchar (50) NOT NULL ,
-        titre_morceau Varchar (50) NOT NULL
-	,CONSTRAINT album_PK PRIMARY KEY (titre)
 )ENGINE=InnoDB;
 
 
@@ -72,78 +40,48 @@ CREATE TABLE styles(
 
 
 #------------------------------------------------------------
+# Table: album
+#------------------------------------------------------------
+
+CREATE TABLE album(
+        titre         Varchar (50) NOT NULL ,
+        date_parution Date NOT NULL ,
+        chemin_image  Varchar (50) NOT NULL ,
+        style         Varchar (50) NOT NULL
+	,CONSTRAINT album_PK PRIMARY KEY (titre)
+
+	,CONSTRAINT album_styles_FK FOREIGN KEY (style) REFERENCES styles(style)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: morceau
+#------------------------------------------------------------
+
+CREATE TABLE morceau(
+        titre          Varchar (50) NOT NULL ,
+        duree          Int NOT NULL ,
+        chemin_musique Varchar (100) NOT NULL ,
+        chemin_image   Varchar (100) NOT NULL ,
+        titre_album    Varchar (50) NOT NULL
+	,CONSTRAINT morceau_PK PRIMARY KEY (titre)
+
+	,CONSTRAINT morceau_album_FK FOREIGN KEY (titre_album) REFERENCES album(titre)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
 # Table: liste_lecture
 #------------------------------------------------------------
 
 CREATE TABLE liste_lecture(
-        nom        Varchar (50) NOT NULL ,
-        date_ajout Date NOT NULL ,
-        titre      Varchar (50) NOT NULL
-	,CONSTRAINT liste_lecture_PK PRIMARY KEY (nom)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: groupe
-#------------------------------------------------------------
-
-CREATE TABLE groupe(
-        nom Varchar (50) NOT NULL
-	,CONSTRAINT groupe_PK PRIMARY KEY (nom)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: discographie
-#------------------------------------------------------------
-
-CREATE TABLE discographie(
-        titre Varchar (50) NOT NULL ,
-        nom   Varchar (50) NOT NULL
-	,CONSTRAINT discographie_PK PRIMARY KEY (titre,nom)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: est_du_style
-#------------------------------------------------------------
-
-CREATE TABLE est_du_style(
-        style Varchar (50) NOT NULL ,
-        titre Varchar (50) NOT NULL ,
-        nom   Varchar (50) NOT NULL
-	,CONSTRAINT est_du_style_PK PRIMARY KEY (style,titre,nom)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: est_dans
-#------------------------------------------------------------
-
-CREATE TABLE est_dans(
         nom         Varchar (50) NOT NULL ,
-        nom_artiste Varchar (50) NOT NULL
-	,CONSTRAINT est_dans_PK PRIMARY KEY (nom,nom_artiste)
-)ENGINE=InnoDB;
+        nombre_sons Int NOT NULL ,
+        duree       Int NOT NULL ,
+        style       Varchar (50) NOT NULL
+	,CONSTRAINT liste_lecture_PK PRIMARY KEY (nom)
 
-
-#------------------------------------------------------------
-# Table: compte
-#------------------------------------------------------------
-
-CREATE TABLE compte(
-        email             Varchar (50) NOT NULL ,
-        password          Varchar (30) NOT NULL ,
-        nom               Varchar (50) NOT NULL ,
-        prenom            Varchar (50) NOT NULL ,
-        age               Int NOT NULL ,
-        date_creation     Date NOT NULL ,
-        date_ajout        Date NOT NULL ,
-        id                Int NOT NULL ,
-        nom_liste_lecture Varchar (50) NOT NULL ,
-        id_favoris        Int NOT NULL ,
-        id_historique     Int NOT NULL
-	,CONSTRAINT compte_PK PRIMARY KEY (email,password)
+	,CONSTRAINT liste_lecture_styles_FK FOREIGN KEY (style) REFERENCES styles(style)
 )ENGINE=InnoDB;
 
 
@@ -152,135 +90,116 @@ CREATE TABLE compte(
 #------------------------------------------------------------
 
 CREATE TABLE favoris(
-        id         Int NOT NULL ,
-        nombre     Int NOT NULL ,
-        duree      Int NOT NULL ,
-        date_ajout Date NOT NULL ,
-        email      Varchar (50) NOT NULL ,
-        password   Varchar (30) NOT NULL ,
-        titre      Varchar (50) NOT NULL
+        id     Int NOT NULL ,
+        nombre Int NOT NULL ,
+        duree  Int NOT NULL
 	,CONSTRAINT favoris_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
 
 
 #------------------------------------------------------------
-# Table: historique
+# Table: groupe
 #------------------------------------------------------------
 
-CREATE TABLE historique(
-        id          Int NOT NULL ,
-        date_ecoute Date NOT NULL ,
-        titre       Varchar (50) NOT NULL ,
-        email       Varchar (50) NOT NULL ,
-        password    Varchar (30) NOT NULL
-	,CONSTRAINT historique_PK PRIMARY KEY (id)
+CREATE TABLE groupe(
+        nom           Varchar (50) NOT NULL ,
+        date_creation Date NOT NULL
+	,CONSTRAINT groupe_PK PRIMARY KEY (nom)
 )ENGINE=InnoDB;
 
 
+#------------------------------------------------------------
+# Table: artiste
+#------------------------------------------------------------
+
+CREATE TABLE artiste(
+        nom            Varchar (50) NOT NULL ,
+        prenom         Varchar (50) NOT NULL ,
+        pseudo         Varchar (50) NOT NULL ,
+        date_naissance Date NOT NULL ,
+        sexe           Bool NOT NULL ,
+        type           Bool NOT NULL ,
+        nom_groupe     Varchar (50)
+	,CONSTRAINT artiste_PK PRIMARY KEY (nom,prenom,pseudo)
+
+	,CONSTRAINT artiste_types_FK FOREIGN KEY (type) REFERENCES types(type)
+	,CONSTRAINT artiste_groupe0_FK FOREIGN KEY (nom_groupe) REFERENCES groupe(nom)
+)ENGINE=InnoDB;
 
 
-ALTER TABLE types
-	ADD CONSTRAINT types_artiste0_FK
-	FOREIGN KEY (nom)
-	REFERENCES artiste(nom);
+#------------------------------------------------------------
+# Table: discographie
+#------------------------------------------------------------
 
-ALTER TABLE album
-	ADD CONSTRAINT album_morceau0_FK
-	FOREIGN KEY (titre_morceau)
-	REFERENCES morceau(titre);
+CREATE TABLE discographie(
+        titre  Varchar (50) NOT NULL ,
+        nom    Varchar (50) NOT NULL ,
+        prenom Varchar (50) NOT NULL ,
+        pseudo Varchar (50) NOT NULL
+	,CONSTRAINT discographie_PK PRIMARY KEY (titre,nom,prenom,pseudo)
 
-ALTER TABLE liste_lecture
-	ADD CONSTRAINT liste_lecture_morceau0_FK
-	FOREIGN KEY (titre)
-	REFERENCES morceau(titre);
+	,CONSTRAINT discographie_album_FK FOREIGN KEY (titre) REFERENCES album(titre)
+	,CONSTRAINT discographie_artiste0_FK FOREIGN KEY (nom,prenom,pseudo) REFERENCES artiste(nom,prenom,pseudo)
+)ENGINE=InnoDB;
 
-ALTER TABLE discographie
-	ADD CONSTRAINT discographie_album0_FK
-	FOREIGN KEY (titre)
-	REFERENCES album(titre);
 
-ALTER TABLE discographie
-	ADD CONSTRAINT discographie_artiste1_FK
-	FOREIGN KEY (nom)
-	REFERENCES artiste(nom);
+#------------------------------------------------------------
+# Table: creer_liste
+#------------------------------------------------------------
 
-ALTER TABLE est_du_style
-	ADD CONSTRAINT est_du_style_styles0_FK
-	FOREIGN KEY (style)
-	REFERENCES styles(style);
+CREATE TABLE creer_liste(
+        nom           Varchar (50) NOT NULL ,
+        email_compte  Varchar (50) NOT NULL ,
+        nom_compte    Varchar (50) NOT NULL ,
+        date_creation Date NOT NULL
+	,CONSTRAINT creer_liste_PK PRIMARY KEY (nom,email_compte,nom_compte)
 
-ALTER TABLE est_du_style
-	ADD CONSTRAINT est_du_style_album1_FK
-	FOREIGN KEY (titre)
-	REFERENCES album(titre);
+	,CONSTRAINT creer_liste_liste_lecture_FK FOREIGN KEY (nom) REFERENCES liste_lecture(nom)
+	,CONSTRAINT creer_liste_compte0_FK FOREIGN KEY (email_compte,nom_compte) REFERENCES compte(email,nom)
+)ENGINE=InnoDB;
 
-ALTER TABLE est_du_style
-	ADD CONSTRAINT est_du_style_liste_lecture2_FK
-	FOREIGN KEY (nom)
-	REFERENCES liste_lecture(nom);
 
-ALTER TABLE est_dans
-	ADD CONSTRAINT est_dans_groupe0_FK
-	FOREIGN KEY (nom)
-	REFERENCES groupe(nom);
+#------------------------------------------------------------
+# Table: ajouter_son
+#------------------------------------------------------------
 
-ALTER TABLE est_dans
-	ADD CONSTRAINT est_dans_artiste1_FK
-	FOREIGN KEY (nom_artiste)
-	REFERENCES artiste(nom);
+CREATE TABLE ajouter_son(
+        titre      Varchar (50) NOT NULL ,
+        nom        Varchar (50) NOT NULL ,
+        date_ajout Date NOT NULL
+	,CONSTRAINT ajouter_son_PK PRIMARY KEY (titre,nom)
 
-ALTER TABLE compte
-	ADD CONSTRAINT compte_image_profil0_FK
-	FOREIGN KEY (id)
-	REFERENCES image_profil(id);
+	,CONSTRAINT ajouter_son_morceau_FK FOREIGN KEY (titre) REFERENCES morceau(titre)
+	,CONSTRAINT ajouter_son_liste_lecture0_FK FOREIGN KEY (nom) REFERENCES liste_lecture(nom)
+)ENGINE=InnoDB;
 
-ALTER TABLE compte
-	ADD CONSTRAINT compte_liste_lecture1_FK
-	FOREIGN KEY (nom_liste_lecture)
-	REFERENCES liste_lecture(nom);
 
-ALTER TABLE compte
-	ADD CONSTRAINT compte_favoris2_FK
-	FOREIGN KEY (id_favoris)
-	REFERENCES favoris(id);
+#------------------------------------------------------------
+# Table: ajouter_favoris
+#------------------------------------------------------------
 
-ALTER TABLE compte
-	ADD CONSTRAINT compte_historique3_FK
-	FOREIGN KEY (id_historique)
-	REFERENCES historique(id);
+CREATE TABLE ajouter_favoris(
+        titre      Varchar (50) NOT NULL ,
+        id         Int NOT NULL ,
+        date_ajout Date NOT NULL
+	,CONSTRAINT ajouter_favoris_PK PRIMARY KEY (titre,id)
 
-ALTER TABLE compte 
-	ADD CONSTRAINT compte_favoris0_AK 
-	UNIQUE (id_favoris);
+	,CONSTRAINT ajouter_favoris_morceau_FK FOREIGN KEY (titre) REFERENCES morceau(titre)
+	,CONSTRAINT ajouter_favoris_favoris0_FK FOREIGN KEY (id) REFERENCES favoris(id)
+)ENGINE=InnoDB;
 
-ALTER TABLE compte 
-	ADD CONSTRAINT compte_historique1_AK 
-	UNIQUE (id_historique);
 
-ALTER TABLE favoris
-	ADD CONSTRAINT favoris_compte0_FK
-	FOREIGN KEY (email,password)
-	REFERENCES compte(email,password);
+#------------------------------------------------------------
+# Table: ecoute
+#------------------------------------------------------------
 
-ALTER TABLE favoris
-	ADD CONSTRAINT favoris_morceau1_FK
-	FOREIGN KEY (titre)
-	REFERENCES morceau(titre);
+CREATE TABLE ecoute(
+        email       Varchar (50) NOT NULL ,
+        nom         Varchar (50) NOT NULL ,
+        titre       Varchar (50) NOT NULL ,
+        date_ecoute Date NOT NULL
+	,CONSTRAINT ecoute_PK PRIMARY KEY (email,nom,titre)
 
-ALTER TABLE favoris 
-	ADD CONSTRAINT favoris_compte0_AK 
-	UNIQUE (email,password);
-
-ALTER TABLE historique
-	ADD CONSTRAINT historique_morceau0_FK
-	FOREIGN KEY (titre)
-	REFERENCES morceau(titre);
-
-ALTER TABLE historique
-	ADD CONSTRAINT historique_compte1_FK
-	FOREIGN KEY (email,password)
-	REFERENCES compte(email,password);
-
-ALTER TABLE historique 
-	ADD CONSTRAINT historique_compte0_AK 
-	UNIQUE (email,password);
+	,CONSTRAINT ecoute_compte_FK FOREIGN KEY (email,nom) REFERENCES compte(email,nom)
+	,CONSTRAINT ecoute_morceau0_FK FOREIGN KEY (titre) REFERENCES morceau(titre)
+)ENGINE=InnoDB;
