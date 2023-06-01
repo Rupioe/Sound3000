@@ -189,27 +189,36 @@
       <div class="page_header floating_element">
         <img src="/icons/openlogo-75.png" alt="Debian Logo" class="floating_element"/>
         <span class="floating_element">
-		Oops, Wrong page !
+		Test inscription, création compte
         </span>
       </div>
-      <div class="content_section floating_element">
+      <br>
 
 
-        <div class="section_header section_header_red">
-          <div id="about"></div>
-	  <a href="http://prj-web-cir2-grp-66/test_zone/test.php">
-	  PHP-test
-	  </href>
-	  <a href="http://prj-web-cir2-grp-66/test_zone/test.html">
-	  BDD-test
-	  </href>
-	  <a href="http://prj-web-cir2-grp-66/html/index.html">
-	  ActualWebSite
-	  </href>
+		  <form action="traitement.php" method="POST" enctype="multipart/form-data">
+		    <label for="email">Email :</label>
+		    <input type="email" id="email" name="email" required><br><br>
 
-        </div>
+		    <label for="nom">Nom :</label>
+		    <input type="text" id="nom" name="nom" required><br><br>
 
-      </div>
+		    <label for="prenom">Prénom :</label>
+		    <input type="text" id="prenom" name="prenom" required><br><br>
+
+		    <label for="date_naissance">Date de naissance :</label>
+		    <input type="date" id="date_naissance" name="date_naissance" required><br><br>
+
+		    <label for="mot_de_passe">Mot de passe :</label>
+		    <input type="password" id="mot_de_passe" name="mot_de_passe" required><br><br>
+
+		    <label for="image_profil">Image de profil :</label>
+		    <input type="file" id="image_profil" name="image_profil"><br>
+		    <label for="image_profil">URL Image de profil :</label>
+		    <input type="url" id="url_profil" name="url_profil"><br><br>
+
+		    <input type="submit" value="S'inscrire">
+		  </form>
+
     </div>
     <div class="validator">
     </div>
