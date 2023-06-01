@@ -3,7 +3,7 @@
     <head>
         <title>page de connection</title>
         <meta charset="utf-8">
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/connection.css" rel="stylesheet" type="text/css"/>
     </head>
 
     <body>
