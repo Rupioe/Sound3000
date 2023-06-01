@@ -12,3 +12,4 @@ USE bddSound; INSERT INTO album (id, titre, date_parution, chemin_image, style) 
 INSERT INTO types(type) VALUES(TRUE);
 INSERT INTO types(type) VALUES(FALSE);
 USE bddSound; INSERT INTO artiste (id, nom, prenom, pseudo, date_naissance,sexe,type,id_groupe) VALUES (1,'Costes','Jean','Costes',STR_TO_DATE('04/03/1968', '%d/%m/%Y'),1,0,NULL);
+USE bddSound; INSERT INTO discographie (id, id_artiste) VALUES (1,1);

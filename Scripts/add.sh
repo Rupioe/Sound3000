@@ -43,7 +43,7 @@ while [ "$ENCORE" == "y" ]; do
 		else
 			SEXE=0
 		fi
-		echo Groupe ou Seul ? G/[S]
+		echo "Groupe ou Seul ? G/[S]"
 		read -r TYPE # Groupe c'est 1
 		if [ "$TYPE" == "G" ]; then
 			TYPE=1
@@ -89,8 +89,8 @@ while [ "$ENCORE" == "y" ]; do
 		echo date : DD/MM/YYYY
 		read -r DATE_CREATION
 
-		mysql -u root -e "USE bddSound; INSERT INTO $CHOSEN (id, nom, date_creation) VALUES ($ID,'$NOM',STR_TO_DATE('$DATE_PARUTION', '%d/%m/%Y'));"
-		echo "USE bddSound; INSERT INTO $CHOSEN (id, nom, date_creation) VALUES ($ID,'$NOM',STR_TO_DATE('$DATE_PARUTION', '%d/%m/%Y'));" >> addon.sql
+		mysql -u root -e "USE bddSound; INSERT INTO $CHOSEN (id, nom, date_creation) VALUES ($ID,'$NOM',STR_TO_DATE('$DATE_CREATION', '%d/%m/%Y'));"
+		echo "USE bddSound; INSERT INTO $CHOSEN (id, nom, date_creation) VALUES ($ID,'$NOM',STR_TO_DATE('$DATE_CREATION', '%d/%m/%Y'));" >> addon.sql
 	fi
 
 
