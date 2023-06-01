@@ -9,8 +9,8 @@
     <body>
         <section id="main">
             <div class="titleBox">
-                <h1>De Retour</h1>
-                <p>connectez-vous</p>
+                <h1>Connection to</h1>
+                <h2>Sound 3000</h2>
             </div>
 
             <div class="inputBox">
@@ -29,7 +29,7 @@
 
             <div class="switchPage">
                 <p>vous n'avez pas de compte ?</p>
-                <a href="index.html">inscrivez-vous</a>
+                <a href="creer.html">inscrivez-vous</a>
             </div>
         </section>
     </body>

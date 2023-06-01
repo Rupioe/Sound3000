@@ -83,7 +83,7 @@ html, body {
 }
 
 .input[type=profil] {
-    background: url("image/name.svg");
+    background: url("image/profil.svg");
     background-repeat: no-repeat;
     background-size: 24px;
     background-position-x: 3px;
