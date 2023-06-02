@@ -67,7 +67,7 @@
 </form>
             <div class="switchPage">
                 <p>vous have a account ?</p>
-                <a href="connection.html">connect</a>
+                <a href="../html/connection.html">connect</a>
             </div>
         </section>
 		
