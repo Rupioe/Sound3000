@@ -67,7 +67,7 @@
 </form>
             <div class="switchPage">
                 <p>vous have a account ?</p>
-                <a href="../html/connection.html">connect</a>
+                <a href="./connection.php">connect</a>
             </div>
         </section>
 		
@@ -106,18 +106,26 @@ include "./db.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-  $email = $_POST['email'];
-  $nom = $_POST['nom'];
-  $prenom = $_POST['prenom'];
-  $date_naissance = $_POST['date_naissance'];
-  $mot_de_passe = $_POST['mot_de_passe'];
-  $image_profil = $_POST['image_profil'];
+  $email = htmlspecialchars($_POST['email']);
+  $nom = htmlspecialchars($_POST['nom']);
+  $prenom = htmlspecialchars($_POST['prenom']);
+  $date_naissance = htmlspecialchars($_POST['date_naissance']);
+  $mot_de_passe = password_hash(htmlspecialchars($_POST['mot_de_passe']),PASSWORD_DEFAULT);
+  $image_profil = htmlspecialchars($_POST['image_profil']);
 
+
+  $bugflag = 0;
+  if ( filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+	echo '<div class="error">Adresse mail mal écrite</div>';
+    $bugflag = 1;
+    exit;
+}
+
+  // SECTION POUR VERIFIER QU'IL N'Y AI PAS DE DOUBLON DE PRIMARY KEY
 try
 {
 	$request = 'SELECT email FROM compte';
 	$statement = $dbCnx->prepare($request);
-	//$statement->bindParam(':id', $id, PDO::PARAM_STR, 7);
 	$statement->execute();
 	$result = $statement->fetchAll();
 }
@@ -126,10 +134,11 @@ catch (PDOException $exception)
 	error_log('Request error: '.$exception->getMessage());
 }
 
-$bugflag = 0;
 foreach ( $result as $ligne) {
-	if ($ligne['email'] == $email )
+	if ($ligne['email'] == $email ){
 		$bugflag = 1;
+        echo '<div class="error">Adresse mail déjà utilisée</div>';
+    }
 }
 
   $mysql_query1 = "INSERT INTO compte (email, nom, prenom, date_naissance, password,chemin_image) VALUES ('".$email."','".$nom."','".$prenom."',STR_TO_DATE('".$date_naissance."', '%Y-%m-%d'),'".$mot_de_passe."','".$image_profil."');";
@@ -157,9 +166,6 @@ fwrite($file, $mysql_query1);
 fclose($file);
 header("Location: ../html/index.html");
 exit;
-}
-else {
-	echo '<div class="error">Adresse mail déjà utilisée</div>';
 }
 
 }
