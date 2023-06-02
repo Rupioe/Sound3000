@@ -5,7 +5,7 @@ html, body{/*style de la page*/
     margin: 0; padding: 0;
     background-color: #cee8f7;
     font-family: 'Lato';
-    
+    flex-direction:column;
 }
 
 header {
@@ -100,10 +100,50 @@ header nav ul {
 
 .title{
 	display:flex;
+	text-decoration: none;
     color:#699bf7;
     text-transform: uppercase;
-    font-family: 'Lato';
+    font-family: 'Roboto';
     font-weight: 800;
-    font-size: xx-large;
+    font-size: 20px;
     letter-spacing: 1px;
+    
+}
+
+.element{
+	display:flex;
+	text-decoration: none;
+    color:#699bf7;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-left: 5%;
+    
+}
+
+.image{
+    position: absolute;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    left: 70%;
+    top: 25%;
+
+    height: auto;
+}
+
+
+/*################################################################################"*/
+/*telephone*/
+@media screen and (max-width: 780px) {
+	header {
+		flex-direction:column;
+	}
+}
+
+
+.flex{
+    flex-direction:column;
 }
