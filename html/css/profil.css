@@ -95,98 +95,15 @@ header nav ul {
 }
 
 /*################################################################################*/
-/*page*/
+
+
 
 .title{
 	display:flex;
-	text-decoration: none;
     color:#699bf7;
     text-transform: uppercase;
-    font-family: 'Roboto';
+    font-family: 'Lato';
     font-weight: 800;
-    font-size: 20px;
+    font-size: xx-large;
     letter-spacing: 1px;
 }
-
-.music-container {
-	display: flex;
-	margin: 0px;
-
-  overflow: scroll;
-  -ms-overflow-style:none;
-  overflow-x: auto;
-}
-
-
-
-.music-container img {
-	max-height:200px;
-	max-width:200px;
-	margin-right: 2%;
-	border-radius:5%; 
-
-	/*flex-direction: column;
-  flex-wrap: wrap;*/
-}
-
-.album-container {
-	display: flex;
-	margin: 0px;
-
-  overflow: scroll;
-  -ms-overflow-style:none;
-  overflow-x: auto;
-}
-
-.album-container img {
-	max-height:200px;
-	max-width:200px;
-	margin-right: 5%;
-	border-radius:5%;
-  margin-bottom: 5%;
-}
-
-.ariste-container {
-	display: flex;
-	margin: 0px;
-
-  overflow: scroll;
-  -ms-overflow-style:none;
-  overflow-x: auto;
-}
-
-.artiste-container img {
-	max-height:200px;
-	max-width:200px;
-	margin-right: 5%;
-  border-radius:50%;
-}
-
-
-
-
-/*################################################################################"*/
-/*telephone*/
-@media screen and (max-width: 780px) {
-	header {
-		flex-direction:column;
-	}
-}
-
-/*################################################################################"*/
-/*scrollbar*/
-* {
-  scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
-}
-
-*::-moz-scrollbar {
-  width: 0px;
-  background-color: transparent;
-}
-
-body::-webkit-scrollbar{
-  display: none;
-}
-
-/*.music-container::-webkit-scrollbar{width: 0!important;}*/
