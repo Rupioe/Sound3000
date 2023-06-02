@@ -113,6 +113,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $mot_de_passe = $_POST['mot_de_passe'];
   $image_profil = $_POST['image_profil'];
 
+try
+{
+	$request = 'SELECT email FROM compte';
+	$statement = $dbCnx->prepare($request);
+	//$statement->bindParam(':id', $id, PDO::PARAM_STR, 7);
+	$statement->execute();
+	$result = $statement->fetchAll();
+}
+catch (PDOException $exception)
+{
+	error_log('Request error: '.$exception->getMessage());
+}
+
 $bugflag = 0;
 foreach ( $result as $ligne) {
 	if ($ligne['email'] == $email )
@@ -131,19 +144,6 @@ try {
 	echo "Une exception a été levée : " . $e->getMessage();
 	echo '<div class="error">Adresse mail déjà utilisée</div>';
 	$bugflag = 1;
-}
-
-try
-{
-	$request = 'SELECT email FROM compte';
-	$statement = $dbCnx->prepare($request);
-	//$statement->bindParam(':id', $id, PDO::PARAM_STR, 7);
-	$statement->execute();
-	$result = $statement->fetchAll();
-}
-catch (PDOException $exception)
-{
-	error_log('Request error: '.$exception->getMessage());
 }
 
 
