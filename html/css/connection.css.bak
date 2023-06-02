@@ -104,7 +104,7 @@ html, body {
 }
 
 .input[type=file] {
-    /*background: url("image/calendar.svg");*
+    /*background: url("image/calendar.svg");*/
     background-repeat: no-repeat;
     background-size: 24px;
     background-position-x: 3px;
@@ -164,4 +164,16 @@ html, body {
 .switchPage a {
     margin: 0;
     font-size: 15px;
+}
+
+.bouton{
+	padding: 1px;
+	background: #699bf7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.2s;
+    cursor: pointer;
+    text-decoration: none;
 }

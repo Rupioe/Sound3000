@@ -10,7 +10,7 @@ html, body{/*style de la page*/
 header {
   display: flex;
   background:#EFEFEB;
-    align-items:center;
+  align-items:center;
   justify-content:space-between;
   padding: 1rem;
 
@@ -67,7 +67,7 @@ header nav ul {
 }
 
 .name{
-    margin: 8px;padding: 3px;
+    margin: 8px;padding: 4px;
     color:#699bf7;
     text-transform: uppercase;
     font-family: 'Roboto';
@@ -94,3 +94,47 @@ header nav ul {
 }
 
 /*################################################################################*/
+/*page*/
+
+.liste{
+	display: flex;
+	/*align-items:center;*/
+	justify-content:start;
+	padding: 1rem;
+	
+	
+}
+
+.music-container {
+	display: flex;
+	margin: 0px;
+}
+
+.music-container img {
+	max-height:200px;
+	max-width:200px;
+	margin-right: 2%;
+	padding: 1rem;
+}
+
+.album-container {
+	display: flex;
+	margin: 0px;
+}
+
+.album-container img {
+	max-height:200px;
+	max-width:200px;
+	margin-right: 5%;
+}
+
+.ariste-container {
+	display: flex;
+	margin: 0px;
+}
+
+.artiste-container img {
+	max-height:200px;
+	max-width:200px;
+	margin-right: 5%;
+}

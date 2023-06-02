@@ -11,6 +11,8 @@
             <div class="titleBox">
                 <h1>Create Account</h1>
             </div>
+			
+			<form action="./traitement.php" method="POST">
 
             <div class="inputBox">
                 <input type="email" id="email" name="email" class="input" required>
@@ -42,16 +44,20 @@
             </div>
             <p class="errorMessage"></p>
 			
-			<div class="inputBox">				
-				<input type="file" id="image_profil" name="image_profil">
+			<div class="inputBox">
+				<button type="button" id="button" onclick="image_switch()" class="bouton">URL ?</button>
 				<p for="image_profil" class="inputName">Profile Picture ?</p>
-				<button type="button" id="button" onclick="image_switch()">URL ?</button>
+					<div id="image-button">
+					<input type="file" id="image_profil" name="image_profil">
+				</div>
+				
+				
+				
 			</div>
-			
+            
 
-
-            <button class="btn">Account</button>
-
+            <button type="submit" class="btn">Account</button>
+</form>
             <div class="switchPage">
                 <p>vous have a account ?</p>
                 <a href="connection.html">connect</a>
@@ -65,18 +71,19 @@
 function image_switch(){
 
     let bouton = document.getElementById('button');
-    let input = document.getElementById('image-profil');
+    let image = document.getElementById('image-button');
     if(URL == 0){
         bouton.innerHTML = "Local file ?";
         URL = 1;
-		input.type = 'url';
+		    image.innerHTML = '<input type="url" id="image_profil" name="image_profil"><br><br></br>';
     }
     else {
         bouton.innerHTML = "URL ?";
         URL = 0;
-		input.type = 'file';
+		    image.innerHTML = '<input type="file" id="image_profil" name="image_profil"><br></br>';
     }
-}
-</script>
+
+
+}</script>
     </body>
 </html>

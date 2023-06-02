@@ -39,24 +39,38 @@
       
 <section>
     <div class="container">
-        <div class="home"><h1>Home</h1></div>
+        <div class="history"><h1>History</h1></div>
+		<div class="music-container">
+			<img src="image/musique.png">
+			<img src="image/musique.png">
+			<img src="image/musique.png">
+			<img src="image/musique.png">
+		</div>
     </div>
 </section>
 <section>
     <div class="container">
         <div class="favorites"><h1>Favorites</h1></div>
+		<div class="music-container">
+			<img src="image/musique.png">
+			<img src="image/musique.png">
+			<img src="image/musique.png">
+			<img src="image/musique.png">
+		</div>
     </div>
 </section>
 <section>
     <div class="container">
         <div class="playlist"><h1>Playlists</h1></div>
+		<div class="album-container">
+			<img src="image/album.png">
+			<img src="image/album.png">
+			<img src="image/album.png">
+			<img src="image/album.png">
+		</div>
     </div>
 </section>
-<section>
-    <div class="container">
-        <div class="history"><h1>History</h1></div>
-    </div>
-</section>
+
 
 
 <footer class="footer">
