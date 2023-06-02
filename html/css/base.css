@@ -5,6 +5,7 @@ html, body{/*style de la page*/
     margin: 0; padding: 0;
     background-color: #cee8f7;
     font-family: 'Lato';
+    
 }
 
 header {
@@ -108,18 +109,19 @@ header nav ul {
 }
 
 .container{
-  overflow: hidden;
+  
 }
 
 .music-container {
 	display: flex;
 	margin: 0px;
+
   overflow: scroll;
   -ms-overflow-style:none;
- overflow-x: auto;  
+  overflow-x: auto;
 }
 
-.music-container::-webkit-scrollbar{width: 0!important;}
+
 
 .music-container img {
 	max-height:200px;
@@ -134,20 +136,27 @@ header nav ul {
 .album-container {
 	display: flex;
 	margin: 0px;
+
   overflow: scroll;
+  -ms-overflow-style:none;
+  overflow-x: auto;
 }
 
 .album-container img {
 	max-height:200px;
 	max-width:200px;
 	margin-right: 5%;
-	border-radius:5%
+	border-radius:5%;
+  margin-bottom: 5%;
 }
 
 .ariste-container {
 	display: flex;
 	margin: 0px;
+
   overflow: scroll;
+  -ms-overflow-style:none;
+  overflow-x: auto;
 }
 
 .artiste-container img {
@@ -167,3 +176,21 @@ header nav ul {
 		flex-direction:column;
 	}
 }
+
+/*################################################################################"*/
+/*scrollbar*/
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+*::-moz-scrollbar {
+  width: 0px;
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+/*.music-container::-webkit-scrollbar{width: 0!important;}*/
