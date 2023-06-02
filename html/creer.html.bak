@@ -41,8 +41,15 @@
                 <p class="inputName">PASSWORD</p>
             </div>
             <p class="errorMessage"></p>
+			
+			<div class="inputBox">				
+				<input type="file" id="image_profil" name="image_profil">
+				<p for="image_profil" class="inputName">Profile Picture ?</p>
+				<button type="button" id="button" onclick="image_switch()">URL ?</button>
+				
+			</div>
+			
 
-            
 
             <button class="btn">Account</button>
 
@@ -51,5 +58,26 @@
                 <a href="connection.html">connect</a>
             </div>
         </section>
+		
+		
+			  <script>
+  let URL = 0;
+
+function image_switch(){
+
+    let bouton = document.getElementById('button');
+    let input = document.getElementById('image-profil');
+    if(URL == 0){
+        bouton.innerHTML = "Local file ?";
+        URL = 1;
+		input.type = 'url';
+    }
+    else {
+        bouton.innerHTML = "URL ?";
+        URL = 0;
+		input.type = 'file';
+    }
+}
+</script>
     </body>
 </html>

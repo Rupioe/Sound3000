@@ -67,7 +67,7 @@ header nav ul {
 }
 
 .name{
-    margin: 8px;padding: 4px;
+    margin: 8px;padding: 3px;
     color:#699bf7;
     text-transform: uppercase;
     font-family: 'Roboto';

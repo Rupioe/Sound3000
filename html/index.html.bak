@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<link href="css/connection.css" rel="stylesheet" type="text/css"/>
+<link href="css/base.css" rel="stylesheet" type="text/css"/>
 <meta charset="utf-8">
 
 
@@ -31,7 +31,7 @@
               <nav class="connexion">
                 <ul>
                   <li><a href=""><img src="image/profil.png"></a></li>
-                  <li><a href=""><img src="image/exit.png"></a></li>
+                  <li><a href="connection.html"><img src="image/exit.png"></a></li>
                 </ul>
               </nav>
             

@@ -103,6 +103,14 @@ html, body {
     background-position-y: 3px;
 }
 
+.input[type=file] {
+    /*background: url("image/calendar.svg");*/
+    background-repeat: no-repeat;
+    background-size: 24px;
+    background-position-x: 3px;
+    background-position-y: 3px;
+}
+
 .input:focus {
     border-color: blue;
 }
