@@ -71,7 +71,7 @@ html, body {
 }
 
 .input[type=email] {
-    background: url("./image/mail2.svg");
+    background: url("image/mail2.svg");
     background-repeat: no-repeat;
     background-size: 24px;
     background-position-x: 3px;

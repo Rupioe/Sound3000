@@ -167,7 +167,7 @@ html, body {
 }
 
 .bouton{
-	padding: 1px;
+	
 	background: #699bf7;
     color: white;
     border: none;
