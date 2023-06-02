@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $image_profil = $_POST['image_profil'];
 
   $mysql_query1 = "INSERT INTO compte (email, nom, prenom, date_naissance, password,chemin_image) VALUES ('".$email."','".$nom."','".$prenom."',STR_TO_DATE('".$date_naissance."', '%Y-%d-%m'),'".$mot_de_passe."','".$image_profil."');";
+  echo $mysql_query1;
   
 // nettoyage
 $query1 = $dbCnx->prepare($mysql_query1);
@@ -27,6 +28,7 @@ $query1->execute();
 } catch (Exception $e) {
 include('test.html');
 echo '<div class="error">Adresse mail déjà utilisée</div>';
+echo "Une exception a été levée : " . $e->getMessage();
 }
 
 
