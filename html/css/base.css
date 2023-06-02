@@ -110,6 +110,7 @@ header nav ul {
 .music-container {
 	display: flex;
 	margin: 0px;
+  overflow: scroll;
 }
 
 .music-container img {
