@@ -1,5 +1,5 @@
 <?php
-include "./constants.php";
+include "../php/constants.php";
 $mysqlServerIp="127.0.0.1";
 $mysqlServerPort = "3306";
 $mysqlDbName = DB_NAME;

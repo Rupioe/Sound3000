@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $mot_de_passe = $_POST['mot_de_passe'];
   $image_profil = $_POST['image_profil'];
 
-  $mysql_query1 = "INSERT INTO compte (email, nom, prenom, date_naissance, password,chemin_image) VALUES ('".$email."','".$nom."','".$prenom."',STR_TO_DATE('".$date_naissance."', '%Y-%d-%m'),'".$mot_de_passe."','".$image_profil."');";
+  $mysql_query1 = "INSERT INTO compte (email, nom, prenom, date_naissance, password,chemin_image) VALUES ('".$email."','".$nom."','".$prenom."',STR_TO_DATE('".$date_naissance."', '%Y-%m-%d'),'".$mot_de_passe."','".$image_profil."');";
   
 // nettoyage
 $query1 = $dbCnx->prepare($mysql_query1);
@@ -27,13 +27,13 @@ $query1->execute();
 } catch (Exception $e) {
 echo "Une exception a été levée : " . $e->getMessage();
 echo '<div class="error">Adresse mail déjà utilisée</div>';
-include('creer.html');
+include('../html/creer.html');
 }
-include('connection.html');
+include('../html/connection.html');
 
 ### save
 $nomFichier = '../Scripts/addon.sql';
-
+$mysql_query1 = $mysql_query1."\n";
 $file = fopen($nomFichier, 'a');
 fwrite($file, $mysql_query1);
 fclose($file);

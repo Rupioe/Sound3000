@@ -13,7 +13,7 @@
                 <h1>Create Account</h1>
             </div>
 			
-			<form action="../php/traitement.php" method="POST">
+			<form action="./creer.php" method="POST">
 
             <div class="inputBox">
                 <input type="email" id="email" name="email" class="input" required>
@@ -94,3 +94,50 @@ function image_switch(){
 }</script>
     </body>
 </html>
+
+<?php
+// Désactiver l'affichage des erreurs
+//error_reporting(0);
+//ini_set('display_errors', 0);
+ 
+include "../php/db.php";
+
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+  $email = $_POST['email'];
+  $nom = $_POST['nom'];
+  $prenom = $_POST['prenom'];
+  $date_naissance = $_POST['date_naissance'];
+  $mot_de_passe = $_POST['mot_de_passe'];
+  $image_profil = $_POST['image_profil'];
+
+  $mysql_query1 = "INSERT INTO compte (email, nom, prenom, date_naissance, password,chemin_image) VALUES ('".$email."','".$nom."','".$prenom."',STR_TO_DATE('".$date_naissance."', '%Y-%m-%d'),'".$mot_de_passe."','".$image_profil."');";
+  
+// nettoyage
+$query1 = $dbCnx->prepare($mysql_query1);
+
+$bugflag = 0;
+try {
+//execution
+$query1->execute();
+} catch (Exception $e) {
+//echo "Une exception a été levée : " . $e->getMessage();
+echo '<div class="error">Adresse mail déjà utilisée</div>';
+$bugflag = 1;
+}
+
+if ( $bugflag == 0){
+### save
+$nomFichier = '../Scripts/addon.sql';
+$mysql_query1 = $mysql_query1."\n";
+$file = fopen($nomFichier, 'a');
+fwrite($file, $mysql_query1);
+fclose($file);
+header("Location: index.html");
+exit;
+}
+
+}
+?>
