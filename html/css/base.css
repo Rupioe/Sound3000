@@ -144,3 +144,14 @@ header nav ul {
 	max-width:200px;
 	margin-right: 5%;
 }
+
+
+
+
+/*################################################################################"*/
+/*telephone*/
+@media screen and (max-width: 780px) {
+	header {
+		flex-direction:column;
+	}
+}
