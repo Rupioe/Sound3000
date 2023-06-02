@@ -38,17 +38,17 @@
 
             <div class="inputBox">
                 <input type="password" id="mot_de_passe" name="mot_de_passe" class="input" required>
-                <p class="inputName">MOT DE PASSE</p>
+                <p class="inputName">PASSWORD</p>
             </div>
             <p class="errorMessage"></p>
 
             
 
-            <button class="btn">S'INSCRIRE</button>
+            <button class="btn">Account</button>
 
             <div class="switchPage">
-                <p>vous avez déjà un compte ?</p>
-                <a href="connection.html">connectez-vous</a>
+                <p>vous have a account ?</p>
+                <a href="connection.html">connect</a>
             </div>
         </section>
     </body>

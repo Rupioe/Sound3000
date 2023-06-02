@@ -13,15 +13,15 @@ html, body {
 }
 
 #main {
-    width: 640px;
-    height: 84%;
+    /*width: 640px;
+    height: 84%;*/
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /*background-color: white;*/
     border-radius: 10px;
 	background: white;
+	padding: 1rem;
 }
 
 .titleBox {
