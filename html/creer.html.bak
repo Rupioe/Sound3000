@@ -56,7 +56,7 @@
 			</div>
             
 
-            <button type="submit"class="btn">Account</button>
+            <button type="submit" class="btn">Account</button>
 </form>
             <div class="switchPage">
                 <p>vous have a account ?</p>
