@@ -1,7 +1,7 @@
 <?php
   // Database constants.
-  define('DB_USER', 'admin');
-  define('DB_PASSWORD', 'kwakoubeh');
+  define('DB_USER', 'dummy');
+  define('DB_PASSWORD', 'ymmud');
   define('DB_NAME', 'bddSound');
   define('DB_SERVER', 'localhost');
 ?>
