@@ -107,11 +107,19 @@ header nav ul {
     letter-spacing: 1px;
 }
 
+.container{
+  overflow: hidden;
+}
+
 .music-container {
 	display: flex;
 	margin: 0px;
   overflow: scroll;
+  -ms-overflow-style:none;
+ overflow-x: auto;  
 }
+
+.music-container::-webkit-scrollbar{width: 0!important;}
 
 .music-container img {
 	max-height:200px;
