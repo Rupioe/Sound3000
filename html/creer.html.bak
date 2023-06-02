@@ -9,39 +9,40 @@
     <body>
         <section id="main">
             <div class="titleBox">
-                <h1>Nouveau Compte</h1>
-                <p>créer un nouveau compte</p>
+                <h1>Create Account</h1>
             </div>
 
             <div class="inputBox">
-                <input type="email" class="input">
+                <input type="email" id="email" name="email" class="input" required>
                 <p class="inputName">E-MAIL</p>
             </div>
             <p class="errorMessage"></p>
 			
 			<div class="inputBox">
-                <input type="password" class="input">
+                <input type="text" id="nom" name="nom" class="input" required>
+                <p class="inputName">LAST NAME</p>
+            </div>
+            <p class="errorMessage"></p>
+			
+			<div class="inputBox">
+                <input type="text" id="prenom" name="prenom" class="input" required>
                 <p class="inputName">NAME</p>
             </div>
             <p class="errorMessage"></p>
 			
 			<div class="inputBox">
-                <input type="profil" class="input">
-                <p class="inputName">LAST NAME</p>
+                <input type="date" id="date_naissance" name="date_naissance" class="input" required>
+                <p class="inputName">AGE</p>
             </div>
             <p class="errorMessage"></p>
 
             <div class="inputBox">
-                <input type="password" class="input">
+                <input type="password" id="mot_de_passe" name="mot_de_passe" class="input" required>
                 <p class="inputName">MOT DE PASSE</p>
             </div>
             <p class="errorMessage"></p>
 
-            <div class="inputBox">
-                <input type="calendar" class="input">
-                <p class="inputName">AGE</p>
-            </div>
-            <p class="errorMessage"></p>
+            
 
             <button class="btn">S'INSCRIRE</button>
 

@@ -9,45 +9,46 @@
     <body>
         <section id="main">
             <div class="titleBox">
-                <h1>Nouveau Compte</h1>
-                <p>créer un nouveau compte</p>
+                <h1>Create Account</h1>
             </div>
 
             <div class="inputBox">
-                <input type="email" class="input">
+                <input type="email" id="email" name="email" class="input" required>
                 <p class="inputName">E-MAIL</p>
             </div>
             <p class="errorMessage"></p>
 			
 			<div class="inputBox">
-                <input type="profil" class="input">
+                <input type="text" id="nom" name="nom" class="input" required>
+                <p class="inputName">LAST NAME</p>
+            </div>
+            <p class="errorMessage"></p>
+			
+			<div class="inputBox">
+                <input type="text" id="prenom" name="prenom" class="input" required>
                 <p class="inputName">NAME</p>
             </div>
             <p class="errorMessage"></p>
 			
 			<div class="inputBox">
-                <input type="profil" class="input">
-                <p class="inputName">LAST NAME</p>
-            </div>
-            <p class="errorMessage"></p>
-
-            <div class="inputBox">
-                <input type="password" class="input">
-                <p class="inputName">MOT DE PASSE</p>
-            </div>
-            <p class="errorMessage"></p>
-
-            <div class="inputBox">
-                <input type="calendar" class="input">
+                <input type="date" id="date_naissance" name="date_naissance" class="input" required>
                 <p class="inputName">AGE</p>
             </div>
             <p class="errorMessage"></p>
 
-            <button class="btn">S'INSCRIRE</button>
+            <div class="inputBox">
+                <input type="password" id="mot_de_passe" name="mot_de_passe" class="input" required>
+                <p class="inputName">PASSWORD</p>
+            </div>
+            <p class="errorMessage"></p>
+
+            
+
+            <button class="btn">Account</button>
 
             <div class="switchPage">
-                <p>vous avez déjà un compte ?</p>
-                <a href="connection.html">connectez-vous</a>
+                <p>vous have a account ?</p>
+                <a href="connection.html">connect</a>
             </div>
         </section>
     </body>

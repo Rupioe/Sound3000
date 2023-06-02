@@ -14,22 +14,22 @@
             </div>
 
             <div class="inputBox">
-                <input type="email" class="input">
+                <input type="email" id="email" name="email" class="input" required>
                 <p class="inputName">E-MAIL</p>
             </div>
-            <p class="errorMessage">exemple d'erreur</p>
+            <!-- <p class="errorMessage">exemple d'erreur</p> -->
 
             <div class="inputBox">
-                <input type="password" class="input">
+                <input type="password" id="mot_de_passe" name="mot_de_passe" class="input" required>
                 <p class="inputName">MOT DE PASSE</p>
             </div>
             <p class="errorMessage"></p>
 
-            <button class="btn">SE CONNECTER</button>
+            <button class="btn">Connect</button>
 
             <div class="switchPage">
-                <p>vous n'avez pas de compte ?</p>
-                <a href="creer.html">inscrivez-vous</a>
+                <p>You don't have account ?</p>
+                <a href="creer.html">sign up</a>
             </div>
         </section>
     </body>
