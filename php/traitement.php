@@ -27,8 +27,9 @@ $query1->execute();
 } catch (Exception $e) {
 echo "Une exception a été levée : " . $e->getMessage();
 echo '<div class="error">Adresse mail déjà utilisée</div>';
+include('creer.html');
 }
-include('test.html');
+include('connection.html');
 
 ### save
 $nomFichier = '../Scripts/addon.sql';
