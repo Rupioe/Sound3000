@@ -21,6 +21,7 @@ html, body {
     justify-content: center;
     /*background-color: white;*/
     border-radius: 10px;
+	background: white;
 }
 
 .titleBox {
@@ -32,8 +33,11 @@ html, body {
 
 .titleBox h1 {
     color: Black;
-    font-size: 30px;
     margin: 0;
+	font-family: 'Roboto';
+    font-weight: 800;
+    font-size: 35px;
+    letter-spacing: 1px;
 }
 
 .titleBox h2 {
@@ -49,6 +53,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+	
 }
 
 .input {
@@ -82,15 +87,15 @@ html, body {
     background-position-y: 3px;
 }
 
-.input[type=profil] {
-    background: url("image/profil.svg");
+.input[type=text] {
+    background: url("image/name.svg");
     background-repeat: no-repeat;
     background-size: 24px;
     background-position-x: 3px;
     background-position-y: 3px;
 }
 
-.input[type=calendar] {
+.input[type=date] {
     background: url("image/calendar.svg");
     background-repeat: no-repeat;
     background-size: 24px;
