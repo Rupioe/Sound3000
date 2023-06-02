@@ -113,20 +113,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $mot_de_passe = $_POST['mot_de_passe'];
   $image_profil = $_POST['image_profil'];
 
+$bugflag = 0;
+foreach ( $result as $ligne) {
+	if ($ligne['email'] == $email )
+		$bugflag = 1;
+}
+
   $mysql_query1 = "INSERT INTO compte (email, nom, prenom, date_naissance, password,chemin_image) VALUES ('".$email."','".$nom."','".$prenom."',STR_TO_DATE('".$date_naissance."', '%Y-%m-%d'),'".$mot_de_passe."','".$image_profil."');";
   
 // nettoyage
 $query1 = $dbCnx->prepare($mysql_query1);
 
-$bugflag = 0;
 try {
-//execution
-$query1->execute();
+	//execution
+	$query1->execute();
 } catch (Exception $e) {
-//echo "Une exception a été levée : " . $e->getMessage();
-echo '<div class="error">Adresse mail déjà utilisée</div>';
-$bugflag = 1;
+	echo "Une exception a été levée : " . $e->getMessage();
+	echo '<div class="error">Adresse mail déjà utilisée</div>';
+	$bugflag = 1;
 }
+
+try
+{
+	$request = 'SELECT email FROM compte';
+	$statement = $dbCnx->prepare($request);
+	//$statement->bindParam(':id', $id, PDO::PARAM_STR, 7);
+	$statement->execute();
+	$result = $statement->fetchAll();
+}
+catch (PDOException $exception)
+{
+	error_log('Request error: '.$exception->getMessage());
+}
+
+
 
 if ( $bugflag == 0){
 ### save
@@ -135,8 +155,11 @@ $mysql_query1 = $mysql_query1."\n";
 $file = fopen($nomFichier, 'a');
 fwrite($file, $mysql_query1);
 fclose($file);
-header("Location: index.html");
+header("Location: ../html/index.html");
 exit;
+}
+else {
+	echo '<div class="error">Adresse mail déjà utilisée</div>';
 }
 
 }
