@@ -5,7 +5,7 @@ html, body{/*style de la page*/
     margin: 0; padding: 0;
     background-color: #cee8f7;
     font-family: 'Lato';
-    
+    flex-direction:column;
 }
 
 header {
@@ -95,7 +95,8 @@ header nav ul {
 }
 
 /*################################################################################*/
-/*page*/
+
+
 
 .title{
 	display:flex;
@@ -106,72 +107,78 @@ header nav ul {
     font-weight: 800;
     font-size: 20px;
     letter-spacing: 1px;
+    
 }
 
-.music-container {
+.element{
+    position: absolute;
+	text-decoration: none;
+    color:#699bf7;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-left: 5%;
+    top: 65%;
+    
+}
+
+.image{
+    position: absolute;
+    max-width: 250px;
+    
+    left: 5%;
+    top: 20%;
+
+    height: auto;
+    width: 100%;
+    height: auto;
+}
+
+.album{
+    position: absolute;
+	text-decoration: none;
+    color:#699bf7;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-left: 5%;
+    top: 20%;
+    left: 30%;
+}
+
+/*.artiste-container {
 	display: flex;
 	margin: 0px;
 
-  overflow: scroll;
-  -ms-overflow-style:none;
-  overflow-x: auto;
-}
-
-
-
-.music-container img {
-	max-height:200px;
-	max-width:200px;
-	margin-right: 2%;
-	border-radius:5%; 
-
-	/*flex-direction: column;
-  flex-wrap: wrap;*/
-}
-
-.album-container {
-	display: flex;
-	margin: 0px;
-
-  overflow: scroll;
-  -ms-overflow-style:none;
-  overflow-x: auto;
-}
-
-.album-container img {
-	max-height:200px;
-	max-width:200px;
-	margin-right: 5%;
-	border-radius:5%;
-  margin-bottom: 5%;
-}
-
-/*.ariste-container {
-	display: flex;
-	margin: 0px;
-
-  overflow: scroll;
-  -ms-overflow-style:none;
-  overflow-x: auto;
+    overflow: scroll;
+    -ms-overflow-style:none;
+    overflow-y: auto;
 }*/
 
-.artiste-container {
-	display: flex;
+.artiste-container{
 	margin: 0px;
+    overflow: scroll;
+    -ms-overflow-style:none;
+    overflow-y: scroll;
 
-  overflow: scroll;
-  -ms-overflow-style:none;
-  overflow-x: auto;
+    position: absolute;
+    top: 32%;
+    left: 35%;
+
+    
 }
 
 .artiste-container img {
-	max-height:200px;
-	max-width:200px;
+	max-height:150px;
+	max-width:150px;
 	margin-right: 5%;
-	border-radius:50%;
+    margin-bottom: 5%;
+    border-radius:5%;
 }
-
-
 
 
 /*################################################################################"*/
@@ -180,22 +187,32 @@ header nav ul {
 	header {
 		flex-direction:column;
 	}
+
+    .artiste-container{
+        display: flex;
+        left: 2%;
+    }
 }
+
+
+.flex{
+    flex-direction:column;
+}
+
+
 
 /*################################################################################"*/
 /*scrollbar*/
 * {
-  scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
-}
-
-*::-moz-scrollbar {
-  width: 0px;
-  background-color: transparent;
-}
-
-body::-webkit-scrollbar{
-  display: none;
-}
-
-/*.music-container::-webkit-scrollbar{width: 0!important;}*/
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+  
+  *::-moz-scrollbar {
+    width: 0px;
+    background-color: transparent;
+  }
+  
+  body::-webkit-scrollbar{
+    display: none;
+  }
