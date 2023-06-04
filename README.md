@@ -16,6 +16,7 @@ $cd Sound 3000
  ```
 
 ### Arborescence :
+```sh
 ./
 |-- LICENSE
 |-- README.md
@@ -48,4 +49,5 @@ $cd Sound 3000
 |   `-- init.sql
 |-- test.html
 `-- test.php
+```
 
