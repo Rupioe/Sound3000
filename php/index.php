@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<link href="../html/css/base.css" rel="stylesheet" type="text/css"/>
+<link href="../css/base.css" rel="stylesheet" type="text/css"/>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
