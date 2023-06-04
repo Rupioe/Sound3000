@@ -21,9 +21,9 @@
         <nav >
        
                 <ul>
-                  <li><a href="" class="link">Home</a></li>
+                  <li><a href="index.html" class="link">Home</a></li>
                   <li><a href="" class="link">Favorites</a></li>
-                  <li><a href="" class="link">Playlist</a></li>
+                  <li><a href="playlist.html" class="link">Playlist</a></li>
                   <li><a href="" class="link">History</a></li>
                   <li><a href="" id="searchBtn"><img src="image/search.png"></a></li>
           </ul>
@@ -31,8 +31,8 @@
       
               <nav class="connexion">
                 <ul>
-                  <li><a href=""><img src="image/profil.png"></a></li>
-                  <li><a href="connection.html"><img src="image/exit.png"></a></li>
+                  <li><a href="profil.html"><img src="image/profil.png"></a></li>
+                  <li><a href="../php/connection.php"><img src="image/exit.png"></a></li>
                 </ul>
               </nav>
             
@@ -92,6 +92,12 @@
 
 
 
-
+        <script>
+            let searchBtn = document.getElementById("searchBtn");
+            searchBtn.addEventListener("click", function(event){
+                event.preventDefault(); 
+                document.getElementById("searchWrapper").classList.toggle("open");  
+            })
+        </script>
     </body>    
 </html>

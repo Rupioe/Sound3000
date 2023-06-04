@@ -95,9 +95,6 @@ header nav ul {
 }
 
 /*################################################################################*/
-
-
-
 .title{
 	display:flex;
 	text-decoration: none;
@@ -107,60 +104,9 @@ header nav ul {
     font-weight: 800;
     font-size: 20px;
     letter-spacing: 1px;
-    
 }
 
-.element{
-    position: absolute;
-	text-decoration: none;
-    color:#699bf7;
-    text-transform: uppercase;
-    font-family: 'Roboto';
-    font-weight: 800;
-    font-size: 20px;
-    letter-spacing: 1px;
-    margin-left: 5%;
-    top: 65%;
-    
-}
-
-.image{
-    position: absolute;
-    left: 5%;
-    top: 20%;
-    height: auto;
-    width: 100%;
-    height: auto;
-}
-
-.image img{
-    max-width: 300px;
-}
-
-.album{
-    position: absolute;
-	text-decoration: none;
-    color:#699bf7;
-    text-transform: uppercase;
-    font-family: 'Roboto';
-    font-weight: 800;
-    font-size: 20px;
-    letter-spacing: 1px;
-    margin-left: 5%;
-    top: 20%;
-    left: 30%;
-}
-
-/*.artiste-container {
-	display: flex;
-	margin: 0px;
-
-    overflow: scroll;
-    -ms-overflow-style:none;
-    overflow-y: auto;
-}*/
-
-.artiste-container{
+.album-container{
 	margin: 0px;
     overflow: scroll;
     -ms-overflow-style:none;
@@ -168,12 +114,11 @@ header nav ul {
 
     position: absolute;
     top: 32%;
-    left: 35%;
 
     
 }
 
-.artiste-container img {
+.album-container img {
 	max-height:150px;
 	max-width:150px;
 	margin-right: 5%;
@@ -182,25 +127,19 @@ header nav ul {
 }
 
 
+
 /*################################################################################"*/
 /*telephone*/
 @media screen and (max-width: 780px) {
 	header {
 		flex-direction:column;
 	}
-
-    .artiste-container{
-        display: flex;
-        left: 2%;
-    }
 }
 
 
 .flex{
     flex-direction:column;
 }
-
-
 
 /*################################################################################"*/
 /*scrollbar*/
