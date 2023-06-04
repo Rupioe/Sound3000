@@ -10,11 +10,6 @@
 <title>Sound 3000</title>
 </head>
 <body>
-    <div class="search" id="searchWrapper">
-        <input type="text">
-        <button><img src="../html/image/search.png"></button>
-      </div>
-      
       <?php include "../html/header.html" ?>
       
       
