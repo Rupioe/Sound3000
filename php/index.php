@@ -23,7 +23,7 @@
                 <ul>
                   <li><a href="" class="link">Home</a></li>
                   <li><a href="" class="link">Favorites</a></li>
-                  <li><a href="playlist.html" class="link">Playlist</a></li>
+                  <li><a href="../html/playlist.html" class="link">Playlist</a></li>
                   <li><a href="" class="link">History</a></li>
                   <li><a href="" id="searchBtn"><img src="../html/image/search.png"></a></li>
           </ul>
@@ -31,7 +31,7 @@
       
               <nav class="connexion">
                 <ul>
-                  <li><a href="profil.html"><img src="../html/image/profil.png"></a></li>
+                  <li><a href="../html/profil.html"><img src="../html/image/profil.png"></a></li>
                   <li><a href="../php/connection.php?reset=1"><img src="../html/image/exit.png"></a></li>
                 </ul>
               </nav>
