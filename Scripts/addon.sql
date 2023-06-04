@@ -15,3 +15,6 @@ USE bddSound; INSERT INTO artiste (id, nom, prenom, pseudo, date_naissance,sexe,
 USE bddSound; INSERT INTO discographie (id, id_artiste) VALUES (1,1);
 INSERT INTO compte (email, nom, prenom, date_naissance, password,chemin_image) VALUES ('zizi@kkk.fr','jflksjfs','jkfmsjkfs',STR_TO_DATE('2023-06-16', '%Y-%m-%d'),'jlkdsjmlfks','');
 INSERT INTO compte (email, nom, prenom, date_naissance, password,chemin_image) VALUES ('lollo@gamil.com','fmljgk','glkjfdmg',STR_TO_DATE('2023-06-09', '%Y-%m-%d'),'gmlkjfkmsgdl','');
+INSERT INTO compte (email, nom, prenom, date_naissance, password,chemin_image) VALUES ('bllblblb@gmail.com','djkfqmsl','fmlkdsfjlmk',STR_TO_DATE('5454-04-05', '%Y-%m-%d'),'$2y$10$YOQUVyhj1eJDfOSTaGRhKunlLwO5oF6AZq2zL2fiN6SAaawcPX7Ea','');
+INSERT INTO compte (email, nom, prenom, date_naissance, password,chemin_image) VALUES ('bllblb34lb@gmail.com','djkfqmsl','fmlkdsfjlmk',STR_TO_DATE('5454-04-05', '%Y-%m-%d'),'$2y$10$fMUDcJbPhmRy8NHXuNTrKeGuNNr9ZYlvLYIn2J6vpGcUx94yViw66','');
+INSERT INTO compte (email, nom, prenom, date_naissance, password,chemin_image) VALUES ('zizi@kkkk.fr','jfodsks','mflkjds',STR_TO_DATE('0444-12-04', '%Y-%m-%d'),'$2y$10$Cv2LudN9qJpD8Awj9F24cuHFS1P3N5IREf0dlXwyj4KOdfxMVI8D.','http://kk.com');

@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <link href="../html/css/connection.css" rel="stylesheet" type="text/css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="../js/compte.js" defer></script>
     </head>
 
     <body>
@@ -19,37 +20,33 @@
                 <input type="email" id="email" name="email" class="input" required>
                 <p class="inputName">E-MAIL</p>
             </div>
-            <p class="errorMessage"></p>
 			
 			<div class="inputBox">
                 <input type="text" id="nom" name="nom" class="input" required>
                 <p class="inputName">LAST NAME</p>
             </div>
-            <p class="errorMessage"></p>
 			
 			<div class="inputBox">
                 <input type="text" id="prenom" name="prenom" class="input" required>
                 <p class="inputName">NAME</p>
             </div>
-            <p class="errorMessage"></p>
 			
 			<div class="inputBox">
                 <input type="date" id="date_naissance" name="date_naissance" class="input" required>
                 <p class="inputName">AGE</p>
             </div>
-            <p class="errorMessage"></p>
 
             <div class="inputBox">
-                <input type="password" id="mot_de_passe" name="mot_de_passe" class="input" required>
+                <input type="password" id="mot_de_passe" name="mot_de_passe" class="input" onkeyup="checkInput()" required>
                 <p class="inputName">PASSWORD</p>
             </div>
-            <p class="errorMessage"></p>
+            <p id="errorMessagePwd"></p>
 			
 			<div class="inputBox">
-                <input type="password" id="mot_de_passe" name="mot_de_passe" class="input" required>
+                <input type="password" id="mot_de_passe_conf" name="mot_de_passe_conf" class="input" onkeyup="checkInput()" required>
                 <p class="inputName">VERIFY PWD</p>
             </div>
-            <p class="errorMessage"></p>
+            <p id="errorMessagePwdc"></p>
 			
 			<div class="inputBox">
 				<button type="button" id="button" onclick="image_switch()" class="bouton">URL ?</button>
@@ -70,35 +67,13 @@
                 <a href="./connection.php">connect</a>
             </div>
         </section>
-		
-		
-			  <script>
-  let URL = 0;
-
-function image_switch(){
-
-    let bouton = document.getElementById('button');
-    let image = document.getElementById('image-button');
-    if(URL == 0){
-        bouton.innerHTML = "Local file ?";
-        URL = 1;
-		    image.innerHTML = '<input type="url" id="image_profil" name="image_profil"><br><br></br>';
-    }
-    else {
-        bouton.innerHTML = "URL ?";
-        URL = 0;
-		    image.innerHTML = '<input type="file" id="image_profil" name="image_profil"><br></br>';
-    }
-
-
-}</script>
     </body>
 </html>
 
 <?php
 // Désactiver l'affichage des erreurs
-//error_reporting(0);
-//ini_set('display_errors', 0);
+error_reporting(0);
+ini_set('display_errors', 0);
  
 include "./db.php";
 
@@ -110,11 +85,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $nom = htmlspecialchars($_POST['nom']);
   $prenom = htmlspecialchars($_POST['prenom']);
   $date_naissance = htmlspecialchars($_POST['date_naissance']);
-  $mot_de_passe = password_hash(htmlspecialchars($_POST['mot_de_passe']),PASSWORD_DEFAULT);
+  $mot_de_passe = htmlspecialchars($_POST['mot_de_passe']);
+  $mot_de_passe_conf = htmlspecialchars($_POST['mot_de_passe_conf']);
   $image_profil = htmlspecialchars($_POST['image_profil']);
 
+  echo $mot_de_passe."<br>".$_POST['mot_de_passe']."<br>".$mot_de_passe_conf."<br>".$_POST['mot_de_passe_conf'];
+  // les hash sont différents à cause du sel
+  // ensuite je peux faire une verif en live avec l'evenement quand l'user met son curseur dans la case ou écrit et comparer les mdp en direct
+  // je peux aussi ajouter des commentaires sur le pwd écrit (trop petit pas assez complexe etc)
 
   $bugflag = 0;
+  if (strcmp($mot_de_passe,$mot_de_passe_conf)){
+	echo '<div class="error">Mot de passe de confirmation faux</div>';
+    $bugflag = 1;
+    exit;
+  }
+  $mot_de_passe = password_hash($mot_de_passe,PASSWORD_DEFAULT);
+  $mot_de_passe_conf = password_hash($mot_de_passe_conf,PASSWORD_DEFAULT);
   if ( filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
 	echo '<div class="error">Adresse mail mal écrite</div>';
     $bugflag = 1;
@@ -164,7 +151,7 @@ $mysql_query1 = $mysql_query1."\n";
 $file = fopen($nomFichier, 'a');
 fwrite($file, $mysql_query1);
 fclose($file);
-header("Location: ../html/index.html");
+header("Location: ./connection.php");
 exit;
 }
 

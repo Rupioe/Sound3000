@@ -14,19 +14,19 @@
                 <h2>Sound 3000</h2>
             </div>
 
+			<form action="./connection.php" method="POST">
             <div class="inputBox">
                 <input type="email" id="email" name="email" class="input" required>
                 <p class="inputName">E-MAIL</p>
             </div>
-            <!-- <p class="errorMessage">exemple d'erreur</p> -->
 
             <div class="inputBox">
                 <input type="password" id="mot_de_passe" name="mot_de_passe" class="input" required>
                 <p class="inputName">PASSWORD</p>
             </div>
-            <p class="errorMessage"></p>
 
-            <button class="btn">Connect</button>
+            <button type="submit" class="btn">Connect</button>
+</form>
 
             <div class="switchPage">
                 <p>You don't have account ?</p>
@@ -49,5 +49,48 @@ if (password_verify($motDePasse, $motDePasseHash)) {
 }
 
 */
+
+// Désactiver l'affichage des erreurs
+error_reporting(0);
+ini_set('display_errors', 0);
+ 
+include "./db.php";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = htmlspecialchars($_POST['email']);
+    $password = htmlspecialchars($_POST['mot_de_passe']);
+
+    try
+    {
+        $request = 'SELECT password FROM compte WHERE email = "zizi@kkk.fr"';
+        $statement = $dbCnx->prepare($request);
+        $statement->execute();
+        $result = $statement->fetchAll();
+    }
+    catch (PDOException $exception)
+    {
+        error_log('Request error: '.$exception->getMessage());
+    }
+    foreach ( $result as $ligne) {
+	    if (password_verify($password,$ligne['password'])){
+
+            session_start();
+
+            // mdp valide
+            $token = genererToken();
+
+            // Stockage du token dans la session ou dans une base de données associée à l'utilisateur
+            $_SESSION['token'] = $token;
+        
+            // Redirection vers la page protégée
+            header('Location: ../html/index.html');
+
+        }
+        else {
+            // mdp invalide
+            echo "Mauvais identifiants !";
+        }
+    }
+}
 
 ?>
