@@ -56,13 +56,16 @@ ini_set('display_errors', 0);
  
 include "./db.php";
 
+if ($_GET['reset'] == 1)
+    $_SESSION['token']=0;
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = htmlspecialchars($_POST['email']);
     $password = htmlspecialchars($_POST['mot_de_passe']);
 
     try
     {
-        $request = 'SELECT password FROM compte WHERE email = "zizi@kkk.fr"';
+        $request = 'SELECT password FROM compte WHERE email = "'.$email.'"';
         $statement = $dbCnx->prepare($request);
         $statement->execute();
         $result = $statement->fetchAll();
@@ -77,20 +80,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             session_start();
 
             // mdp valide
-            $token = genererToken();
+            $token = genererToken($ligne['password']);
 
             // Stockage du token dans la session ou dans une base de données associée à l'utilisateur
             $_SESSION['token'] = $token;
+
+    try
+    {
+        $request = 'UPDATE compte SET token = "'.$token.'" WHERE email = "'.$email.'"';
+        $statement = $dbCnx->prepare($request);
+        $statement->execute();
+    }
+    catch (PDOException $exception)
+    {
+        error_log('Request error: '.$exception->getMessage());
+    }
+    try
+    {
+        $request = 'UPDATE compte SET timestamp = "'.time().'" WHERE email = "'.$email.'"';
+        $statement = $dbCnx->prepare($request);
+        $statement->execute();
+    }
+    catch (PDOException $exception)
+    {
+        error_log('Request error: '.$exception->getMessage());
+    }
         
             // Redirection vers la page protégée
-            header('Location: ../html/index.html');
-
+            header('Location: ../php/token.php?path=../php/index.php');
         }
         else {
             // mdp invalide
             echo "Mauvais identifiants !";
         }
     }
+}
+
+
+function genererToken($passwordhash){
+    return hash("sha256",$passwordhash);
 }
 
 ?>
