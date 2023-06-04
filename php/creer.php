@@ -3,7 +3,7 @@
     <head>
         <title>page d'inscription</title>
         <meta charset="utf-8">
-        <link href="../html/css/connection.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/connection.css" rel="stylesheet" type="text/css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="../js/compte.js" defer></script>
     </head>
