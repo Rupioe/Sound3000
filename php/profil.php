@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<link href="css/profil.css" rel="stylesheet" type="text/css"/>
+<link href="../css/profil.css" rel="stylesheet" type="text/css"/>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,7 +12,7 @@
 <body>
     <div class="search" id="searchWrapper">
         <input type="text">
-        <button><img src="image/search.png"></button>
+        <button><img src="../html/image/search.png"></button>
       </div>
       
       <header>
@@ -21,18 +21,18 @@
         <nav >
        
                 <ul>
-                  <li><a href="../php/index.php" class="link">Home</a></li>
+                  <li><a href="index.php" class="link">Home</a></li>
                   <li><a href="" class="link">Favorites</a></li>
-                  <li><a href="playlist.html" class="link">Playlist</a></li>
+                  <li><a href="playlist.php" class="link">Playlist</a></li>
                   <li><a href="" class="link">History</a></li>
-                  <li><a href="" id="searchBtn"><img src="image/search.png"></a></li>
+                  <li><a href="" id="searchBtn"><img src="../html/image/search.png"></a></li>
           </ul>
         </nav>
       
               <nav class="connexion">
                 <ul>
-                  <li><a href=""><img src="image/profil.png"></a></li>
-                  <li><a href="../php/connection.php"><img src="image/exit.png"></a></li>
+                  <li><a href=""><img src="../html/image/profil.png"></a></li>
+                  <li><a href="connection.php"><img src="../html/image/exit.png"></a></li>
                 </ul>
               </nav>
             
@@ -64,7 +64,7 @@
 
         <div class="image">
             <div class="title">Picture : <br></div>
-            <img src="image/Capture.PNG">
+            <img src="../resources/images/compte/compte.png">
         </div>
     </div>
     
