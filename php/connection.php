@@ -37,22 +37,10 @@
 </html>
 
 <?php
-/*
-$motDePasse = "monMotDePasse";
-$motDePasseHash = "$2y$10$u2nlDQoZdASaOePnR4QRYuWmd9XKcW2IuLr7mEDTKkl.03K.DRrU2";
-
-// Vérification du mot de passe
-if (password_verify($motDePasse, $motDePasseHash)) {
-    echo "Mot de passe valide";
-} else {
-    echo "Mot de passe invalide";
-}
-
-*/
-
 // Désactiver l'affichage des erreurs
 error_reporting(0);
 ini_set('display_errors', 0);
+session_start();
  
 include "./db.php";
 
@@ -77,7 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     foreach ( $result as $ligne) {
 	    if (password_verify($password,$ligne['password'])){
 
-            session_start();
 
             // mdp valide
             $token = genererToken($ligne['password']);
