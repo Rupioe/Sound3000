@@ -20,7 +20,7 @@ while [ "$ENCORE" == "y" ]; do
 		read -r STYLE
 
 		mysql -u root -e "USE bddSound; INSERT INTO $CHOSEN (id, titre, date_parution, chemin_image, style) VALUES ($ID,'$TITRE',STR_TO_DATE('$DATE_PARUTION', '%d/%m/%Y'),'$CHEMIN_IMAGE','$STYLE');"
-		echo "USE bddSound; INSERT INTO $CHOSEN (id, titre, date_parution, chemin_image, style) VALUES ($ID,'$TITRE',STR_TO_DATE('$DATE_PARUTION', '%d/%m/%Y'),'$CHEMIN_IMAGE','$STYLE');" >> addon.sql
+		echo "USE bddSound; INSERT INTO $CHOSEN (id, titre, date_parution, chemin_image, style) VALUES ($ID,'$TITRE',STR_TO_DATE('$DATE_PARUTION', '%d/%m/%Y'),'$CHEMIN_IMAGE','$STYLE');" >> ../sql/addon.sql
 	fi
 
 	if [ "$CHOIX" -eq 2 ]; then
@@ -56,7 +56,7 @@ while [ "$ENCORE" == "y" ]; do
 			IDGROUPE="NULL"
 		fi
 		mysql -u root -e "USE bddSound; INSERT INTO $CHOSEN (id, nom, prenom, pseudo, date_naissance,sexe,type,id_groupe) VALUES ($ID,'$NOM','$PRENOM','$PSEUDO',STR_TO_DATE('$DATE_NAISSANCE', '%d/%m/%Y'),$SEXE,$TYPE,$IDGROUPE);"
-		echo "USE bddSound; INSERT INTO $CHOSEN (id, nom, prenom, pseudo, date_naissance,sexe,type,id_groupe) VALUES ($ID,'$NOM','$PRENOM','$PSEUDO',STR_TO_DATE('$DATE_NAISSANCE', '%d/%m/%Y'),$SEXE,$TYPE,$IDGROUPE);" >> addon.sql
+		echo "USE bddSound; INSERT INTO $CHOSEN (id, nom, prenom, pseudo, date_naissance,sexe,type,id_groupe) VALUES ($ID,'$NOM','$PRENOM','$PSEUDO',STR_TO_DATE('$DATE_NAISSANCE', '%d/%m/%Y'),$SEXE,$TYPE,$IDGROUPE);" >> ../sql/addon.sql
 	fi
 
 	if [ "$CHOIX" -eq 3 ]; then
@@ -76,7 +76,7 @@ while [ "$ENCORE" == "y" ]; do
 		read -r IDALBUM
 
 		mysql -u root -e "USE bddSound; INSERT INTO $CHOSEN (id, titre, duree, chemin_musique, chemin_image,id_album) VALUES ($ID,'$TITRE',$DUREE,'$CHEMIN_MUSIQUE','$CHEMIN_IMAGE',$IDALBUM);"
-		echo "USE bddSound; INSERT INTO $CHOSEN (id, titre, duree, chemin_musique, chemin_image,id_album) VALUES ($ID,'$TITRE',$DUREE,'$CHEMIN_MUSIQUE','$CHEMIN_IMAGE',$IDALBUM);" >> addon.sql
+		echo "USE bddSound; INSERT INTO $CHOSEN (id, titre, duree, chemin_musique, chemin_image,id_album) VALUES ($ID,'$TITRE',$DUREE,'$CHEMIN_MUSIQUE','$CHEMIN_IMAGE',$IDALBUM);" >> ../sql/addon.sql
 	fi
 
 	if [ "$CHOIX" -eq 4 ]; then
@@ -90,7 +90,7 @@ while [ "$ENCORE" == "y" ]; do
 		read -r DATE_CREATION
 
 		mysql -u root -e "USE bddSound; INSERT INTO $CHOSEN (id, nom, date_creation) VALUES ($ID,'$NOM',STR_TO_DATE('$DATE_CREATION', '%d/%m/%Y'));"
-		echo "USE bddSound; INSERT INTO $CHOSEN (id, nom, date_creation) VALUES ($ID,'$NOM',STR_TO_DATE('$DATE_CREATION', '%d/%m/%Y'));" >> addon.sql
+		echo "USE bddSound; INSERT INTO $CHOSEN (id, nom, date_creation) VALUES ($ID,'$NOM',STR_TO_DATE('$DATE_CREATION', '%d/%m/%Y'));" >> ../sql/addon.sql
 	fi
 
 
@@ -105,7 +105,7 @@ while [ "$ENCORE" == "y" ]; do
 		read -r ID_ARTISTE
 
 		mysql -u root -e "USE bddSound; INSERT INTO $CHOSEN (id, id_artiste) VALUES ($ID_ALBUM,$ID_ARTISTE);"
-		echo "USE bddSound; INSERT INTO $CHOSEN (id, id_artiste) VALUES ($ID_ALBUM,$ID_ARTISTE);" >> addon.sql
+		echo "USE bddSound; INSERT INTO $CHOSEN (id, id_artiste) VALUES ($ID_ALBUM,$ID_ARTISTE);" >> ../sql/addon.sql
 	fi
 
 	### Encore un ajout ?

@@ -7,4 +7,5 @@ GRANT ALL PRIVILEGES ON *.* TO 'dummy'@'localhost' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON bddSound.* TO 'dummy'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 source sql/bdd3000.sql
-source Scripts/addon.sql
+source sql/addon.sql
+source sql/patchToken.sql

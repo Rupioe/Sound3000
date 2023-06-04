@@ -146,7 +146,7 @@ try {
 
 if ( $bugflag == 0){
 ### save
-$nomFichier = '../Scripts/addon.sql';
+$nomFichier = '../sql/addon.sql';
 $mysql_query1 = $mysql_query1."\n";
 $file = fopen($nomFichier, 'a');
 fwrite($file, $mysql_query1);
