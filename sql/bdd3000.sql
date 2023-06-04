@@ -45,7 +45,7 @@ CREATE TABLE album(
         id            Int NOT NULL ,
         titre         Varchar (50) NOT NULL ,
         date_parution Date NOT NULL ,
-        chemin_image  Varchar (50) NOT NULL ,
+        chemin_image  Varchar (100) NOT NULL ,
         style         Varchar (50) NOT NULL
 	,CONSTRAINT album_PK PRIMARY KEY (id)
 
