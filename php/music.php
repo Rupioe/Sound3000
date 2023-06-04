@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<link href="css/music.css" rel="stylesheet" type="text/css"/>
+<link href="../css/music.css" rel="stylesheet" type="text/css"/>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,7 +12,7 @@
 <body>
     <div class="search" id="searchWrapper">
         <input type="text">
-        <button><img src="image/search.png"></button>
+        <button><img src="../html/image/search.png"></button>
       </div>
       
       <header>
@@ -21,11 +21,11 @@
         <nav >
        
                 <ul>
-                  <li><a href="../php/index.php" class="link">Home</a></li>
+                  <li><a href="index.php" class="link">Home</a></li>
                   <li><a href="" class="link">Favorites</a></li>
-                  <li><a href="playlist.html" class="link">Playlist</a></li>
+                  <li><a href="playlist.php" class="link">Playlist</a></li>
                   <li><a href="" class="link">History</a></li>
-                  <li><a href="" id="searchBtn"><img src="image/search.png"></a></li>
+                  <li><a href="" id="searchBtn"><img src="../html/image/search.png"></a></li>
           </ul>
         </nav>
       
@@ -41,7 +41,7 @@
     <div class="flex">
 
         <div class="image">
-            <img src="image/musique.png">
+            <img src="../resources/images/sound/musique.png">
         </div>
 
         <div class="element">

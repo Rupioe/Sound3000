@@ -15,39 +15,9 @@
         <button><img src="../html/image/search.png"></button>
       </div>
       
-      <header>
-        
-        <div class="logo">Sound 3000</div>
-        <nav >
-       
-                <ul>
-                  <li><a href="index.php" class="link">Home</a></li>
-                  <li><a href="" class="link">Favorites</a></li>
-                  <li><a href="playlist.php" class="link">Playlist</a></li>
-                  <li><a href="" class="link">History</a></li>
-                  <li><a href="" id="searchBtn"><img src="../html/image/search.png"></a></li>
-          </ul>
-        </nav>
+      <?php include "../html/header.html" ?>
       
-              <nav class="connexion">
-                <ul>
-                  <li><a href=""><img src="../html/image/profil.png"></a></li>
-                  <li><a href="connection.php"><img src="../html/image/exit.png"></a></li>
-                </ul>
-              </nav>
-            
-      </header>
-      <footer class="footer">
-        <div class="left">
-            <p class="name">Youenn Le Hénaff</p>
-        </div>
-        <div class="right">
-            <p class="name">Quentin Carbonnel</p>
-        </div>
-        <div class="center">
-            <p>Sound 3000</p>
-        </div>
-    </footer>
+      
 
     <div class="flex">
         <div class="title">
@@ -72,12 +42,6 @@
 
 
 
-    <script>
-        let searchBtn = document.getElementById("searchBtn");
-        searchBtn.addEventListener("click", function(event){
-            event.preventDefault(); 
-            document.getElementById("searchWrapper").classList.toggle("open");
-        })
-    </script>
+    <?php include "../html/footer.html" ?>
     </body>    
 </html>
