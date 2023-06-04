@@ -95,6 +95,36 @@ header nav ul {
 }
 
 /*################################################################################*/
+.title{
+	display:flex;
+	text-decoration: none;
+    color:#699bf7;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.album-container{
+	margin: 0px;
+    overflow: scroll;
+    -ms-overflow-style:none;
+    overflow-y: scroll;
+
+    position: absolute;
+    top: 32%;
+
+    
+}
+
+.album-container img {
+	max-height:150px;
+	max-width:150px;
+	margin-right: 5%;
+    margin-bottom: 5%;
+    border-radius:5%;
+}
 
 
 
@@ -110,3 +140,19 @@ header nav ul {
 .flex{
     flex-direction:column;
 }
+
+/*################################################################################"*/
+/*scrollbar*/
+* {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+  
+  *::-moz-scrollbar {
+    width: 0px;
+    background-color: transparent;
+  }
+  
+  body::-webkit-scrollbar{
+    display: none;
+  }
