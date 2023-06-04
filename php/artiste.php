@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<link href="css/artiste.css" rel="stylesheet" type="text/css"/>
+<link href="../css/artiste.css" rel="stylesheet" type="text/css"/>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
