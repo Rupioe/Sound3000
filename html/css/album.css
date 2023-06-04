@@ -120,21 +120,23 @@ header nav ul {
     font-size: 30px;
     letter-spacing: 1px;
     margin-left: 5%;
-    top: 65%;
-    
+    top: 65%;   
 }
 
 .image{
     position: absolute;
     left: 5%;
     top: 20%;
+    height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .image img{
-  max-width: 300px;
+    max-width: 250px;
 }
 
-.title2 {
+.music{
     position: absolute;
 	text-decoration: none;
     color:#699bf7;
@@ -148,7 +150,18 @@ header nav ul {
     left: 30%;
 }
 
+.sound{
+	margin: 0px;
+    overflow: scroll;
+    -ms-overflow-style:none;
+    overflow-y: scroll;
 
+    position: absolute;
+    top: 32%;
+    left: 35%;
+
+    
+}
 
 
 /*################################################################################"*/
@@ -157,12 +170,19 @@ header nav ul {
 	header {
 		flex-direction:column;
 	}
+
+    .artiste-container{
+        display: flex;
+        left: 2%;
+    }
 }
 
 
 .flex{
     flex-direction:column;
 }
+
+
 
 /*################################################################################"*/
 /*scrollbar*/
