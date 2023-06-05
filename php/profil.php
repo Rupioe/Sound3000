@@ -93,6 +93,10 @@ if( isset($_FILES['file']) && $_GET['browse'] == 1 && $_SERVER['REQUEST_METHOD']
 	$leFichierInit = $_FILES['file']['name'];
 	$leFichier = $_FILES['file']['tmp_name'];
 	$destFichier = $repo.'/'.substr(str_replace(' ', '_', $leFichierInit), 0, strlen($leFichierInit));
+    if ($destFichier == $repo.'/'){
+header("Location: ./profil.php");
+exit;
+    }
 	move_uploaded_file( $leFichier,$destFichier );
     $image_profil = $destFichier;
     $mysql_query1 = "UPDATE compte SET chemin_image='".$image_profil."' WHERE token='".$_SESSION['token']."';";
@@ -119,8 +123,9 @@ exit;
 else {
     if ($_GET['browse'] == 1 && $_SERVER['REQUEST_METHOD'] === 'POST'){
 
-  if ( isset($_POST['file'])) 
+  if( isset($_POST['file']) && $_POST['file'] != '' ){
   $image_profil = htmlspecialchars($_POST['file']);
+  } 
   else
   $image_profil = $imgGet;
 
