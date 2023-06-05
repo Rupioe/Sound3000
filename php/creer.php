@@ -96,6 +96,8 @@ if( isset($_FILES['image_profil']) ) {
 	$leFichier = $_FILES['image_profil']['tmp_name'];
 	$destFichier = $repo.'/'.substr(str_replace(' ', '_', $leFichierInit), 0, strlen($leFichierInit));
 	move_uploaded_file( $leFichier,$destFichier );
+    if ($destFichier == $repo.'/') $image_profil = NULL;
+    else
     $image_profil = $destFichier;
 }
   // les hash sont différents à cause du sel
