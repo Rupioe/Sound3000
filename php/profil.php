@@ -6,7 +6,7 @@
 <link href="../css/header_footer.css" rel="stylesheet" type="text/css"/>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="../js/compte.js" defer></script>
+<script src="../js/profil.js" defer></script>
 
 
 <title>Sound 3000</title>
@@ -44,7 +44,7 @@
             <h1>PROFIL</h1>
         </div>
         <div class="element">
-			<form action="./profil.php" method="POST">
+	<form action="./profil.php" method="POST" enctype="multipart/form-data">
             <h2>
                 Name : <input type="text" id="name" name="name" value="<?php echo $prenomGet ?>"><s></s>          <br><br>
                 Last Name : <input type="text" id="last_name" name="last_name" value="<?php echo $nomGet ?>"><s></s>         <br><br>
@@ -53,25 +53,27 @@
                 Password : <input type="password" id="password" name="password" value=""><s></s>             <br><br>
             </h2>
 
+                <button type="submit" class="btn">Save</button>
         </div>
     </div>
+    </form>
 
-        </div>
-
+	<form action="./profil.php" method="POST" enctype="multipart/form-data">
         <div class="image">
-            <div class="title">Picture : <br></div>
+            <div class="title">Picture : <br>
+            </div>
 
-			<div class="inputBox">
-				<button type="button" id="button" onclick="image_switch()" class="bouton">URL ?</button>
-					<div id="image-button">
-					<input type="file" id="image_profil" name="image_profil">
-				</div>
-			</div>
-            <img src="<?php echo $imgGet ?>" id="pp">
-            <button type="submit" class="btn">Save</button>
+                <div class="inputBox">
+                    <button type="button" id="button" onclick="image_switch()" class="bouton">Local file ?</button>
+                    <div id="image-button">
+                        <input type="url" id="file" name="file" value="">
+                    </div>
+                </div>
+                <img src="<?php echo $imgGet ?>" id="pp">
+                <button type="submit" class="bouton">Save</button>
         </div>
+    </form>
 
-</form>
 
     <?php include "../html/footer.html" ?>
     </body>    
@@ -81,25 +83,44 @@
 // Désactiver l'affichage des erreurs
 error_reporting(0);
 ini_set('display_errors', 0);
+ini_set('file_uploads', 'On');
+ini_set('upload_max_filesize', '5M');
+ini_set('post_max_size', '5M');
  
 include "./db.php";
 
+if( isset($_FILES['file']) ) {
+    echo $_FILES["file"]["error"];
+	$repo = '../resources/images/compte';
+	$leFichierInit = $_FILES['file']['name'];
+	$leFichier = $_FILES['file']['tmp_name'];
+	$destFichier = $repo.'/'.substr(str_replace(' ', '_', $leFichierInit), 0, strlen($leFichierInit));
+	move_uploaded_file( $leFichier,$destFichier );
+    $image_profil = $destFichier;
+$mysql_query1 = "UPDATE compte SET chemin_image='".$image_profil."' WHERE token='".$_SESSION['token']."';";
+}
+else {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   $nom = htmlspecialchars($_POST['last_name']);
   $prenom = htmlspecialchars($_POST['name']);
   $date_naissance = htmlspecialchars($_POST['date']);
+  if ( isset($_POST['mot_de_passe'])) 
   $mot_de_passe = htmlspecialchars($_POST['mot_de_passe']);
-  if ( $mot_de_passe == NULL) $mot_de_passe = $pwdGet;
-  $image_profil = htmlspecialchars($_POST['image_profil']);
-  if ( $image_profil == NULL) $image_profil = $imgGet;
+  else
+  $mot_de_passe = $pwdGet;
+  if ( isset($_POST['file'])) 
+  $image_profil = htmlspecialchars($_POST['file']);
+  else
+  $image_profil = $imgGet;
+
 
  // email | nom   | prenom | date_naissance | password           | chemin_image | token  | timestamp
 $mysql_query1 = "UPDATE compte SET nom='".$nom."', prenom='".$prenom."', date_naissance=STR_TO_DATE('".$date_naissance."', '%Y-%m-%d'), password='".$mot_de_passe."',chemin_image='".$image_profil."' WHERE token='".$_SESSION['token']."';";
-//UPDATE nom_table
-//SET colonne1 = nouvelle_valeur1, colonne2 = nouvelle_valeur2
-//WHERE condition;
+}
+}
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // nettoyage
 $query1 = $dbCnx->prepare($mysql_query1);
 
@@ -118,7 +139,7 @@ $mysql_query1 = $mysql_query1."\n";
 $file = fopen($nomFichier, 'a');
 fwrite($file, $mysql_query1);
 fclose($file);
-header("Location: ./index.php");
+header("Location: ./profil.php");
 exit;
 }
 

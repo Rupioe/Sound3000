@@ -15,7 +15,7 @@
                 <h1>Create Account</h1>
             </div>
 			
-			<form action="./creer.php" method="POST">
+			<form action="./creer.php" method="POST" enctype="multipart/form-data">
 
             <div class="inputBox">
                 <input type="email" id="email" name="email" class="input" required>
@@ -75,6 +75,8 @@
 // Désactiver l'affichage des erreurs
 error_reporting(0);
 ini_set('display_errors', 0);
+ini_set('upload_max_filesize', '5M');
+ini_set('post_max_size', '5M');
  
 include "./db.php";
 
@@ -88,6 +90,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $mot_de_passe_conf = htmlspecialchars($_POST['mot_de_passe_conf']);
   $image_profil = htmlspecialchars($_POST['image_profil']);
 
+if( isset($_FILES['image_profil']) ) {
+	$repo = '../resources/images/compte';
+	$leFichierInit = $_FILES['image_profil']['name'];
+	$leFichier = $_FILES['image_profil']['tmp_name'];
+	$destFichier = $repo.'/'.substr(str_replace(' ', '_', $leFichierInit), 0, strlen($leFichierInit));
+	move_uploaded_file( $leFichier,$destFichier );
+    $image_profil = $destFichier;
+}
   // les hash sont différents à cause du sel
   // ensuite je peux faire une verif en live avec l'evenement quand l'user met son curseur dans la case ou écrit et comparer les mdp en direct
   // je peux aussi ajouter des commentaires sur le pwd écrit (trop petit pas assez complexe etc)
