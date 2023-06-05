@@ -22,10 +22,10 @@
         </div>
         <div class="element">
             <h2>
-                Name : <input type="text" id="monInput" name="monInput" value="Texte par défaut"><s></s>          <br><br>
-                Last Name : <input type="text" id="monInput" name="monInput" value="Texte par défaut"><s></s>         <br><br>
-                Date : <input type="text" id="monInput" name="monInput" value="Texte par défaut"><s></s>              <br><br>
-                Email : <input type="text" id="monInput" name="monInput" value="Texte par défaut"><s></s>             <br><br>
+                Name : <input type="text" id="name" name="name" value="name"><s></s>          <br><br>
+                Last Name : <input type="text" id="last_name" name="last_name" value="last name"><s></s>         <br><br>
+                Date : <input type="date" id="date" name="date" value="xx/xx/xxxx"><s></s>              <br><br>
+                Email : <input type="email" id="email" name="email" value="email@email.fr"><s></s>             <br><br>
             </h2>
 
         </div>
@@ -36,6 +36,10 @@
 
         <div class="image">
             <div class="title">Picture : <br></div>
+            <div class="inputBox">
+				<div id="image-button">
+					<input type="file" id="image_profil" name="image_profil">
+				</div>
             <img src="../resources/images/compte/compte.png">
         </div>
     </div>
