@@ -62,9 +62,9 @@
 
 
 
-UPDATE nom_table
-SET colonne1 = nouvelle_valeur1, colonne2 = nouvelle_valeur2
-WHERE condition;
+//UPDATE nom_table
+//SET colonne1 = nouvelle_valeur1, colonne2 = nouvelle_valeur2
+//WHERE condition;
 
 
 
