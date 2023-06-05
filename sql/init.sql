@@ -12,3 +12,4 @@ source sql/patchToken.sql
 source sql/patchArtisteImg.sql
 source sql/artistesGPT.sql
 source sql/profilPic.sql
+source sql/albumsGPT.sql
