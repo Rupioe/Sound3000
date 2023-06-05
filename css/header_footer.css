@@ -88,13 +88,9 @@ header {
 
 
   /*######################################################################################################################*/
-  /*filtre*/
+  /**/
 
   .button-group {
-    display: flex;
-  }
-
-  .group-button-search {
     display: flex;
   }
   
@@ -116,36 +112,12 @@ header {
 
 
 .boutton-result{
-  display: flex;
-  background-color: white;
-    color: black;
+  background-color: black;
+    color: white;
     padding: 10px;
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: 10px;
     
     border: gray;
     border-radius: 5px;
     outline: thick double;
-}
-
-.colonne{
-  display: flex;
-}
-
-/*################################################################################"*/
-/*telephone*/
-@media screen and (max-width: 780px) {
-	header {
-		flex-direction:column;
-	}
-
-  .search {
-    height:80px;
-    margin-top:-120px;
-  }
-
-  .colonne{
-    flex-direction: column;
-  }
-  
 }
