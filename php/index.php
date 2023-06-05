@@ -43,7 +43,7 @@ include "./PasDeTokenPasDeChocolat.php";
 			<img src="../resources/images/morceau/musique.png">
 			<img src="../resources/images/morceau/musique.png">
 			<img src="../resources/images/morceau/musique.png">
-            <<img src="../resources/images/morceau/musique.png">
+            <img src="../resources/images/morceau/musique.png">
 			<img src="../resources/images/morceau/musique.png">
 			<img src="../resources/images/morceau/musique.png">
 			<img src="../resources/images/morceau/musique.png">
