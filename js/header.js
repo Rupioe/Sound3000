@@ -1,3 +1,4 @@
+/*###########################################################*/ 
 
     let searchBtn = document.getElementById("searchBtn");
     searchBtn.addEventListener("click", function(event){
@@ -6,6 +7,8 @@
     });
   
 
+/*###########################################################*/ 
+  
   const buttons = document.getElementsByClassName('toggle-button');
   const defaultButton = document.getElementById('button1');
   
@@ -20,7 +23,10 @@
     });
   }
 
-    var nb_result = 6;
+
+/*###########################################################*/ 
+
+  var nb_result = 6;
   
     // Récupérer le champ de saisie et les boutons
   var input2 = document.getElementById('input_search');
