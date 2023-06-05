@@ -147,3 +147,25 @@ header nav ul {
 .flex{
     flex-direction:column;
 }
+
+
+
+
+
+
+.input-wrapper {
+    position: relative;
+  }
+  
+  .placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Pour permettre le clic à travers le label */
+    font-style: italic;
+    color: gray;
+  }
+  
+  .has-text .placeholder {
+    display: none;
+  }
