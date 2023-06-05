@@ -63,7 +63,31 @@ html, body{/*style de la page*/
 
 
 
+.bouton{
+	
+	background: #699bf7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+}
 
+.btn {
+    width: 300px;
+    padding: 15px 20px;
+    margin-top: 50px;
+    background: #699bf7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+}
 
 
 .input-wrapper {
