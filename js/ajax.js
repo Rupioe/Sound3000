@@ -9,16 +9,16 @@
 // \param callback The callback to call where the request is successful.
 // \param data The data associated with the request.
 
+var table = 'morceau';
+
+function music(){table = 'morceau';}
+function artiste(){table = 'artiste';}
+function album(){table = 'album';}
+
 function search(){
 var input = document.getElementById("input_search").value;
-var morceau = document.getElementById('button1');
-var artiste = document.getElementById('button2');
-var album = document.getElementById('button3');
-
-if (!morceau.disabled) var table = 'morceau';
-if (!artiste.disabled) var table = 'artiste';
-if (!album.disabled) var table = 'album';
-
+// DEBUG
+console.log('./request.php/results/?table='+table+'&input='+input);
 ajaxRequest('GET', './request.php/results/?table='+table+'&input='+input, displayResults);
 
 }
@@ -29,9 +29,15 @@ function displayResults(results)
   if ( results.length <= 6) nb_result = results.length;
   else nb_result = 6;
   var index = 0;
+  if (table != 'artiste')
   for (let result of results){
     index = index + 1;
     document.getElementById('result'+index).innerHTML = result.titre;
+}
+else
+  for (let result of results){
+    index = index + 1;
+    document.getElementById('result'+index).innerHTML = result.nom+' '+result.prenom;
 }
 }
 

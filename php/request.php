@@ -24,6 +24,9 @@
   {
     try
     {
+      if($table == 'artiste')
+      $request = 'SELECT * FROM '.$table.' WHERE nom COLLATE UTF8_GENERAL_CI LIKE \''.$input.'%\' OR prenom COLLATE UTF8_GENERAL_CI LIKE \''.$input.'%\' OR pseudo COLLATE UTF8_GENERAL_CI LIKE \''.$input.'%\'';
+      else
       $request = 'SELECT * FROM '.$table.' WHERE titre COLLATE UTF8_GENERAL_CI LIKE \''.$input.'%\'';
       $statement = $dbCnx->prepare($request);
       if ($table != '')
