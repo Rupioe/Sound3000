@@ -1,17 +1,21 @@
 <div class="search" id="searchWrapper">
-  <input type="text" id="input_search">
-  <button><img src="../html/image/search.png"></button>
   <div class="button-group">
     <button id="button1" class="toggle-button active">music</button>
     <button id="button2" class="toggle-button">artiste</button>
     <button id="button3" class="toggle-button">album</button>
   </div>
-  <div class="button-group">
-    <button id="result1" class="boutton-result" style="display: none;">result 1</button>
-    <button id="result2" class="boutton-result" style="display: none;">result 2</button>
-    <button id="result3" class="boutton-result" style="display: none;">result 3 .......</button>
+  <input type="text" id="input_search">
+  <div class="colonne"> 
+    <button><img src="../html/image/search.png"></button>
+    <div class="group-button-search">
+      <button id="result1" class="boutton-result" style="display: none;">result 1</button>
+      <button id="result2" class="boutton-result" style="display: none;">result 2</button>
+      <button id="result3" class="boutton-result" style="display: none;">result 3</button>
+      <button id="result4" class="boutton-result" style="display: none;">result 4</button>
+      <button id="result5" class="boutton-result" style="display: none;">result 5</button>
+      <button id="result6" class="boutton-result" style="display: none;">...</button>
+    </div>
   </div>
-  
 </div>
 <header>
   <div class="logo">Sound 3000</div>
@@ -57,13 +61,16 @@ for (let i = 0; i < buttons.length; i++) {
 </script>
 
 <script>
-  var nb_result = 3;
+  var nb_result = 6;
 
   // Récupérer le champ de saisie et les boutons
 var input = document.getElementById('input_search');
 var bouton1 = document.getElementById('result1');
 var bouton2 = document.getElementById('result2');
 var bouton3 = document.getElementById('result3');
+var bouton4 = document.getElementById('result4');
+var bouton5 = document.getElementById('result5');
+var bouton6 = document.getElementById('result6');
 
 // Ajouter un écouteur d'événement sur l'input
 input.addEventListener('input', function() {
@@ -85,6 +92,24 @@ input.addEventListener('input', function() {
         bouton3.style.display = 'block';
     } else {
         bouton3.style.display = 'none';
+    }
+
+    if (nb_result >= 4) {
+        bouton4.style.display = 'block';
+    } else {
+        bouton4.style.display = 'none';
+    }
+
+    if (nb_result >= 5) {
+        bouton5.style.display = 'block';
+    } else {
+        bouton5.style.display = 'none';
+    }
+
+    if (nb_result >= 6) {
+        bouton6.style.display = 'block';
+    } else {
+        bouton6.style.display = 'none';
     }
   }
 });
