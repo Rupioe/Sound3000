@@ -39,7 +39,7 @@ $cd Sound 3000
 |   |-- constants.php
 |   |-- database.php
 |   `-- request.php
-|-- ressources  		# contient les ressources stockées loclement par l'utilisateur (upload de photo de profil)
+|-- resources  		# contient les ressources stockées loclement par l'utilisateur (upload de photo de profil)
 |   |-- images
 |   |   |-- album
 |   |   |-- compte

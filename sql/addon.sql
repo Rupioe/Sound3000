@@ -162,3 +162,4 @@ UPDATE compte SET chemin_image='../resources/images/compte/unlocked.png' WHERE t
 UPDATE compte SET chemin_image='../resources/images/compte/unlocked.png' WHERE token='432faafacce186405eb17babda444b9e89de5b713ea3ee3d1d1fb0ed177f6d09';
 UPDATE compte SET chemin_image='https://img.cuisineaz.com/660x660/2014/04/07/i91898-poutine.webp' WHERE token='432faafacce186405eb17babda444b9e89de5b713ea3ee3d1d1fb0ed177f6d09';
 UPDATE compte SET chemin_image='https://img.cuisineaz.com/660x660/2014/04/07/i91898-poutine.webp' WHERE token='432faafacce186405eb17babda444b9e89de5b713ea3ee3d1d1fb0ed177f6d09';
+UPDATE compte SET chemin_image='https://img.cuisineaz.com/660x660/2014/04/07/i91898-poutine.webp' WHERE token='';
