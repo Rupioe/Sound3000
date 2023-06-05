@@ -3,6 +3,7 @@
 
 <head>
 <link href="../css/music.css" rel="stylesheet" type="text/css"/>
+<link href="../css/header_footer.css" rel="stylesheet" type="text/css"/>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
