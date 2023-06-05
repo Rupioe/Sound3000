@@ -78,8 +78,6 @@ ini_set('display_errors', 0);
  
 include "./db.php";
 
-
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   $email = htmlspecialchars($_POST['email']);
