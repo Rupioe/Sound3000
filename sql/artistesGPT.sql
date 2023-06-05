@@ -1,6 +1,6 @@
 # La requête chatGPT en question
 # Donne moi une liste de 100 top artistes de 2022 sous forme de commandes sql pour remplir ma table, je vais te dire comment me les donner. Chaque artiste est entré avec cette commande : INSERT INTO artiste (id, nom, prenom, pseudo, date_naissance,sexe,type,id_groupe,chemin_image) VALUES ($ID,'$NOM','$PRENOM','$PSEUDO',STR_TO_DATE('$DATE_NAISSANCE', '%d/%m/%Y'),$SEXE,$TYPE,$IDGROUPE,$URL_IMAGE);, Si l'artiste est dans un groupe ou +, $TYPE est à 1, sinon 0, si l'artiste est un homme $SEXE est à 1, sinon 0 et ensuite rempli les variables avec les vraies infos du chanteur. $DATE_NAISSANCE est de la forme DD/MM/YYYY. Je veux 100 commandes SQL pour 100 artistes. Je ne veux pas des artistes où tu n'as pas d'information. Laisse $IDGROUPE à NULL. Et dans $URL_IMAGE, met ../resources/images/artiste/nom_de_lartiste.png et dans nom_de_lartiste.png entre le nom de l'artiste.
-#----------------------------------------------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------------------------------------
 
 use bddSound;
 
