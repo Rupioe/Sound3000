@@ -46,6 +46,6 @@ include "./db.php";
 	        $hashTS = $ligne['timestamp'];
     // Vérifie si le token est valide selon vos critères (par exemple, en le comparant à une valeur stockée en base de données)
     // Retourne true si le token est valide, sinon false
-    return (time()-$hashTS < 30);
+    return (time()-$hashTS < 300);
 }
 ?>
