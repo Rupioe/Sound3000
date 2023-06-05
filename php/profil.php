@@ -14,6 +14,13 @@
 <body>
       <?php include "../html/header.html";
             include "./PasDeTokenPasDeChocolat.php";
+    // Désactiver l'affichage des erreurs
+    error_reporting(0);
+    ini_set('display_errors', 0);
+    ini_set('file_uploads', 'On');
+    ini_set('upload_max_filesize', '5M');
+    ini_set('post_max_size', '5M');
+ 
 
     try
     {
@@ -58,7 +65,7 @@
     </div>
     </form>
 
-	<form action="./profil.php?browse=1" method="POST" enctype="multipart/form-data">
+	<form action="./profil.php?browse=<?php if($_GET['browse']==1)echo 0; else echo 1; ?>" method="POST" enctype="multipart/form-data">
         <div class="image">
             <div class="title">Picture : <br>
             </div>
@@ -80,17 +87,8 @@
 </html>
 
 <?php
-// Désactiver l'affichage des erreurs
-error_reporting(0);
-ini_set('display_errors', 0);
-ini_set('file_uploads', 'On');
-ini_set('upload_max_filesize', '5M');
-ini_set('post_max_size', '5M');
- 
-include "./db.php";
 
 if( isset($_FILES['file']) && $_GET['browse'] == 1 && $_SERVER['REQUEST_METHOD'] === 'POST' ) {
-    echo $_FILES["file"]["error"];
 	$repo = '../resources/images/compte';
 	$leFichierInit = $_FILES['file']['name'];
 	$leFichier = $_FILES['file']['tmp_name'];
@@ -129,7 +127,6 @@ else {
 
  // email | nom   | prenom | date_naissance | password           | chemin_image | token  | timestamp
 $mysql_query1 = "UPDATE compte SET chemin_image='".$image_profil."' WHERE token='".$_SESSION['token']."';";
-echo $mysql_query1;
 
 // nettoyage
 $query1 = $dbCnx->prepare($mysql_query1);
