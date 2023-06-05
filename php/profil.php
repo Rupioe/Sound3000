@@ -38,6 +38,8 @@
         <div class="image">
             <div class="title">Picture : <br></div>
             <div class="inputBox">
+			    <button type="button" id="button" onclick="image_switch()" class="bouton">URL ?</button>
+				<p for="image_profil" class="inputName">Profile Picture ?</p>
 				<div id="image-button">
 					<input type="file" id="image_profil" name="image_profil">
 				</div>
