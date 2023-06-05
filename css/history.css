@@ -76,8 +76,9 @@ display: flex;
 }
 
 .card-music-description--cover {
+width: 100px; height: 100px; flex-shrink: 0;
+}
 
-width: 100px; height: 100px; flex-shrink: 0;}
 .card-music-description--cover img {
 width: 100%;
 height: auto;
@@ -105,8 +106,14 @@ gap: 10px;
 .card-music-actions ul li img {
  width: 50px;
  height: auto;
-
+cursor: pointer;
 }
+
+#heart1 {
+    background-image: url("../html/image/red_heart.png"); /* Chemin de l'image initiale */
+    background-size: cover;
+    cursor: pointer;
+  }
 
 @media screen and (max-width:760px) {
     .list-card-music > li {
