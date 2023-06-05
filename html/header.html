@@ -1,10 +1,15 @@
 <div class="search" id="searchWrapper">
-  <input type="text">
+  <input type="text" id="input_search">
   <button><img src="../html/image/search.png"></button>
   <div class="button-group">
     <button id="button1" class="toggle-button active">music</button>
     <button id="button2" class="toggle-button">artiste</button>
     <button id="button3" class="toggle-button">album</button>
+  </div>
+  <div class="button-group">
+    <button id="result1" class="boutton-result" style="display: none;">result 1</button>
+    <button id="result2" class="boutton-result" style="display: none;">result 2</button>
+    <button id="result3" class="boutton-result" style="display: none;">result 3 .......</button>
   </div>
   
 </div>
@@ -49,4 +54,38 @@ for (let i = 0; i < buttons.length; i++) {
     this.classList.add('active');
   });
 }
+</script>
+
+<script>
+  var nb_result = 3;
+
+  // Récupérer le champ de saisie et les boutons
+var input = document.getElementById('input_search');
+var bouton1 = document.getElementById('result1');
+var bouton2 = document.getElementById('result2');
+var bouton3 = document.getElementById('result3');
+
+// Ajouter un écouteur d'événement sur l'input
+input.addEventListener('input', function() {
+  if (input.value !== '') {
+    // Afficher ou masquer les boutons en fonction de la valeur
+    if (nb_result >= 1) {
+        bouton1.style.display = 'block';
+    } else {
+        bouton1.style.display = 'none';
+    }
+    
+    if (nb_result >= 2) {
+        bouton2.style.display = 'block';
+    } else {
+        bouton2.style.display = 'none';
+    }
+    
+    if (nb_result >= 3) {
+        bouton3.style.display = 'block';
+    } else {
+        bouton3.style.display = 'none';
+    }
+  }
+});
 </script>

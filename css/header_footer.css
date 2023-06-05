@@ -108,3 +108,16 @@ header {
   .toggle-button.active {
     background-color: #699bf7;
   }
+
+
+
+.boutton-result{
+  background-color: black;
+    color: white;
+    padding: 10px;
+    margin-right: 10px;
+    
+    border: gray;
+    border-radius: 5px;
+    outline: thick double;
+}
