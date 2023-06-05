@@ -1,0 +1,24 @@
+.button {
+  display: inline-block;
+  position: relative;
+}
+
+.image {
+  position: absolute;
+  cursor: pointer;
+}
+
+#image1 {
+  top: 0;
+  left: 0;
+}
+
+#image2 {
+  top: 0;
+  right: 0;
+}
+
+#image3 {
+  bottom: 0;
+  left: 0;
+}
