@@ -88,13 +88,13 @@ header {
 
 
   /*######################################################################################################################*/
-  /*filtre*/
+  /**/
 
   .button-group {
     display: flex;
   }
 
-   .group-button-search {
+  .group-button-search {
     display: flex;
   }
   
@@ -116,17 +116,16 @@ header {
 
 
 .boutton-result{
-  display: flex;
   background-color: white;
     color: black;
     padding: 10px;
     margin-right: 5px;
     margin-left: 5px;
     
-    border: gray;
+    border: black;
     border-radius: 5px;
-    outline: thick double;
 }
+
 
 /*################################################################################"*/
 /*telephone*/
@@ -134,7 +133,32 @@ header {
 	header {
 		flex-direction:column;
 	}
-  .button-group {
-    
+
+  .search {
+    height:auto;
+    margin-top:-120px;
+    box-sizing: border-box;
+  }
+
+  .colonne{
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .colonne > div {
+    display: flex;
+    /*! flex-direction: column; */
+  }
+  .group-button-search {
+    position: absolute;
+    width: 100%;
+    top: 3rem;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    gap: 20px;
+    background-color: rgb(45, 44, 45);
+    padding: 0rem;
+    box-sizing: border-box;
   }
 }
