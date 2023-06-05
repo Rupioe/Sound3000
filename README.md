@@ -8,6 +8,7 @@ apache2
 php
 
 ### To install :
+Il faut que resources/images/compte soit en 777
 Veillez à avoir lancé et activé le virtual host, à avoir démarré les démons mariadb et apache. (+ réglages liaison apache-php si besoin)
 ```sh
 $git clone https://github.com/Rupioe/Sound3000/tree/main

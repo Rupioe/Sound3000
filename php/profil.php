@@ -44,7 +44,7 @@
             <h1>PROFIL</h1>
         </div>
         <div class="element">
-	<form action="./profil.php" method="POST" enctype="multipart/form-data">
+	<form action="./profil.php?form=1" method="POST" enctype="multipart/form-data">
             <h2>
                 Name : <input type="text" id="name" name="name" value="<?php echo $prenomGet ?>"><s></s>          <br><br>
                 Last Name : <input type="text" id="last_name" name="last_name" value="<?php echo $nomGet ?>"><s></s>         <br><br>
@@ -58,7 +58,7 @@
     </div>
     </form>
 
-	<form action="./profil.php" method="POST" enctype="multipart/form-data">
+	<form action="./profil.php?browse=1" method="POST" enctype="multipart/form-data">
         <div class="image">
             <div class="title">Picture : <br>
             </div>
@@ -89,7 +89,7 @@ ini_set('post_max_size', '5M');
  
 include "./db.php";
 
-if( isset($_FILES['file']) ) {
+if( isset($_FILES['file']) && $_GET['browse'] == 1 && $_SERVER['REQUEST_METHOD'] === 'POST' ) {
     echo $_FILES["file"]["error"];
 	$repo = '../resources/images/compte';
 	$leFichierInit = $_FILES['file']['name'];
@@ -97,30 +97,7 @@ if( isset($_FILES['file']) ) {
 	$destFichier = $repo.'/'.substr(str_replace(' ', '_', $leFichierInit), 0, strlen($leFichierInit));
 	move_uploaded_file( $leFichier,$destFichier );
     $image_profil = $destFichier;
-$mysql_query1 = "UPDATE compte SET chemin_image='".$image_profil."' WHERE token='".$_SESSION['token']."';";
-}
-else {
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-  $nom = htmlspecialchars($_POST['last_name']);
-  $prenom = htmlspecialchars($_POST['name']);
-  $date_naissance = htmlspecialchars($_POST['date']);
-  if ( isset($_POST['mot_de_passe'])) 
-  $mot_de_passe = htmlspecialchars($_POST['mot_de_passe']);
-  else
-  $mot_de_passe = $pwdGet;
-  if ( isset($_POST['file'])) 
-  $image_profil = htmlspecialchars($_POST['file']);
-  else
-  $image_profil = $imgGet;
-
-
- // email | nom   | prenom | date_naissance | password           | chemin_image | token  | timestamp
-$mysql_query1 = "UPDATE compte SET nom='".$nom."', prenom='".$prenom."', date_naissance=STR_TO_DATE('".$date_naissance."', '%Y-%m-%d'), password='".$mot_de_passe."',chemin_image='".$image_profil."' WHERE token='".$_SESSION['token']."';";
-}
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $mysql_query1 = "UPDATE compte SET chemin_image='".$image_profil."' WHERE token='".$_SESSION['token']."';";
 // nettoyage
 $query1 = $dbCnx->prepare($mysql_query1);
 
@@ -129,7 +106,6 @@ try {
 	$query1->execute();
 } catch (Exception $e) {
 	echo "Une exception a été levée : " . $e->getMessage();
-	echo '<div class="error">Adresse mail déjà utilisée</div>';
 	$bugflag = 1;
 }
 
@@ -142,5 +118,88 @@ fclose($file);
 header("Location: ./profil.php");
 exit;
 }
+else {
+    if ($_GET['browse'] == 1 && $_SERVER['REQUEST_METHOD'] === 'POST'){
 
+  if ( isset($_POST['file'])) 
+  $image_profil = htmlspecialchars($_POST['file']);
+  else
+  $image_profil = $imgGet;
+
+
+ // email | nom   | prenom | date_naissance | password           | chemin_image | token  | timestamp
+$mysql_query1 = "UPDATE compte SET chemin_image='".$image_profil."' WHERE token='".$_SESSION['token']."';";
+echo $mysql_query1;
+
+// nettoyage
+$query1 = $dbCnx->prepare($mysql_query1);
+
+try {
+	//execution
+	$query1->execute();
+} catch (Exception $e) {
+	echo "Une exception a été levée : " . $e->getMessage();
+	$bugflag = 1;
+}
+
+### save
+$nomFichier = '../sql/addon.sql';
+$mysql_query1 = $mysql_query1."\n";
+$file = fopen($nomFichier, 'a');
+fwrite($file, $mysql_query1);
+fclose($file);
+header("Location: ./profil.php");
+exit;
+
+    }
+}
+
+
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_GET['form']==1) {
+
+  if ( isset($_POST['last_name'])) 
+  $nom = htmlspecialchars($_POST['last_name']);
+  else
+  $nom = $nomGet;
+
+  if ( isset($_POST['name'])) 
+  $prenom = htmlspecialchars($_POST['name']);
+  else
+  $prenom = $prenomGet;
+
+  if ( isset($_POST['date'])) 
+  $date_naissance = htmlspecialchars($_POST['date']);
+  else
+  $date_naissance = $dateGet;
+
+  if ( isset($_POST['mot_de_passe'])) 
+  $mot_de_passe = htmlspecialchars($_POST['mot_de_passe']);
+  else
+  $mot_de_passe = $pwdGet;
+
+ // email | nom   | prenom | date_naissance | password           | chemin_image | token  | timestamp
+$mysql_query1 = "UPDATE compte SET nom='".$nom."', prenom='".$prenom."', date_naissance=STR_TO_DATE('".$date_naissance."', '%Y-%m-%d'), password='".$mot_de_passe."' WHERE token='".$_SESSION['token']."';";
+
+// nettoyage
+$query1 = $dbCnx->prepare($mysql_query1);
+
+try {
+	//execution
+	$query1->execute();
+} catch (Exception $e) {
+	echo "Une exception a été levée : " . $e->getMessage();
+	$bugflag = 1;
+}
+
+### save
+$nomFichier = '../sql/addon.sql';
+$mysql_query1 = $mysql_query1."\n";
+$file = fopen($nomFichier, 'a');
+fwrite($file, $mysql_query1);
+fclose($file);
+header("Location: ./profil.php");
+exit;
+}
 ?>
