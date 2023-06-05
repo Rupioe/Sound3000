@@ -18,24 +18,73 @@
 
 <!-- ####################################################### -->
 
-<div class="player">
-    <div class="imgBox">
-        <img src="../resources/images/compte/compte.png">
-    </div>
-    <audio controls>
-        <source src="../resources/sounds/club.mp3" type="audio/mp3">
-    </audio>
-</div>
 
 
-<div class="music-button"> 
-    <img src="../html/image/rectangle.jpg">
-    <img src="../html/image/play.png">
-    <img src="../html/image/music.png">
-    <img src="../html/image/add.png">
+<ol class="list-card-music">
+    <li>
+        <div class="card-music">
+            <div class="card-music-description">
+                <div class="card-music-description--cover">
+                    <img src="../html/image/music.png">
+                </div>
+                <div class="card-music-description--title--artiste">
+                    <h3>titre de musique</h3>
+                    <h4>Nom artiste</h4>
+                </div>
+            </div>
+            <div class="card-music-actions">
+                <ul>
+                    <li><a href="" class="add-playlist"><img src="../html/image/add.png"></a></li>
+                    <li><a href="" class="add-favorite"><img src="../html/image/heart.png"></a></li>
+                    <li><a href="" class="play"><img src="../html/image/play.png"></a></li>
+                </ul>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="card-music">
+            <div class="card-music-description">
+                <div class="card-music-description--cover">
+                    <img src="../html/image/music.png">
+                </div>
+                <div class="card-music-description--title--artiste">
+                    <h3>titre de musique</h3>
+                    <h4>Nom artiste</h4>
+                </div>
+            </div>
+            <div class="card-music-actions">
+                <ul>
+                    <li><a href="" class="add-playlist"><img src="../html/image/add.png"></a></li>
+                    <li><a href="" class="add-favorite"><img src="../html/image/heart.png"></a></li>
+                    <li><a href="" class="play"><img src="../html/image/play.png"></a></li>
+                </ul>
+            </div>
+        </div>
+    </li>
+
+    <li>
+        <div class="card-music">
+            <div class="card-music-description">
+                <div class="card-music-description--cover">
+                    <img src="../html/image/music.png">
+                </div>
+                <div class="card-music-description--title--artiste">
+                    <h3>titre de musique</h3>
+                    <h4>Nom artiste</h4>
+                </div>
+            </div>
+            <div class="card-music-actions">
+                <ul>
+                    <li><a href="" class="add-playlist"><img src="../html/image/add.png"></a></li>
+                    <li><a href="" class="add-favorite"><img src="../html/image/heart.png"></a></li>
+                    <li><a href="" class="play"><img src="../html/image/play.png"></a></li>
+                </ul>
+            </div>
+        </div>
+    </li>
+</ol>
 
 
-</div>
 
 
 
