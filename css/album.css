@@ -32,13 +32,13 @@ html, body{/*style de la page*/
     font-weight: 800;
     font-size: 30px;
     letter-spacing: 1px;
-    margin-left: 5%;
+    margin-left: 65%;
     top: 65%;   
 }
 
 .image{
     position: absolute;
-    left: 5%;
+    left: 65%;
     top: 20%;
     height: auto;
     width: 100%;
@@ -59,8 +59,8 @@ html, body{/*style de la page*/
     font-size: 20px;
     letter-spacing: 1px;
     margin-left: 5%;
-    top: 20%;
-    left: 30%;
+    top: 65%;
+    left: 75%;
 }
 
 .sound{
@@ -137,7 +137,8 @@ html, body{/*style de la page*/
 
 
 .list-card-music > li {
-flex-basis: calc(50% - 20px);
+/*flex-basis: calc(50% - 20px);*/
+flex-basis: 60%;
 display:flex;
 align-items: center;
 counter-increment: music;
