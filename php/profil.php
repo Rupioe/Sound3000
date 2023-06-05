@@ -6,6 +6,7 @@
 <link href="../css/header_footer.css" rel="stylesheet" type="text/css"/>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../js/compte.js" defer></script>
 
 
 <title>Sound 3000</title>
@@ -56,3 +57,17 @@
     <?php include "../html/footer.html" ?>
     </body>    
 </html>
+
+<?php
+
+
+
+UPDATE nom_table
+SET colonne1 = nouvelle_valeur1, colonne2 = nouvelle_valeur2
+WHERE condition;
+
+
+
+
+
+?>
