@@ -8,6 +8,39 @@
 // \param url The url with the data.
 // \param callback The callback to call where the request is successful.
 // \param data The data associated with the request.
+
+var table = 'morceau';
+
+function music(){table = 'morceau';}
+function artiste(){table = 'artiste';}
+function album(){table = 'album';}
+
+function search(){
+var input = document.getElementById("input_search").value;
+// DEBUG
+console.log('./request.php/results/?table='+table+'&input='+input);
+ajaxRequest('GET', './request.php/results/?table='+table+'&input='+input, displayResults);
+
+}
+
+var nb_result = 6;
+function displayResults(results)
+{
+  if ( results.length <= 6) nb_result = results.length;
+  else nb_result = 6;
+  var index = 0;
+  if (table != 'artiste')
+  for (let result of results){
+    index = index + 1;
+    document.getElementById('result'+index).innerHTML = result.titre;
+}
+else
+  for (let result of results){
+    index = index + 1;
+    document.getElementById('result'+index).innerHTML = result.nom+' '+result.prenom;
+}
+}
+
 function ajaxRequest(type, url, callback, data = null)
 {
   let xhr;
@@ -58,8 +91,6 @@ function httpErrors(errorCode)
   // Display error.
   if (errorCode in messages)
   {
-    $('#errors').html('<i class="fa fa-exclamation-circle"></i> <strong>' +
-      messages[errorCode] + '</strong>');
-    $('#errors').show();
+   // document.getElementById['errors'].innerHTML ='<i class="fa fa-exclamation-circle"></i> <strong>'+messages[errorCode] + '</strong>';
   }
 }

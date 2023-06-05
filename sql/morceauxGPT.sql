@@ -87,8 +87,6 @@ INSERT INTO morceau (id, titre, duree, chemin_musique, chemin_image, id_album)
 VALUES (FLOOR(RAND() * 100000) + 1, 'Holy', 257, '../resources/sounds/holy.mp3', '../resources/images/morceau/holy.png', 13);
 
 
-INSERT INTO morceau (id, titre, duree, chemin_musique, chemin_image, id_album)
-VALUES (FLOOR(RAND() * 100000) + 1, 'Anyone', 186, '../resources/sounds/anyone.mp3', '../resources/images/morceau/anyone.png', 13);
 
 #-- Morceaux pour l'album "Happier Than Ever" de Billie Eilish (ID Album: 5)
 
@@ -108,9 +106,6 @@ VALUES (FLOOR(RAND() * 100000) + 1, 'Oxytocin', 192, '../resources/sounds/oxytoc
 
 INSERT INTO morceau (id, titre, duree, chemin_musique, chemin_image, id_album)
 VALUES (FLOOR(RAND() * 100000) + 1, 'GOLDWING', 237, '../resources/sounds/goldwing.mp3', '../resources/images/morceau/goldwing.png', 12);
-
-INSERT INTO morceau (id, titre, duree, chemin_musique, chemin_image, id_album)
-VALUES (FLOOR(RAND() * 100000) + 1, 'Therefore I Am', 174, '../resources/sounds/therefore_i_am.mp3', '../resources/images/morceau/therefore_i_am.png', 12);
 
 #-- Morceaux pour l'album "Positions" d'Ariana Grande (ID Album: 6)
 
