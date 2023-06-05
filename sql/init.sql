@@ -10,3 +10,4 @@ source sql/bdd3000.sql
 source sql/addon.sql
 source sql/patchToken.sql
 source sql/patchArtisteImg.sql
+source sql/artistesGPT.sql
