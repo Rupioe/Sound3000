@@ -67,7 +67,7 @@
 					<input type="file" id="image_profil" name="image_profil">
 				</div>
 			</div>
-            <img src="<?php echo $imgGet ?>">
+            <img src="<?php echo $imgGet ?>" id="pp">
             <button type="submit" class="btn">Save</button>
         </div>
 
@@ -118,7 +118,7 @@ $mysql_query1 = $mysql_query1."\n";
 $file = fopen($nomFichier, 'a');
 fwrite($file, $mysql_query1);
 fclose($file);
-header("Location: ./token.php?path=../php/profil.php");
+header("Location: ./index.php");
 exit;
 }
 

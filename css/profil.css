@@ -106,3 +106,8 @@ html, body{/*style de la page*/
   .has-text .placeholder {
     display: none;
   }
+
+#pp {
+    max-width: 300px;
+    height: auto;
+  }
