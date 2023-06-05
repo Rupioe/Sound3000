@@ -81,8 +81,8 @@
 
 <?php
 // Désactiver l'affichage des erreurs
-//error_reporting(0);
-//ini_set('display_errors', 0);
+error_reporting(0);
+ini_set('display_errors', 0);
 ini_set('file_uploads', 'On');
 ini_set('upload_max_filesize', '5M');
 ini_set('post_max_size', '5M');
@@ -117,9 +117,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
  // email | nom   | prenom | date_naissance | password           | chemin_image | token  | timestamp
 $mysql_query1 = "UPDATE compte SET nom='".$nom."', prenom='".$prenom."', date_naissance=STR_TO_DATE('".$date_naissance."', '%Y-%m-%d'), password='".$mot_de_passe."',chemin_image='".$image_profil."' WHERE token='".$_SESSION['token']."';";
-//UPDATE nom_table
-//SET colonne1 = nouvelle_valeur1, colonne2 = nouvelle_valeur2
-//WHERE condition;
 }
 }
 
