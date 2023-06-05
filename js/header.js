@@ -71,6 +71,15 @@
           bouton6.style.display = 'none';
       }
     }
+
+    if (input2.value == '') {
+        bouton1.style.display = 'none';
+        bouton2.style.display = 'none';
+        bouton3.style.display = 'none';
+        bouton4.style.display = 'none';
+        bouton5.style.display = 'none';
+        bouton6.style.display = 'none';
+    }
   });
 
 
