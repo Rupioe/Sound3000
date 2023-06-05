@@ -18,8 +18,7 @@
 
         <div class="title"><h1>Hello 
 <?php
-session_start();
-include "./db.php";
+include "./PasDeTokenPasDeChocolat.php";
     try
     {
         $request = 'SELECT nom FROM compte WHERE token = "'.$_SESSION['token'].'"';

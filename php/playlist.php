@@ -11,7 +11,9 @@
 </head>
 
 <body>
-<?php include "../html/header.html" ?>
+<?php include "../html/header.html";
+      include "./PasDeTokenPasDeChocolat.php";
+?>
       
 
 <section>
