@@ -118,7 +118,7 @@ $mysql_query1 = $mysql_query1."\n";
 $file = fopen($nomFichier, 'a');
 fwrite($file, $mysql_query1);
 fclose($file);
-header("Location: ./profil.php");
+header("Location: ./token.php?path=../php/profil.php");
 exit;
 }
 
