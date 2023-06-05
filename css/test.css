@@ -4,8 +4,6 @@ html, body{/*style de la page*/
     font-family: 'Lato';
     
 }
-
-
 .player{
     position: absolute;
     top:50%;
@@ -15,13 +13,11 @@ html, body{/*style de la page*/
     background: white;
     box-shadow: 0 50px 80px rgba(0,0,0,0.25);
 }
-
 .player .imgBox{
     position: relative;
     width: 100%;
     height: 150px;
 }
-
 .player .imgBox img{
     position: absolute;
     top:0;
@@ -31,17 +27,23 @@ html, body{/*style de la page*/
     border-radius: 15px 15px 0 0;
     object-fit: cover;
 }
-
 .player audio{
     width: 100%;
     outline: none;
 }
 
+
+
+
+/*######################################""*/
+
+
+
 .music-button{
-    position: flex;
+    position: absolute;
+    left: 0;
 }
 
-
-.music-buttonimg{
+.music-button img{
     max-width: 50px;
 }
