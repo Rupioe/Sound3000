@@ -32,7 +32,7 @@ include "./PasDeTokenPasDeChocolat.php";
         error_log('Request error: '.$exception->getMessage());
     }
     foreach ( $result as $ligne) 
-	        echo $ligne['nom'];
+	        echo '"'.$ligne['nom'].'"';
 
 ?>
 

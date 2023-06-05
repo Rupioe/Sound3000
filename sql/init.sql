@@ -11,3 +11,4 @@ source sql/addon.sql
 source sql/patchToken.sql
 source sql/patchArtisteImg.sql
 source sql/artistesGPT.sql
+source sql/profilPic.sql

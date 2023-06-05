@@ -88,7 +88,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $mot_de_passe_conf = htmlspecialchars($_POST['mot_de_passe_conf']);
   $image_profil = htmlspecialchars($_POST['image_profil']);
 
-  echo $mot_de_passe."<br>".$_POST['mot_de_passe']."<br>".$mot_de_passe_conf."<br>".$_POST['mot_de_passe_conf'];
   // les hash sont différents à cause du sel
   // ensuite je peux faire une verif en live avec l'evenement quand l'user met son curseur dans la case ou écrit et comparer les mdp en direct
   // je peux aussi ajouter des commentaires sur le pwd écrit (trop petit pas assez complexe etc)
