@@ -10,7 +10,9 @@
 <title>Sound 3000</title>
 </head>
 <body>
-      <?php include "../html/header.html" ?>
+      <?php include "../html/header.html";
+            include "./PasDeTokenPasDeChocolat.php";
+       ?>
 
       <?php include "../html/footer.html" ?>
     </body>    
