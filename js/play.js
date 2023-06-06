@@ -13,7 +13,7 @@ Array.from(collectionFavorite).forEach(function(item,i){
 })*/
 
 
-const play = document.getElementsByClassName('play-music');
+/*const play = document.getElementsByClassName('play-music');
 item.play("click", function(event){
     event.preventDefault();
     this.classList.toggle("play");
@@ -25,4 +25,21 @@ item.play("click", function(event){
         mainImage.src = "../html/image/play.png";
       }*/
 
-})
+//})
+
+
+const play = document.getElementsByClassName('play-music')[0];
+let isPlaying = false;
+
+play.addEventListener("click", function(event) {
+  event.preventDefault();
+  this.classList.toggle("play");
+  
+  if (isPlaying) {
+    play.style.backgroundImage = 'url("../html/image/play.png")';
+    isPlaying = false;
+  } else {
+    play.style.backgroundImage = 'url("../html/image/pause.png")';
+    isPlaying = true;
+  }
+});
