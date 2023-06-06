@@ -63,9 +63,11 @@
 
         <div class="title2">
             <h2>Title : <?php echo $titreGet ?></h2>
+            <a href="" class="play-music">
         </div>
 
 
         <?php include "../html/footer.html" ?>
+        <script src="../js/play.js" defer></script>
     </body>    
 </html>

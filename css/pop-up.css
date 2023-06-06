@@ -1,0 +1,45 @@
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .popup-content {
+    background-color: #333; /* Fond sombre */
+    color: #fff; /* Couleur du texte en blanc */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  .popup-content a {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff; /* Couleur des liens en blanc */
+  }
+  
+  .close {
+    color: #fff; /* Couleur de la croix en blanc */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #ccc; /* Couleur de la croix en gris clair au survol */
+    text-decoration: none;
+    cursor: pointer;
+  }

@@ -94,3 +94,19 @@ html, body{/*style de la page*/
   body::-webkit-scrollbar{
     display: none;
   }
+
+
+  /*#####################################################################*/
+  /*javascript*/
+  .play-music {
+    display: block;
+    width: 45px;
+    height: 45px;
+    background-image: url("../html/image/play.svg");
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+ } 
+ .add-favorite.play {
+    background-image: url("../html/image/pause.svg");
+ }
