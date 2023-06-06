@@ -41,7 +41,7 @@
     </li>
 </ol>
 
-
+<script src="../js/heart.js" defer></script>
 
 
 
