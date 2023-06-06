@@ -39,9 +39,10 @@ Array.from(links).forEach(function(link) {
   }
 if(toadd){
  // php/request.php/tweets/ login=...&text=... Ajout d’un tweet
-  var rekete = './request_favorites.php/results/ id='+morceauID+'&email='+email;
+  var rekete = './request_favorites.php/results/';
+  var params = 'id='+morceauID+'&email='+email;
   console.log(rekete);
-  ajaxRequest('POST', rekete, updateList);
+  ajaxRequest('POST', rekete, updateList,params);
 } else {
  // php/request.php/tweets/i?login=... Suppression du tweet
   var rekete = './request_favorites.php/results/i?id='+morceauID+'&email='+email;
