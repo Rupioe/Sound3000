@@ -3,6 +3,12 @@ var popupOverlay;
     var newPopupOverlay;
 
     function openPopup() {
+
+      const stop_link = document.getElementsByClassName('add-playlist');
+      item.play("click", function(event){
+      event.preventDefault();})
+
+
       // Création de la popup overlay
       popupOverlay = document.createElement("div");
       popupOverlay.className = "popup-overlay";
