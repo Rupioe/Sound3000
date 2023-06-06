@@ -23,7 +23,7 @@
     {
         //'SELECT * FROM morceau WHERE id = "'.$_GET['id'].'"';
         //'SELECT date_parution, album.titre AS album_titre, morceau.* FROM morceau JOIN album ON morceau.id_album = album.id WHERE morceau.id ="'.$_GET['id'].'"';
-        $request = 'SELECT date_parution, album.titre AS album_titre, morceau.*, artiste.pseudo, artiste.id AS artiste_id FROM morceau JOIN album ON morceau.id_album = album.id JOIN discographie ON album.id = discographie.id JOIN artiste ON discographie.id_artiste = artiste.id WHERE morceau.id ="'.$_GET['id'].'"';
+        $request = 'SELECT date_parution, album.titre AS album_titre, morceau.*, artiste.pseudo, artiste.id AS artiste_id, album.id AS album_id FROM morceau JOIN album ON morceau.id_album = album.id JOIN discographie ON album.id = discographie.id JOIN artiste ON discographie.id_artiste = artiste.id WHERE morceau.id ="'.$_GET['id'].'"';
         $statement = $dbCnx->prepare($request);
         $statement->execute();
         $result = $statement->fetchAll();
@@ -52,7 +52,7 @@
         <div class="element">
             
                 
-            Album :  <?php echo $albumTitre ?>          <br>
+            Album :  <?php echo '<a href="./album.php?id='.$ligne['album_id'].'">'.$albumTitre.'</a>' ?>          <br>
             Name : <?php echo '<a href="./artiste.php?id='.$ligne['artiste_id'].'">'.$pseudo.'</a>' ?><s></s>          <br>
             Creation : <?php echo $date ?> <s></s>          <br>
             Time : <?php echo floor($dureeGet/60)?> minutes <?php echo $dureeGet%60 ?> secondes <s></s>          <br>
