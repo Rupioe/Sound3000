@@ -223,12 +223,8 @@
 </ol>
 
 
-<script>
-            function changerImage() {
-                var image = document.getElementById('heart1');
-                image.src = "../html/image/red_heart.png"; // Remplacez 'chemin/vers/image2.jpg' par le chemin de votre nouvelle image
-            }
-</script>
+
+
 
 
 
