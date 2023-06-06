@@ -25,7 +25,7 @@ while [ "$ENCORE" == "y" ]; do
 
 	if [ "$CHOIX" -eq 2 ]; then
 		CHOSEN="artiste"
-		mysql -u root -e "USE bddSound; SHOW COLUMNS FROM $CHOSEN; SELECT FOUND_ROWS();" 
+		mysql -u root -e "USE bddSound; SELECT id, nom, prenom, pseudo FROM $CHOSEN; SHOW COLUMNS FROM $CHOSEN; SELECT FOUND_ROWS();" 
 		echo "ID (int)"
 		read -r ID
 		echo nom
@@ -43,6 +43,8 @@ while [ "$ENCORE" == "y" ]; do
 		else
 			SEXE=0
 		fi
+		echo nom image
+		read -r CHEMIN_ARTISTE
 		echo "Groupe ou Seul ? G/[S]"
 		read -r TYPE # Groupe c'est 1
 		if [ "$TYPE" == "G" ]; then
@@ -55,8 +57,8 @@ while [ "$ENCORE" == "y" ]; do
 			TYPE=0
 			IDGROUPE="NULL"
 		fi
-		mysql -u root -e "USE bddSound; INSERT INTO $CHOSEN (id, nom, prenom, pseudo, date_naissance,sexe,type,id_groupe) VALUES ($ID,'$NOM','$PRENOM','$PSEUDO',STR_TO_DATE('$DATE_NAISSANCE', '%d/%m/%Y'),$SEXE,$TYPE,$IDGROUPE);"
-		echo "USE bddSound; INSERT INTO $CHOSEN (id, nom, prenom, pseudo, date_naissance,sexe,type,id_groupe) VALUES ($ID,'$NOM','$PRENOM','$PSEUDO',STR_TO_DATE('$DATE_NAISSANCE', '%d/%m/%Y'),$SEXE,$TYPE,$IDGROUPE);" >> ../sql/addon.sql
+		mysql -u root -e "USE bddSound; INSERT INTO $CHOSEN (id, nom, prenom, pseudo, date_naissance,sexe,type,id_groupe,chemin_image) VALUES ($ID,'$NOM','$PRENOM','$PSEUDO',STR_TO_DATE('$DATE_NAISSANCE', '%d/%m/%Y'),$SEXE,$TYPE,$IDGROUPE,'../resources/images/artiste/$CHEMIN_ARTISTE');"
+		echo "USE bddSound; INSERT INTO $CHOSEN (id, nom, prenom, pseudo, date_naissance,sexe,type,id_groupe,chemin_image) VALUES ($ID,'$NOM','$PRENOM','$PSEUDO',STR_TO_DATE('$DATE_NAISSANCE', '%d/%m/%Y'),$SEXE,$TYPE,$IDGROUPE,'../resources/images/artiste/$CHEMIN_ARTISTE');" >> ../sql/addon.sql
 	fi
 
 	if [ "$CHOIX" -eq 3 ]; then

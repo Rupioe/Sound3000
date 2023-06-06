@@ -73,8 +73,8 @@
 
 <?php
 // Désactiver l'affichage des erreurs
-error_reporting(0);
-ini_set('display_errors', 0);
+//error_reporting(0);
+//ini_set('display_errors', 0);
 ini_set('upload_max_filesize', '5M');
 ini_set('post_max_size', '5M');
  
