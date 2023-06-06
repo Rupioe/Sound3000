@@ -31,11 +31,24 @@
         error_log('Request error: '.$exception->getMessage());
     }
     foreach ( $result as $ligne){ 
+            $style = $ligne['style'];
+    }
+    try
+    {
+        $request = 'SELECT artiste.* FROM artiste WHERE artiste.id ="'.$_GET['id'].'"';
+        $statement = $dbCnx->prepare($request);
+        $statement->execute();
+        $result = $statement->fetchAll();
+    }
+    catch (PDOException $exception)
+    {
+        error_log('Request error: '.$exception->getMessage());
+    }
+    foreach ( $result as $ligne){ 
             $image = $ligne['chemin_image'];
             $pseudo = $ligne['pseudo'];
             $nom = $ligne['nom'];
             $prenom = $ligne['prenom'];
-            $style = $ligne['style'];
             $type = $ligne['type'];
     }
 ?>
@@ -57,12 +70,6 @@
 
     </div>
 
-        <div class="album">
-            <h2>Albums : <s></s></h2>
-        </div>
-        <section>
-                <div class="artiste-container">
-
 <?php
     try
     {
@@ -75,6 +82,12 @@
     {
         error_log('Request error: '.$exception->getMessage());
     }
+        echo '<div class="album">';
+        if (count($result) >= 1)
+        echo '<h2>Albums :</h2>';
+        echo '</div>';
+        echo '<section>';
+        echo '<div class="artiste-container">';
     foreach ( $result as $ligne){ 
                     echo '<a href="./album.php?id='.$ligne['album_id'].'"><img src="'.$ligne['chemin_image_album'].'"></a>';
     }
