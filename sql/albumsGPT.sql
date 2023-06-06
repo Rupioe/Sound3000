@@ -46,6 +46,7 @@ VALUES (14, 'Futur Nostalgia', STR_TO_DATE('04/03/2011', '%d/%m/%Y'), '../resour
 INSERT INTO album (id, titre, date_parution, chemin_image, style)
 VALUES (15, 'Reputation', STR_TO_DATE('10/01/2009', '%d/%m/%Y'), '../resources/images/album/reputation.png', 'rock');
 
+# a creer :
 #-- Albums pour BTS
 INSERT INTO album (id, titre, date_parution, chemin_image, style)
 VALUES (5, 'Map of the Soul: 7', STR_TO_DATE('21/02/2020', '%d/%m/%Y'), '../resources/images/album/map_of_the_soul_7.png', 'pop');
@@ -66,7 +67,6 @@ VALUES (11, 'When We All Fall Asleep, Where Do We Go?', STR_TO_DATE('29/03/2019'
 
 INSERT INTO album (id, titre, date_parution, chemin_image, style)
 VALUES (12, 'Happier Than Ever', STR_TO_DATE('30/07/2021', '%d/%m/%Y'), '../resources/images/album/happier_than_ever.png', 'pop');
-
 
 # -- Justin Bieber
 INSERT INTO album (id, titre, date_parution, chemin_image, style)
