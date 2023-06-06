@@ -85,7 +85,7 @@
                     echo '<div class="card-music-actions">';
                         echo '<ul>';
                             echo '<li><a href="" class="add-playlist"><img src="../html/image/add.png"></a></li>';
-                            echo '<li><a href="" class="add-favorite"><img src="../html/image/heart.png"></a></li>';
+                            echo '<li><a href="" class="add-favorite"></a></li>';
                             echo '<li><a href="" class="play"><img src="../html/image/play.png"></a></li>';
                         echo '</ul>';
                     echo '</div>';
@@ -106,6 +106,6 @@
 
         <?php include "../html/footer.html" ?>
 
-
+        <script src="../js/heart.js" defer></script>
     </body>    
 </html>
