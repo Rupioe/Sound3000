@@ -67,7 +67,7 @@
 
 	<form action="./profil.php?browse=<?php if($_GET['browse']==1)echo 0; else echo 1; ?>" method="POST" enctype="multipart/form-data">
         <div class="image">
-            <div class="title">Picture : <br>
+            <div class="title2">Picture : <br>
             </div>
 
                 <div class="inputBox">

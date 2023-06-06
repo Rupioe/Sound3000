@@ -12,6 +12,7 @@ html, body{/*style de la page*/
 
 
 .title{
+    width:30vw;
 	display:flex;
 	text-decoration: none;
     color:#699bf7;
@@ -36,7 +37,21 @@ html, body{/*style de la page*/
     
 }
 
+.title2{
+    
+	display:flex;
+	text-decoration: none;
+    color:#699bf7;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 1px;
+    
+}
+
 .image{
+    margin-top: 2vh;
     position: absolute;
     width: 100%;
     max-width: 300px;
@@ -54,6 +69,12 @@ html, body{/*style de la page*/
 	header {
 		flex-direction:column;
 	}
+
+
+    .image{
+        left: 5%;
+        top: 120%;
+    }
 }
 
 
