@@ -18,11 +18,11 @@ item.play("click", function(event){
     event.preventDefault();
     this.classList.toggle("play");
 
-    var mainImage = document.getElementByClassName("play-music");
+    /*var mainImage = document.getElementByClassName("play-music");
     if (mainImage.src.includes("../html/image/play.png")) {
         mainImage.src = "../html/image/pause.png";
       } else {
         mainImage.src = "../html/image/play.png";
-      }
+      }*/
 
 })
