@@ -1,6 +1,8 @@
 
 const suppr_link = document.getElementsByClassName('add-playlist');
 
+console.log(suppr_link);
+
 Array.from(suppr_link).forEach(function(item,i){
     item.addEventListener("click", function(event){
         event.preventDefault();
@@ -12,10 +14,6 @@ var popupOverlay;
     var newPopupOverlay;
 
     function openPopup() {
-
-      const stop_link = document.getElementsByClassName('add-playlist');
-      item.play("click", function(event){
-      event.preventDefault();})
 
 
       // Création de la popup overlay
