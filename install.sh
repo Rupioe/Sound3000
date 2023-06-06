@@ -5,7 +5,8 @@ if lsb_release -d | grep -q "Debian"; then
 	apt update
 	apt install mariadb-server php php-mysql apache2
 	cp config/php.ini /etc/php/"$(ls -l | sort | grep d  | sed -n '$s/.* \([^ ]*\)$/\1/p')"/apache2/
-	cp config/sound3000.conf /etc/apache2/sites-enabled/
+	cp config/sound3000.conf /etc/apache2/sites-available/
+	a2ensite /etc/apache2/sites-available/sound3000.conf
 	systemctl enable apache2
 	systemctl enable mariadb
 	systemctl start apache2
