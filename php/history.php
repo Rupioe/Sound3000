@@ -33,7 +33,7 @@
             </div>
             <div class="card-music-actions">
                 <ul>
-                    <li><a href="" class="add-playlist" onclick="openPopup()"><img src="../html/image/add.png" ></a></li>
+                    <li><img src="../html/image/add.png" class="add-playlist" onclick="openPopup()"></a></li>
                     <li><a href="" class="add-favorite"></a></li>
                     <li><a href="" class="play"><img src="../html/image/play.png"></a></li>
                 </ul>
