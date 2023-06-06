@@ -187,3 +187,19 @@ gap: 10px;
  height: auto;
 
 }
+
+/*###############################*/
+/*heart*/
+
+.add-favorite {
+    display: block;
+    width: 45px;
+    height: 45px;
+    background-image: url("../html/image/heart.png");
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+ } 
+ .add-favorite.added {
+    background-image: url("../html/image/red_heart.png");
+ }
