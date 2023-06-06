@@ -1,4 +1,8 @@
 
+const stop_link = document.getElementsByClassName('add-playlist');
+      item.play("click", function(event){
+      event.preventDefault();})
+      
 var popupOverlay;
     var newPopupOverlay;
 
