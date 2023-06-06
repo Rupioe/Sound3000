@@ -14,3 +14,4 @@ source sql/artistesGPT.sql
 source sql/profilPic.sql
 source sql/albumsGPT.sql
 source sql/morceauxGPT.sql
+soure sql/patchHistory.sql

@@ -89,7 +89,7 @@
         echo '<section>';
         echo '<div class="artiste-container">';
     foreach ( $result as $ligne){ 
-                    echo '<a href="./album.php?id='.$ligne['album_id'].'"><img src="'.$ligne['chemin_image_album'].'"></a>';
+                    echo '<a href="token.php?path=../php/album.php?id='.$ligne['album_id'].'"><img src="'.$ligne['chemin_image_album'].'"></a>';
     }
 ?>
                 </div>

@@ -49,7 +49,7 @@
 
         <div class="element">                
             <?php echo $titreGet ?>          <br>
-            <?php echo '<a href="./artiste.php?id='.$ligne['artiste_id'].'">'.$pseudo.'</a>'?>         <br>
+            <?php echo '<a href="token.php?path=../php/artiste.php?id='.$ligne['artiste_id'].'">'.$pseudo.'</a>'?>         <br>
             <?php echo $date ?>          <br>
             <?php echo $style ?>          <br>
         
