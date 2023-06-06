@@ -1,10 +1,9 @@
 
-const collectionFavorite = document.getElementsByClassName('add-playlist');
+const suppr_link = document.getElementsByClassName('add-playlist');
 
         Array.from(collectionFavorite).forEach(function(item,i){
             item.addEventListener("click", function(event){
                 event.preventDefault();
-                this.classList.toggle("added");
     
             })
 
