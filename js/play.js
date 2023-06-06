@@ -44,6 +44,9 @@ play.addEventListener("click", function(event) {
   }
 });
 
+
+
+
 /*pour ceux qui ne sont pas footer*/
 const play2 = document.getElementsByClassName('play-music2')[0];
 let isPlaying2 = false;
@@ -60,3 +63,30 @@ play2.addEventListener("click", function(event) {
     isPlaying2 = true;
   }
 });
+
+
+
+/*liste*/
+const play3 = document.getElementsByClassName('play-music3');
+
+console.log(play3);
+
+Array.from(play3).forEach(function(item,i){
+    item.addEventListener("click", function(event){
+        event.preventDefault();
+        this.classList.toggle("play");
+
+        if (isPlaying2) {
+          play2.style.backgroundImage = 'url("../html/image/play.png")';
+          isPlaying2 = false;
+        } else {
+          play2.style.backgroundImage = 'url("../html/image/pause.png")';
+          isPlaying2 = true;
+        }
+
+        var others = 
+
+    })
+
+
+})
