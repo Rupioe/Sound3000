@@ -21,7 +21,7 @@
     <div class="container">
         <div class="title"><h1>Playlists</h1></div>
 		<div class="album-container">
-			<img src="../resources/images/album/album.png">
+			<img src="../resources/images/album/album.png" href="playlist_solo.php">
 			<img src="../resources/images/album/album.png">
 			<img src="../resources/images/album/album.png">
 			<img src="../resources/images/album/album.png">
