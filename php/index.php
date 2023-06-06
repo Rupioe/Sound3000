@@ -71,21 +71,6 @@ include "./PasDeTokenPasDeChocolat.php";
 		</div>
     </div>
 </section>
-<section>
-    <div class="container">
-        <div class="title"><h1>Playlists</h1></div>
-		<div class="album-container">
-			<img src="../resources/images/album/album.png">
-			<img src="../resources/images/album/album.png">
-			<img src="../resources/images/album/album.png">
-			<img src="../resources/images/album/album.png">
-            <img src="../resources/images/album/album.png">
-			<img src="../resources/images/album/album.png">
-            <img src="../resources/images/album/album.png">
-			<img src="../resources/images/album/album.png">
-		</div>
-    </div>
-</section>
 
 
 
