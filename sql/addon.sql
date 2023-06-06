@@ -35,4 +35,7 @@ USE bddSound; INSERT INTO discographie (id, id_artiste) VALUES (10,88);
 USE bddSound; INSERT INTO discographie (id, id_artiste) VALUES (11,87);
 USE bddSound; INSERT INTO discographie (id, id_artiste) VALUES (12,87);
 USE bddSound; INSERT INTO discographie (id, id_artiste) VALUES (13,86);
-INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ('b@b.b',11152,STR_TO_DATE('2023-05-20', '%Y-%m-%d'));
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",9105,STR_TO_DATE("2023-06-06", "%Y-%m-%d"))
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",11134,STR_TO_DATE("2023-06-06", "%Y-%m-%d"))
+DELETE FROM ajouter_favoris WHERE id=11134 AND email ="b@b.b"
+DELETE FROM ajouter_favoris WHERE id=9105 AND email ="b@b.b"

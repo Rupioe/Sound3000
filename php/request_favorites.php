@@ -25,7 +25,7 @@
     date_default_timezone_set("Europe/Paris");
     try
     {
-      $request = 'INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("'.$email.'",'.$id.',STR_TO_DATE("'.date("Y-m-d").'", \'%Y-%m-%d\'))';
+      $request = 'INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("'.$email.'",'.$id.',STR_TO_DATE("'.date("Y-m-d").'", "%Y-%m-%d"))';
       $statement = $dbCnx->prepare($request);
       $statement->execute();
       $result = $statement->fetchAll(PDO::FETCH_ASSOC);

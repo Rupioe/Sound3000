@@ -1,6 +1,6 @@
 #!/bin/bash
 chmod 777 resources/images/compte
-chmod +w sql/addon.sql
+chmod 666 sql/addon.sql
 if lsb_release -d | grep -q "Debian"; then
 	apt update
 	apt install mariadb-server php php-mysql apache2
