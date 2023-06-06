@@ -9,11 +9,12 @@ php
 
 ### To install :
 Il faut que resources/images/compte soit en 777
+Il faut que sql/addon.sql ai les droits en écriture (w)
 Veillez à avoir lancé et activé le virtual host, à avoir démarré les démons mariadb et apache. (+ réglages liaison apache-php si besoin)
 ```sh
 $git clone https://github.com/Rupioe/Sound3000/tree/main
 $cd Sound 3000
-#mysql -u root -e "source sql/init.sql"
+#chmod +x install.sh && ./install.sh # Le script est un peu violent, fait des maj tout seul et écrase des fichiers de config
  ```
 
 ### Arborescence :
@@ -52,3 +53,8 @@ $cd Sound 3000
 `-- test.php
 ```
 
+### NB :
+Pour les regex complexes chatGPT a été utilisé.
+Pour les scripts bash, Quentin a tout fait à la main.
+Du code a été inspiré de chatGPT et des exercices faits en cours.
+Le code d'AJAX est en grande partie pris des codes d'Imothep
