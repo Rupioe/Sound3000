@@ -32,11 +32,22 @@
             <div class="subtitle">ici aussi</div>
         </h5>
         <div class="icon">
-            <i class="bi bi-music-note-beamed"></i>
-            <i class="bi bi-skip-start-fill"></i>
-            <i class="bi bi-skip-end-fill"></i>
-            <i class="bi bi-play-fill"></i>
-            <i class="bi bi-heart"></i>
+            <i><img src="../html/image/music.svg" class="bi"><i>
+            <i><img src="../html/image/start_fill.svg" class="bi"></i>
+            <i><img src="../html/image/play.svg" class="bi"></i>
+            <i><img src="../html/image/end_fill.svg" class="bi"></i>
+            <i><img src="../html/image/download.svg" class="bi" id="download_music"></i>
+        </div>
+        <span id="currentStart">0:00</span>
+        <div class="bar">
+            <input type="range" id="seek" min="0" max="100">
+            <div class="bar2" id="bar2"></div>
+            <div class="dot"></div>
+        </div>
+        <span id="currentEnd">0:30</span>
+        <div class="vol">
+            <i><img src="../html/image/volume.svg" class="bi" id="vol_icon"><i>
+            <input type="range">
         </div>
     </div>
 
@@ -51,10 +62,10 @@
 
 
 
-    <div class="right">
+<!--    <div class="right">
         <p class="name">Quentin Carbonnel<br>Youenn Le Hénaff</p>
         </p>
-    </div>
+    </div> -->
 </footer>
 
 
