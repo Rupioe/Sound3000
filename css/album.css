@@ -203,3 +203,18 @@ gap: 10px;
  .add-favorite.added {
     background-image: url("../html/image/red_heart.png");
  }
+
+   /*#####################################################################*/
+  /*javascript*/
+  .play-music2 {
+    display: block;
+    width: 45px;
+    height: 45px;
+    background-image: url("../html/image/play.png");
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+ } 
+ .add-favorite.play {
+    background-image: url("../html/image/pause.png");
+ }
