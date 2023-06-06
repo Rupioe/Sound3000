@@ -30,12 +30,6 @@ VALUES (3, '÷', STR_TO_DATE('03/03/2017', '%d/%m/%Y'), '../resources/images/alb
 INSERT INTO album (id, titre, date_parution, chemin_image, style)
 VALUES (4, 'No.6 Collaborations Project', STR_TO_DATE('12/07/2019', '%d/%m/%Y'), '../resources/images/album/no_6_collaborations_project.png', 'pop');
 
-#-- Albums pour BTS
-INSERT INTO album (id, titre, date_parution, chemin_image, style)
-VALUES (5, 'Map of the Soul: 7', STR_TO_DATE('21/02/2020', '%d/%m/%Y'), '../resources/images/album/map_of_the_soul_7.png', 'pop');
-
-INSERT INTO album (id, titre, date_parution, chemin_image, style)
-VALUES (6, 'Butter', STR_TO_DATE('21/05/2021', '%d/%m/%Y'), '../resources/images/album/butter.png', 'pop');
 
 #-- Albums pour Ariana Grande
 INSERT INTO album (id, titre, date_parution, chemin_image, style)
@@ -43,6 +37,21 @@ VALUES (7, 'Sweetener', STR_TO_DATE('17/08/2018', '%d/%m/%Y'), '../resources/ima
 
 INSERT INTO album (id, titre, date_parution, chemin_image, style)
 VALUES (8, 'Positions', STR_TO_DATE('30/10/2020', '%d/%m/%Y'), '../resources/images/album/positions.png', 'pop');
+
+# -- Dua lipa
+INSERT INTO album (id, titre, date_parution, chemin_image, style)
+VALUES (14, 'Futur Nostalgia', STR_TO_DATE('04/03/2011', '%d/%m/%Y'), '../resources/images/album/futur_nostalgia.png', 'classic');
+
+# -- Taylor Swift
+INSERT INTO album (id, titre, date_parution, chemin_image, style)
+VALUES (15, 'Reputation', STR_TO_DATE('10/01/2009', '%d/%m/%Y'), '../resources/images/album/reputation.png', 'rock');
+
+#-- Albums pour BTS
+INSERT INTO album (id, titre, date_parution, chemin_image, style)
+VALUES (5, 'Map of the Soul: 7', STR_TO_DATE('21/02/2020', '%d/%m/%Y'), '../resources/images/album/map_of_the_soul_7.png', 'pop');
+
+INSERT INTO album (id, titre, date_parution, chemin_image, style)
+VALUES (6, 'Butter', STR_TO_DATE('21/05/2021', '%d/%m/%Y'), '../resources/images/album/butter.png', 'pop');
 
 #-- Albums pour Drake
 INSERT INTO album (id, titre, date_parution, chemin_image, style)
@@ -62,11 +71,3 @@ VALUES (12, 'Happier Than Ever', STR_TO_DATE('30/07/2021', '%d/%m/%Y'), '../reso
 # -- Justin Bieber
 INSERT INTO album (id, titre, date_parution, chemin_image, style)
 VALUES (13, 'Justice', STR_TO_DATE('30/09/2001', '%d/%m/%Y'), '../resources/images/album/justice.png', 'new genre');
-
-# -- Dua lipa
-INSERT INTO album (id, titre, date_parution, chemin_image, style)
-VALUES (14, 'Futur Nostalgia', STR_TO_DATE('04/03/2011', '%d/%m/%Y'), '../resources/images/album/futur_nostalgia.png', 'classic');
-
-# -- Taylor Swift
-INSERT INTO album (id, titre, date_parution, chemin_image, style)
-VALUES (15, 'Reputation', STR_TO_DATE('10/01/2009', '%d/%m/%Y'), '../resources/images/album/reputation.png', 'rock');

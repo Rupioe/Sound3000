@@ -13,144 +13,89 @@
 <body>
 <?php include "../html/header.html"; 
       include "./PasDeTokenPasDeChocolat.php";
+
+    // Désactiver l'affichage des erreurs
+    //error_reporting(0);
+    //ini_set('display_errors', 0);
+ 
+
+    try
+    {
+        $request = 'SELECT album.*, artiste.pseudo FROM album JOIN discographie ON album.id = discographie.id JOIN artiste ON discographie.id_artiste = artiste.id WHERE album.id ="'.$_GET['id'].'"';
+        $statement = $dbCnx->prepare($request);
+        $statement->execute();
+        $result = $statement->fetchAll();
+    }
+    catch (PDOException $exception)
+    {
+        error_log('Request error: '.$exception->getMessage());
+    }
+    foreach ( $result as $ligne){ 
+	        $titreGet = $ligne['titre'];
+            $image = $ligne['chemin_image'];
+            $date = $ligne['date_parution'];
+            $pseudo = $ligne['pseudo'];
+            $style = $ligne['style'];
+    }
 ?>
 
     <div class="flex">
 
         <div class="image">
-            <img src="../resources/images/album/album.png">
+            <img src="<?php echo $image ?>">
         </div>
 
         <div class="element">                
-            Album<s></s>          <br>
-            Name<s></s>          <br>
-            Creation<s></s>          <br>
-            Style<s></s>          <br>
+            <?php echo $titreGet ?>          <br>
+            <?php echo $pseudo ?>         <br>
+            <?php echo $date ?>          <br>
+            <?php echo $style ?>          <br>
         
         </div>
     
         <!-- <div class="music"><h2>music : </h2></div>  -->
         <ol class="list-card-music">   
-            <li>
-                <div class="card-music">
-                    <div class="card-music-description">
-                        <div class="card-music-description--cover">
-                            <img src="../html/image/music.png">
-                        </div>
-                        <div class="card-music-description--title--artiste">
-                            <h3>titre de musique<s></s></h3>
-                            <h4>Nom artiste<s></s></h4>
-                        </div>
-                    </div>
-                    <div class="card-music-actions">
-                        <ul>
-                            <li><a href="" class="add-playlist"><img src="../html/image/add.png"></a></li>
-                            <li><a href="" class="add-favorite"><img src="../html/image/heart.png"></a></li>
-                            <li><a href="" class="play"><img src="../html/image/play.png"></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card-music">
-                    <div class="card-music-description">
-                        <div class="card-music-description--cover">
-                            <img src="../html/image/music.png">
-                        </div>
-                        <div class="card-music-description--title--artiste">
-                            <h3>titre de musique<s></s></h3>
-                            <h4>Nom artiste<s></s></h4>
-                        </div>
-                    </div>
-                    <div class="card-music-actions">
-                        <ul>
-                            <li><a href="" class="add-playlist"><img src="../html/image/add.png"></a></li>
-                            <li><a href="" class="add-favorite"><img src="../html/image/heart.png"></a></li>
-                            <li><a href="" class="play"><img src="../html/image/play.png"></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card-music">
-                    <div class="card-music-description">
-                        <div class="card-music-description--cover">
-                            <img src="../html/image/music.png">
-                        </div>
-                        <div class="card-music-description--title--artiste">
-                            <h3>titre de musique<s></s></h3>
-                            <h4>Nom artiste<s></s></h4>
-                        </div>
-                    </div>
-                    <div class="card-music-actions">
-                        <ul>
-                            <li><a href="" class="add-playlist"><img src="../html/image/add.png"></a></li>
-                            <li><a href="" class="add-favorite"><img src="../html/image/heart.png"></a></li>
-                            <li><a href="" class="play"><img src="../html/image/play.png"></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card-music">
-                    <div class="card-music-description">
-                        <div class="card-music-description--cover">
-                            <img src="../html/image/music.png">
-                        </div>
-                        <div class="card-music-description--title--artiste">
-                            <h3>titre de musique<s></s></h3>
-                            <h4>Nom artiste<s></s></h4>
-                        </div>
-                    </div>
-                    <div class="card-music-actions">
-                        <ul>
-                            <li><a href="" class="add-playlist"><img src="../html/image/add.png"></a></li>
-                            <li><a href="" class="add-favorite"><img src="../html/image/heart.png"></a></li>
-                            <li><a href="" class="play"><img src="../html/image/play.png"></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card-music">
-                    <div class="card-music-description">
-                        <div class="card-music-description--cover">
-                            <img src="../html/image/music.png">
-                        </div>
-                        <div class="card-music-description--title--artiste">
-                            <h3>titre de musique<s></s></h3>
-                            <h4>Nom artiste<s></s></h4>
-                        </div>
-                    </div>
-                    <div class="card-music-actions">
-                        <ul>
-                            <li><a href="" class="add-playlist"><img src="../html/image/add.png"></a></li>
-                            <li><a href="" class="add-favorite"><img src="../html/image/heart.png"></a></li>
-                            <li><a href="" class="play"><img src="../html/image/play.png"></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card-music">
-                    <div class="card-music-description">
-                        <div class="card-music-description--cover">
-                            <img src="../html/image/music.png">
-                        </div>
-                        <div class="card-music-description--title--artiste">
-                            <h3>titre de musique<s></s></h3>
-                            <h4>Nom artiste<s></s></h4>
-                        </div>
-                    </div>
-                    <div class="card-music-actions">
-                        <ul>
-                            <li><a href="" class="add-playlist"><img src="../html/image/add.png"></a></li>
-                            <li><a href="" class="add-favorite"><img src="../html/image/heart.png"></a></li>
-                            <li><a href="" class="play"><img src="../html/image/play.png"></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
+
+        <?php
+    try
+    {
+        $request = 'SELECT * FROM morceau WHERE id_album ='.$_GET['id'];
+        $statement = $dbCnx->prepare($request);
+        $statement->execute();
+        $result = $statement->fetchAll();
+    }
+    catch (PDOException $exception)
+    {
+        error_log('Request error: '.$exception->getMessage());
+    }
+    foreach ( $result as $ligne){ 
+        $musique = $ligne['chemin_musique'];
+        //<!-- un morceau : -->
+            echo '<li>';
+                echo '<div class="card-music">';
+                    echo '<div class="card-music-description">';
+                        echo '<div class="card-music-description--cover">';
+                            echo '<img src="'.$ligne['chemin_image'].'">';
+                        echo '</div>';
+                        echo '<div class="card-music-description--title--artiste">';
+                            echo '<h3>'.$ligne['titre'].'</h3>';
+                            echo '<h4>'.floor($ligne['duree']/60).':'.($ligne['duree']%60).'</h4>';
+                        echo '</div>';
+                    echo '</div>';
+                    echo '<div class="card-music-actions">';
+                        echo '<ul>';
+                            'echo <li><a href="" class="add-playlist"><img src="../html/image/add.png"></a></li>';
+                            echo '<li><a href="" class="add-favorite"><img src="../html/image/heart.png"></a></li>';
+                            echo '<li><a href="" class="play"><img src="../html/image/play.png"></a></li>';
+                        echo '</ul>';
+                    echo '</div>';
+                echo '</div>';
+            echo '</li>';
+    }
+        //<!-- /un morceau : -->
+        ?>
+
+
         </ol>
     </div>
 

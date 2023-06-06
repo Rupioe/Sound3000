@@ -21,8 +21,9 @@
 
     try
     {
-        $request = 'SELECT * FROM morceau WHERE id = "'.$_GET['id'].'"';
-        $request = 'SELECT date_parution, album.titre AS album_titre, morceau.* FROM morceau JOIN album ON morceau.id_album = album.id WHERE morceau.id ="'.$_GET['id'].'"';
+        //'SELECT * FROM morceau WHERE id = "'.$_GET['id'].'"';
+        //'SELECT date_parution, album.titre AS album_titre, morceau.* FROM morceau JOIN album ON morceau.id_album = album.id WHERE morceau.id ="'.$_GET['id'].'"';
+        $request = 'SELECT date_parution, album.titre AS album_titre, morceau.*, artiste.pseudo FROM morceau JOIN album ON morceau.id_album = album.id JOIN discographie ON album.id = discographie.id JOIN artiste ON discographie.id_artiste = artiste.id WHERE morceau.id ="'.$_GET['id'].'"';
         $statement = $dbCnx->prepare($request);
         $statement->execute();
         $result = $statement->fetchAll();
@@ -32,36 +33,36 @@
         error_log('Request error: '.$exception->getMessage());
     }
     foreach ( $result as $ligne){ 
- // email | nom   | prenom | date_naissance | password           | chemin_image | token  | timestamp
 	        $titreGet = $ligne['titre'];
             $dureeGet = $ligne['duree'];
             $musique = $ligne['chemin_musique'];
             $image = $ligne['chemin_image'];
             $albumTitre = $ligne['album_titre'];
             $date = $ligne['date_parution'];
+            $pseudo = $ligne['pseudo'];
     }
 ?>
 
     <div class="flex">
 
         <div class="image">
-            <img src="../resources/images/morceau/musique.png">
+            <img src="<?php echo $image ?>">
         </div>
 
         <div class="element">
             
                 
-            Album :  <s></s>          <br>
-            Name : <s></s>          <br>
-            Creation :  <s></s>          <br>
-            Time :  <s></s>          <br>
+            Album :  <?php echo $albumTitre ?>          <br>
+            Name : <?php echo $pseudo ?><s></s>          <br>
+            Creation : <?php echo $date ?> <s></s>          <br>
+            Time : <?php echo floor($dureeGet/60)?> minutes <?php echo $dureeGet%60 ?> secondes <s></s>          <br>
             
         </div>
 
     </div>
 
         <div class="title2">
-            <h2>Title : <s></s></h2>
+            <h2>Title : <?php echo $titreGet ?></h2>
         </div>
 
 
