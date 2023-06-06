@@ -21,7 +21,7 @@
 
     try
     {
-        $request = 'SELECT album.*, artiste.pseudo FROM album JOIN discographie ON album.id = discographie.id JOIN artiste ON discographie.id_artiste = artiste.id WHERE album.id ="'.$_GET['id'].'"';
+        $request = 'SELECT album.*, artiste.pseudo, artiste.id AS artiste_id  FROM album JOIN discographie ON album.id = discographie.id JOIN artiste ON discographie.id_artiste = artiste.id WHERE album.id ="'.$_GET['id'].'"';
         $statement = $dbCnx->prepare($request);
         $statement->execute();
         $result = $statement->fetchAll();
@@ -47,7 +47,7 @@
 
         <div class="element">                
             <?php echo $titreGet ?>          <br>
-            <?php echo $pseudo ?>         <br>
+            <?php echo '<a href="./artiste.php?id='.$ligne['artiste_id'].'">'.$pseudo.'</a>'?>         <br>
             <?php echo $date ?>          <br>
             <?php echo $style ?>          <br>
         
@@ -78,13 +78,13 @@
                             echo '<img src="'.$ligne['chemin_image'].'">';
                         echo '</div>';
                         echo '<div class="card-music-description--title--artiste">';
-                            echo '<h3>'.$ligne['titre'].'</h3>';
+                            echo '<h3><a href="./music.php?id='.$ligne['id'].'">'.$ligne['titre'].'</a></h3>';
                             echo '<h4>'.floor($ligne['duree']/60).':'.($ligne['duree']%60).'</h4>';
                         echo '</div>';
                     echo '</div>';
                     echo '<div class="card-music-actions">';
                         echo '<ul>';
-                            'echo <li><a href="" class="add-playlist"><img src="../html/image/add.png"></a></li>';
+                            echo '<li><a href="" class="add-playlist"><img src="../html/image/add.png"></a></li>';
                             echo '<li><a href="" class="add-favorite"><img src="../html/image/heart.png"></a></li>';
                             echo '<li><a href="" class="play"><img src="../html/image/play.png"></a></li>';
                         echo '</ul>';
