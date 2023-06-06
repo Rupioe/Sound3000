@@ -63,7 +63,7 @@
 
         <div class="title2">
             <h2>Title : <?php echo $titreGet ?></h2>
-            <a href="#" class="play-music"></a>
+            <a href="#" class="play-music2"></a>
         </div>
 
 

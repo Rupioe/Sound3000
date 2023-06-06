@@ -43,3 +43,20 @@ play.addEventListener("click", function(event) {
     isPlaying = true;
   }
 });
+
+/*pour ceux qui ne sont pas footer*/
+const play2 = document.getElementsByClassName('play-music2')[0];
+let isPlaying2 = false;
+
+play2.addEventListener("click", function(event) {
+  event.preventDefault();
+  this.classList.toggle("play");
+  
+  if (isPlaying2) {
+    play2.style.backgroundImage = 'url("../html/image/play.png")';
+    isPlaying2 = false;
+  } else {
+    play2.style.backgroundImage = 'url("../html/image/pause.png")';
+    isPlaying2 = true;
+  }
+});
