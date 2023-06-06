@@ -29,15 +29,21 @@ function displayResults(results)
   if ( results.length <= 6) nb_result = results.length;
   else nb_result = 6;
   var index = 0;
-  if (table != 'artiste')
+  if (table == 'morceau')
   for (let result of results){
     index = index + 1;
-    document.getElementById('result'+index).innerHTML = result.titre;
+    document.getElementById('result'+index).innerHTML = '<a href="./music.php?id='+result.id+'">'+result.titre+'</href>';
+}
+else
+  if (table == 'album')
+  for (let result of results){
+    index = index + 1;
+    document.getElementById('result'+index).innerHTML = '<a href="./album.php?id='+result.id+'">'+result.titre+'</href>';
 }
 else
   for (let result of results){
     index = index + 1;
-    document.getElementById('result'+index).innerHTML = result.nom+' '+result.prenom;
+    document.getElementById('result'+index).innerHTML = '<a href="./artiste.php?id='+result.id+'">'+result.nom+' '+result.prenom+'</href>';
 }
 }
 
