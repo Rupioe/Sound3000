@@ -63,6 +63,8 @@
 </section>
 
         <?php include "../html/footer.html" ?>
+        
+        <script src="../js/heart.js" defer></script>
         <script src="../js/pop-up.js" defer></script>
     </body>
 </html>
