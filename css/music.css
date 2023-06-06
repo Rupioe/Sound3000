@@ -98,7 +98,7 @@ html, body{/*style de la page*/
 
   /*#####################################################################*/
   /*javascript*/
- /* .play-music {
+  .play-music {
     display: block;
     width: 45px;
     height: 45px;
@@ -109,4 +109,4 @@ html, body{/*style de la page*/
  } 
  .add-favorite.play {
     background-image: url("../html/image/pause.png");
- }*/
+ }
