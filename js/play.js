@@ -84,9 +84,13 @@ Array.from(play3).forEach(function(item,i){
           isPlaying2 = true;
         }
 
-        var others = 
+    var others = document.getElementsByClassName('add-favorite');
+    var classes = Array.from(others.classList);
+    classes.forEach(function(className) {
+      if(className)
+    }
 
-    })
+    });
 
 
-})
+});

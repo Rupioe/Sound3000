@@ -35,3 +35,4 @@ USE bddSound; INSERT INTO discographie (id, id_artiste) VALUES (10,88);
 USE bddSound; INSERT INTO discographie (id, id_artiste) VALUES (11,87);
 USE bddSound; INSERT INTO discographie (id, id_artiste) VALUES (12,87);
 USE bddSound; INSERT INTO discographie (id, id_artiste) VALUES (13,86);
+DELETE FROM ajouter_favoris WHERE id=49811 AND email ="b@b.b"
