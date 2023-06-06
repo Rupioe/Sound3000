@@ -1,38 +1,90 @@
-// Obtenir la référence du lien et de la popup
-var link = document.getElementById("myLink");
-var popup = document.getElementById("myPopup");
 
-// Ouvrir la popup lors du clic sur le lien
-link.addEventListener("click", function(event) {
-  event.preventDefault(); // Empêche la redirection par défaut du lien
-  popup.style.display = "block";
-});
+var popupOverlay;
+    var newPopupOverlay;
 
-// Fermer la popup lors du clic sur la croix
-var close = document.getElementsByClassName("close")[0];
-close.addEventListener("click", function() {
-  popup.style.display = "none";
-});
+    function openPopup() {
+      // Création de la popup overlay
+      popupOverlay = document.createElement("div");
+      popupOverlay.className = "popup-overlay";
+      popupOverlay.onclick = function(event) {
+        // Fermeture de la popup lorsque l'utilisateur clique à l'extérieur
+        if (event.target === popupOverlay) {
+          document.body.removeChild(popupOverlay);
+        }
+      };
 
-// Obtenir la référence du lien 3 et de la popup 3
-var link3 = document.getElementById("myLink3");
-var popup3 = document.getElementById("myPopup3");
+      // Création de la popup
+      var popup = document.createElement("div");
+      popup.className = "popup";
 
-// Ouvrir la popup 3 lors du clic sur le lien 3
-link3.addEventListener("click", function(event) {
-  event.preventDefault();
-  popup3.style.display = "block";
-});
+      // Création des liens
+      var lien1 = document.createElement("a");
+      lien1.href = "#";
+      lien1.textContent = "Lien 1";
+      lien1.onclick = function() {
+        // Fermeture de la popup actuelle
+        document.body.removeChild(popupOverlay);
+        return false;
+      };
+      popup.appendChild(lien1);
 
-// Fermer la popup 3 lors du clic sur la croix
-var close3 = popup3.getElementsByClassName("close")[0];
-close3.addEventListener("click", function() {
-  popup3.style.display = "none";
-});
+      var lien2 = document.createElement("a");
+      lien2.href = "#";
+      lien2.textContent = "Lien 2";
+      lien2.onclick = function() {
+        // Fermeture de la popup actuelle
+        document.body.removeChild(popupOverlay);
+        return false;
+      };
+      popup.appendChild(lien2);
 
-// Fermer la popup 3 lorsque l'utilisateur clique en dehors de celle-ci
-window.addEventListener("click", function(event) {
-  if (event.target == popup3) {
-    popup3.style.display = "none";
-  }
-});
+      var lien3 = document.createElement("a");
+      lien3.href = "#";
+      lien3.textContent = "Lien 3";
+      lien3.onclick = function() {
+        // Fermeture de la popup actuelle
+        document.body.removeChild(popupOverlay);
+        // Ouverture de la nouvelle popup
+        openNewPopup();
+        return false;
+      };
+      popup.appendChild(lien3);
+
+      // Ajout de la popup à l'overlay
+      popupOverlay.appendChild(popup);
+
+      // Ajout de l'overlay au corps de la page
+      document.body.appendChild(popupOverlay);
+    }
+
+    function openNewPopup() {
+      newPopupOverlay = document.createElement("div");
+      newPopupOverlay.className = "popup-overlay";
+      newPopupOverlay.onclick = function(event) {
+        // Fermeture de la popup lorsque l'utilisateur clique à l'extérieur
+        if (event.target === newPopupOverlay) {
+          document.body.removeChild(newPopupOverlay);
+        }
+      };
+
+      var newPopup = document.createElement("div");
+      newPopup.className = "popup";
+
+      var label = document.createElement("div");
+      label.className = "popup-label";
+      label.textContent = "New Playlist: title:";
+      newPopup.appendChild(label);
+
+      var input = document.createElement("input");
+      input.type = "text";
+      input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter" && input.value.trim() !== "") {
+          document.body.removeChild(newPopupOverlay);
+        }
+      });
+      newPopup.appendChild(input);
+
+      newPopupOverlay.appendChild(newPopup);
+
+      document.body.appendChild(newPopupOverlay);
+    }

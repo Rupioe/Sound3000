@@ -63,7 +63,7 @@
 
         <div class="title2">
             <h2>Title : <?php echo $titreGet ?></h2>
-            <a href="" class="play-music">
+            <img id="mainImage" src="../html/image/play.png" onclick="swapImage()"><!--class="play-music"-->
         </div>
 
 
