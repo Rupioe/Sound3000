@@ -15,8 +15,8 @@
       include "./PasDeTokenPasDeChocolat.php";
 
     // Désactiver l'affichage des erreurs
-    //error_reporting(0);
-    //ini_set('display_errors', 0);
+    error_reporting(0);
+    ini_set('display_errors', 0);
  
 
     try
@@ -55,7 +55,7 @@
             Album :  <?php echo $albumTitre ?>          <br>
             Name : <?php echo $pseudo ?><s></s>          <br>
             Creation : <?php echo $date ?> <s></s>          <br>
-            Time : <?php echo $dureeGet/60?> minutes <s></s>          <br>
+            Time : <?php echo floor($dureeGet/60)?> minutes <?php echo $dureeGet%60 ?> secondes <s></s>          <br>
             
         </div>
 
