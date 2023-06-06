@@ -47,7 +47,9 @@
         <span id="currentEnd">0:30</span>
         <div class="vol">
             <i><img src="../html/image/volume.svg" class="bi" id="vol_icon"><i>
-            <input type="range">
+            <input type="range" min="0" max="100" id="volume">
+            <div class="vol_bar"></div>
+            <div class="dot" id="vol_dot"></div>
         </div>
     </div>
 
