@@ -1,7 +1,16 @@
 
-const stop_link = document.getElementsByClassName('add-playlist');
-      item.stop_link("click", function(event){
-      event.preventDefault();})
+const collectionFavorite = document.getElementsByClassName('add-playlist');
+
+        Array.from(collectionFavorite).forEach(function(item,i){
+            item.addEventListener("click", function(event){
+                event.preventDefault();
+                this.classList.toggle("added");
+    
+            })
+
+
+        })
+
 
 var popupOverlay;
     var newPopupOverlay;
