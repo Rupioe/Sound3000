@@ -63,6 +63,20 @@ html, body{/*style de la page*/
         display: flex;
         left: 2%;
     }
+
+    .image{
+        left: 5%;
+    }
+    
+    .element{
+        margin-left: 5%;
+        top: 35%;   
+    }
+
+    .list-card-music {
+        margin-left: 5%;
+        top: 45%; 
+    }
 }
 
 
