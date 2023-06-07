@@ -12,7 +12,7 @@ html, body {
     background-color: #cee8f7;
 }
 
-#main {
+#main {/*contient le questionnaire*/
     /*width: 640px;
     height: 84%;*/
     width: 43%;
@@ -25,7 +25,7 @@ html, body {
 	padding: 2rem;
 }
 
-.titleBox {
+.titleBox {/*nom du champ*/
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
