@@ -1,4 +1,5 @@
 #!/bin/bash
+# Script d'ajout à la base de donnée pour faciliter l'ajout de données personnalisées
 ENCORE="y"
 
 while [ "$ENCORE" == "y" ]; do
