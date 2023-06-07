@@ -31,15 +31,6 @@ html, body{/*style de la page*/
   overflow-x: auto;
 }
 
-/*.ariste-container {
-	display: flex;
-	margin: 0px;
-
-  overflow: scroll;
-  -ms-overflow-style:none;
-  overflow-x: auto;
-}*/
-
 .music-container a {
 	max-height:200px;
 	max-width:200px;
@@ -58,39 +49,6 @@ html, body{/*style de la page*/
 
 	/*flex-direction: column;
   flex-wrap: wrap;*/
-}
-
-.album-container {
-	display: flex;
-	margin: 0px;
-
-  overflow: scroll;
-  -ms-overflow-style:none;
-  overflow-x: auto;
-}
-
-.album-container img {
-	max-height:200px;
-	max-width:200px;
-	margin-right: 5%;
-	border-radius:5%;
-  margin-bottom: 5%;
-}
-
-.artiste-container {
-	display: flex;
-	margin: 0px;
-
-  overflow: scroll;
-  -ms-overflow-style:none;
-  overflow-x: auto;
-}
-
-.artiste-container img {
-	max-height:200px;
-	max-width:200px;
-	margin-right: 5%;
-	border-radius:50%;
 }
 
 
