@@ -33,7 +33,7 @@ var popupOverlay;
       // Création des liens
       var lien1 = document.createElement("a");
       lien1.href = "#";
-      lien1.textContent = "Lien 1";
+      lien1.textContent = "Playlist 1";
       lien1.onclick = function() {
         // Fermeture de la popup actuelle
         document.body.removeChild(popupOverlay);
@@ -43,7 +43,7 @@ var popupOverlay;
 
       var lien2 = document.createElement("a");
       lien2.href = "#";
-      lien2.textContent = "Lien 2";
+      lien2.textContent = "Playlist 2";
       lien2.onclick = function() {
         // Fermeture de la popup actuelle
         document.body.removeChild(popupOverlay);
@@ -53,7 +53,7 @@ var popupOverlay;
 
       var lien3 = document.createElement("a");
       lien3.href = "#";
-      lien3.textContent = "Lien 3";
+      lien3.textContent = "New Playlist";
       lien3.onclick = function() {
         // Fermeture de la popup actuelle
         document.body.removeChild(popupOverlay);
