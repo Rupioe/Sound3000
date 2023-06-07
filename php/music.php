@@ -79,7 +79,7 @@
             <h2>Title : <?php echo $titreGet ?></h2>
             <?php
             //<a href="#" class="play-music2"></a>
-            echo '<a class="play-music2" id="solo" href="'.$musique.'//'.$titreGet.'//'.$image.'//'.$pseudo.'//'.$dureeGet.'//'.$emailToken.'"></a>';
+            echo '<a class="play-music2" id="solo" href="'.$musique.'//'.$titreGet.'//'.$image.'//'.$pseudo.'//'.$dureeGet.'//'.$emailToken.'//'.$ligne['id'].'"></a>';
             ?>
         </div>
 

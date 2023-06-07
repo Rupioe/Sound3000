@@ -1,11 +1,23 @@
 // --------------------------- AUDIO
 
-// dans source on a chemin_musique//titre//chemin_image//pseudo//email
+// dans source on a chemin_musique//titre//chemin_image//pseudo//duree//email//id
 
 const audio = document.getElementById("myAudio");
 const imgID = document.getElementById("poster_master_play");
 const hcinq = document.getElementById("titre");
 const duree = document.getElementById("currentEnd");
+
+var email = '';
+var ID = 0;
+
+function setEmail(source){
+var tableau = source.split("//");
+email = tableau[5];
+}
+function setID(source){
+var tableau = source.split("//");
+ID = tableau[6];
+}
 
 function audioPlay(source){
 audio.currentTime = 0;
@@ -14,6 +26,13 @@ audio.src = tableau[0];
 audio.pause();
 audio.load();
 audio.play();
+
+ // php/request.php/tweets/ login=...&text=... Ajout d’un tweet
+  var rekete = './request_history.php/results/';
+  var params = 'id='+ID+'&email='+email;
+  console.log(rekete);
+  console.log(params);
+  ajaxRequest('POST', rekete, updateList,params);
 }
 
 function imageSet(source){
@@ -58,6 +77,8 @@ document.getElementsByClassName('playkk'+inc)[0].addEventListener("click", funct
   cleanElements();
   this.classList.toggle("play");
     if (this.classList.contains('play')) 
+  setEmail(this.getAttribute("href"));
+  setID(this.getAttribute("href"));
   audioPlay(this.getAttribute("href"));
   imageSet(this.getAttribute("href"));
   titreSet(this.getAttribute("href"));
@@ -152,6 +173,8 @@ play2.addEventListener("click", function(event) {
     isPlaying2 = false;
     audio.pause();
   } else {
+  setEmail(this.getAttribute("href"));
+  setID(this.getAttribute("href"));
   audioPlay(this.getAttribute("href"));
   imageSet(this.getAttribute("href"));
   titreSet(this.getAttribute("href"));
@@ -160,3 +183,79 @@ play2.addEventListener("click", function(event) {
     isPlaying2 = true;
   }
 });
+
+// ----------------------------------------------- AJAX
+
+
+//------------------------------------------------------------------------------
+//--- ajaxRequest --------------------------------------------------------------
+//------------------------------------------------------------------------------
+// Perform an Ajax request.
+// \param type The type of the request (GET, DELETE, POST, PUT).
+// \param url The url with the data.
+// \param callback The callback to call where the request is successful.
+// \param data The data associated with the request.
+
+
+var nb_result = 6;
+function updateList(results)
+{
+}
+
+function ajaxRequest(type, url, callback, data = null)
+{
+  let xhr;
+
+  // Create XML HTTP request.
+  xhr = new XMLHttpRequest();
+  if (type == 'GET' && data != null)
+    url += '?' + data;
+  xhr.open(type, url);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+  // Add the onload function.
+  xhr.onload = () =>
+  {
+    switch (xhr.status)
+    {
+      case 200:
+      case 201:
+        console.log(xhr.responseText);
+        callback(JSON.parse(xhr.responseText));
+        break;
+      default:
+        httpErrors(xhr.status);
+    }
+  };
+
+  // Send XML HTTP request.
+  xhr.send(data);
+}
+
+
+
+
+
+//------------------------------------------------------------------------------
+//--- httpErrors ---------------------------------------------------------------
+//------------------------------------------------------------------------------
+// Display an error message accordingly to an error code.
+// \param errorCode The error code (HTTP status for example).
+function httpErrors(errorCode)
+{
+  let messages =
+  {
+    400: 'Requête incorrecte',
+    401: 'Authentifiez vous',
+    403: 'Accès refusé',
+    404: 'Page non trouvée',
+    500: 'Erreur interne du serveur',
+    503: 'Service indisponible'
+  };
+
+  // Display error.
+  if (errorCode in messages)
+  {
+   // document.getElementById['errors'].innerHTML ='<i class="fa fa-exclamation-circle"></i> <strong>'+messages[errorCode] + '</strong>';
+  }
+}
