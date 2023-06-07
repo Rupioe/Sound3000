@@ -81,7 +81,7 @@ html, body{/*style de la page*/
 	max-height:150px;
 	max-width:150px;
 	margin-right: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
     border-radius:5%;
 }
 
@@ -106,8 +106,6 @@ html, body{/*style de la page*/
     .artiste-container{
         top: 100%;
         left: 5%;
-        margin-bottom: 100px;
-        gap:100px;
            
     }
 }
