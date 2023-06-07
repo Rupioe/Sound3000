@@ -1,5 +1,6 @@
 # Sound3000
 Audio player with favorites, playlists, research and a lot more
+Rupioe did the backend and certain js animations and Tenval did the backend css html and js.
 
 ### Dependencies :
 git
