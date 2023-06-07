@@ -70,13 +70,23 @@ html, body{/*style de la page*/
     
     .element{
         margin-left: 5%;
-        top: 35%;   
+        top: 50%;   
     }
 
     .list-card-music {
         margin-left: 5%;
-        top: 45%; 
+        top: 60%; 
     }
+
+    .list-card-music > li::before {
+        margin-left: 5%;
+        top: 60%; 
+      }
+
+      .list-card-music > li {
+        margin-left: 5%;
+        top: 60%; 
+        }
 }
 
 
