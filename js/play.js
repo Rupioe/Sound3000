@@ -66,7 +66,6 @@ document.getElementsByClassName('playkk'+inc)[0].addEventListener("click", funct
   clickFooter();
   donotclean=1;
   }
-//document.getElementsByClassName('play-music')[0].classList.toggle("play");
   
   if (isPlaying3[i]) {
     isPlaying3[i] = false;
@@ -111,10 +110,10 @@ function cleanElements() {
     }
   }
 }
-// Appel de la fonction pour mettre à jour les éléments
 
 
 
+// ---------------------------------- FOOTER 
 const play = document.getElementsByClassName('play-music')[0];
 var isPlaying = false;
 var firstplay = 0;
@@ -139,7 +138,7 @@ play.addEventListener("click", function(event) {
 
 
 
-/*pour ceux qui ne sont pas footer*/
+// ---------------------------------- MUSIC 
 const play2 = document.getElementsByClassName('play-music2')[0];
 var isPlaying2 = false;
 
@@ -151,7 +150,12 @@ play2.addEventListener("click", function(event) {
   if (isPlaying2) {
     play2.style.backgroundImage = 'url("../html/image/play.png")';
     isPlaying2 = false;
+    audio.pause();
   } else {
+  audioPlay(this.getAttribute("href"));
+  imageSet(this.getAttribute("href"));
+  titreSet(this.getAttribute("href"));
+  dureeSet(this.getAttribute("href"));
     play2.style.backgroundImage = 'url("../html/image/pause.png")';
     isPlaying2 = true;
   }
