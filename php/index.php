@@ -44,31 +44,16 @@ include "./PasDeTokenPasDeChocolat.php";
 			<a href="history.php"><img src="../resources/images/morceau/musique.png"></a>
 			<a href="history.php"><img src="../resources/images/morceau/musique.png"></a>
             <a href="history.php"><img src="../resources/images/morceau/musique.png"></a>
-			<img src="../resources/images/morceau/musique.png">
-			<img src="../resources/images/morceau/musique.png">
-            <img src="../resources/images/morceau/musique.png">
-			<img src="../resources/images/morceau/musique.png">
-			<img src="../resources/images/morceau/musique.png">
-			<img src="../resources/images/morceau/musique.png">
-            <img src="../resources/images/morceau/musique.png">
-			<img src="../resources/images/morceau/musique.png">
-			<img src="../resources/images/morceau/musique.png">
-			<img src="../resources/images/morceau/musique.png">
 		</div>
     </div>
 </section>
 <section>
     <div class="container">
         <div class="title"><h1>Favorites</h1></div>
-		<div class="artiste-container">
-        <a href=""><img src="../resources/images/artiste/artiste.png"></a>
-        <a href=""><img src="../resources/images/artiste/artiste.png"></a>
-			<img src="../resources/images/artiste/artiste.png">
-			<img src="../resources/images/artiste/artiste.png">
-            <img src="../resources/images/artiste/artiste.png">
-			<img src="../resources/images/artiste/artiste.png">
-            <img src="../resources/images/artiste/artiste.png">
-			<img src="../resources/images/artiste/artiste.png">
+		<div class="music-container">
+        <a href="history.php"><img src="../resources/images/artiste/artiste.png"></a>
+			<a href="history.php"><img src="../resources/images/artiste/artiste.png"></a>
+            <a href="history.php"><img src="../resources/images/artiste/artiste.png"></a>
 		</div>
     </div>
 </section>
