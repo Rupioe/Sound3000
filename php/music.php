@@ -70,7 +70,7 @@
             Name : <?php echo '<a href="token.php?path=../php/artiste.php?id='.$ligne['artiste_id'].'">'.$pseudo.'</a>' ?><s></s>          <br>
             Creation : <?php echo $date ?> <s></s>          <br>
             Time : <?php echo floor($dureeGet/60)?> minutes <?php echo $dureeGet%60 ?> secondes <s></s>          <br>
-            <br><br><br><br><br><br><br><br><br>
+            <br><br><br><br>
         </div>
 
     </div>
