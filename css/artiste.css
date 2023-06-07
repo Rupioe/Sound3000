@@ -100,12 +100,12 @@ html, body{/*style de la page*/
     }
 
     .album{
-        top: 100%;
+        top: 90%;
         left: 5%;
     }
 
     .artiste-container{
-        top: 110%;
+        top: 100%;
         left: 5%;
    }
 }
