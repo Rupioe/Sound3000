@@ -42,7 +42,8 @@ include "./PasDeTokenPasDeChocolat.php";
         <div class="title"><h1>History</h1></div>
 		<div class="music-container">
 			<a href="history.php"><img src="../resources/images/morceau/musique.png"></a>
-			<img src="../resources/images/morceau/musique.png">
+			<a href="history.php"><img src="../resources/images/morceau/musique.png"></a>
+            <a href="history.php"><img src="../resources/images/morceau/musique.png"></a>
 			<img src="../resources/images/morceau/musique.png">
 			<img src="../resources/images/morceau/musique.png">
             <img src="../resources/images/morceau/musique.png">
@@ -61,7 +62,7 @@ include "./PasDeTokenPasDeChocolat.php";
         <div class="title"><h1>Favorites</h1></div>
 		<div class="artiste-container">
         <a href=""><img src="../resources/images/artiste/artiste.png"></a>
-			<img src="../resources/images/artiste/artiste.png">
+        <a href=""><img src="../resources/images/artiste/artiste.png"></a>
 			<img src="../resources/images/artiste/artiste.png">
 			<img src="../resources/images/artiste/artiste.png">
             <img src="../resources/images/artiste/artiste.png">
