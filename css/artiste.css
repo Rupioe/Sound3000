@@ -108,6 +108,11 @@ html, body{/*style de la page*/
         top: 100%;
         left: 5%;
    }
+
+   .artiste-container img {
+    margin-bottom: 100px;
+    margin-right: 5%;
+}
 }
 
 .flex{
