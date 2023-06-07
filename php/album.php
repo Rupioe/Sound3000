@@ -59,6 +59,7 @@
         <ol class="list-card-music">   
 
         <?php
+        $inc = 0;
     try
     {
         $request = 'SELECT * FROM morceau WHERE id_album ='.$_GET['id'];
@@ -71,6 +72,7 @@
         error_log('Request error: '.$exception->getMessage());
     }
     foreach ( $result as $ligne){ 
+        $inc = $inc + 1;
         $musique = $ligne['chemin_musique'];
         $idSon = $ligne['id'];
         //<!-- un morceau : -->
@@ -123,7 +125,7 @@
                             // $maybeAdded sera soit "" soit " added" en fonction de si le morceau est dans la base favoris ou non 
                             // ------------------------------
 
-                            echo '<li><a href="#" class="play-music3"></a></li>';
+                            echo '<li><a href="'.$musique.'" class="playkk'.$inc.' countPlay" id="playykk'.$inc.'"><img src="../html/image/play.png"></a></li>';
                         echo '</ul>';
                     echo '</div>';
                 echo '</div>';

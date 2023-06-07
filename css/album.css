@@ -205,7 +205,16 @@ gap: 10px;
  }
 
    /*#####################################################################*/
-  /*javascript*/
+  /*javascript play/pause*/
+ .countPlay {
+    display: block;
+    width: 45px;
+    height: 45px;
+    /*background-image: url("../html/image/play.png");*/
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+ } 
   .play-music3 {
     display: block;
     width: 45px;
