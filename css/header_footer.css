@@ -6,7 +6,7 @@ header {
     padding: 1rem;
   
   }
-  header .logo {
+  header .logo {/*Sound 3000*/
     display:flex;
     align-items:center;
     justify-content:center;
@@ -18,13 +18,13 @@ header {
       font-size: 35px;
       letter-spacing: 1px;
   }
-  header nav ul {
+  header nav ul {/*lien home favorites history*/
     display:flex;
     gap:12px;
     list-style:none
   }
   
-  .search {
+  .search {/*bare cachée de recherche*/
     height:40px;
     background:black;
     padding: 1rem;
@@ -57,7 +57,7 @@ header {
       text-align : center;
   }
   
-  .name{
+  .name{/*ici et suite de la section, plus utile, partie dans le html en commentaire*/
       margin: 8px;padding: 4px;
       color:#699bf7;
       text-transform: uppercase;
@@ -88,7 +88,7 @@ header {
 
 
   /*######################################################################################################################*/
-  /**/
+  /*bouttons de filtres et de resultats*/
 
   .button-group {
     display: flex;
@@ -165,7 +165,7 @@ header {
 
 
 /*################################################################################"*/
-/*Player*/
+/*Player (footer actuel)*/
 
 /*https://www.youtube.com/watch?v=OafpiyPa63I*/
 
@@ -210,7 +210,7 @@ footer .master_play .wave .wave1:nth-child(3){
 
 /*javascripts classe*/
 
-footer .master_play .active1 .wave1{
+footer .master_play .active1 .wave1{/*petit dessin a 3 barres*/
   animation: wave .5s linear infinite;
 }
 
@@ -233,12 +233,12 @@ footer .master_play .active1 .wave1:nth-child(3){
   }
 }
 
-footer .master_play img{
+footer .master_play img{/*image de la musique*/
   width: 35px;
   height: 35px;
 }
 
-footer .master_play h5{
+footer .master_play h5{/*titre musique*/
   width: 130px;
   /*border: 1px solid #fff;*/
   margin-left: 15px;
@@ -250,7 +250,7 @@ footer .master_play h5{
 
 }
 
-footer .master_play .subtitle{
+footer .master_play .subtitle{/*artiste musique*/
   font-size: 11px;
   color: darkgray;
   width: 100%;
@@ -269,14 +269,14 @@ footer .master_play .icon{
 
 }
 
-footer .master_play .icon .bi{
+footer .master_play .icon .bi{/*les images cliquables*/
   cursor: pointer;
   outline: none;
 
 
 }
 
-footer .master_play .icon .shuffle{
+footer .master_play .icon .shuffle{/*inutile*/
   font-size: 17px;
   margin-right: 10px;
   width: 17px;
@@ -299,7 +299,7 @@ footer .master_play .icon .bi.wave1:nth-child(3){
 
 }
 
-footer .master_play span{
+footer .master_play span{/*timer*/
   color: black;
   width: 32px;
   border: 1px solid white;
@@ -312,6 +312,10 @@ footer .master_play #currentStart{
   margin: 0px 0px 0px 20px;
 
 }
+
+
+
+/*###### barre du timer ####### on ne l'a pas connecter aux musiques, elle n'est donc pas fonctionnel, donc on l'a cachée et on affiche une plus jolie*/ 
 
 footer .master_play .bar{
   position: relative;
@@ -355,7 +359,7 @@ footer .master_play .bar .dot::before{
   box-shadow: inset 0px 0px 3px #699bf7;
 }
 
-footer .master_play .bar input{
+footer .master_play .bar input{/*vrai barre*/
   position: absolute;
   width: 100%;
   top: -7px;
@@ -363,8 +367,10 @@ footer .master_play .bar input{
   cursor: pointer;
   z-index: 999999999999999999999999;
   /*transition: 3s linear;*/
-  opacity: 0;
+  opacity: 0;/*invisible (1 = visible)*/
 }
+
+/*###### barre du son ####### on n'a pas chercher a la faire fonctionner, elle est la pour le style, donc on l'a cachée et on affiche une plus jolie*/ 
 
 footer .master_play .vol{
   position: relative;
@@ -442,7 +448,4 @@ footer .master_play .vol .dot::before{
     background-image: url("../html/image/pause.png");
  }
 
-
-
- 
 
