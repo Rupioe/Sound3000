@@ -100,8 +100,14 @@ html, body{/*style de la page*/
     }
 
     .album{
-        top: 75%;
+        top: 120%;
         left: 5%;
+    }
+
+    .artiste-container{
+        top: 125%;
+        left: 5%;
+           
     }
 }
 
