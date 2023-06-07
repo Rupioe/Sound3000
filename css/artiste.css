@@ -110,7 +110,10 @@ html, body{/*style de la page*/
     }
 
     .artiste-container img {
+        max-height:150px;
+	max-width:150px;
         margin-bottom: 100px;
+        border-radius:5%;
     }
 }
 
