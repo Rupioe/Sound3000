@@ -1,5 +1,9 @@
 'use strict';
 
+function updateList(results)
+{
+}
+
 // Il y aura un faux <p> dans favorites d'id = "RetireLesFavoris"
 if(document.getElementById('RetireLesFavoris')) var favorites = 1;
 else favorites = 0;
@@ -48,6 +52,7 @@ if(toadd){
   var rekete = './request_favorites.php/results/i?id='+morceauID+'&email='+email;
   console.log(rekete);
   ajaxRequest('DELETE', rekete, updateList);
+  console.log(document.getElementById(morceauID).style.display = 'none');
 }
   });
 });
@@ -63,31 +68,6 @@ if(toadd){
 
 
 var nb_result = 6;
-function updateList(results)
-{
-  if(favorites){ // si on entre dans cette condition ça veut dire qu'on est dans la page favorites.php donc on doit cacher les favoris retirés
-                  // sans avoir à recharger la page
-        if ( results.length <= 6) nb_result = results.length;
-        else nb_result = 6;
-        var index = 0;
-        if (table == 'morceau')
-        for (let result of results){
-          index = index + 1;
-          document.getElementById('result'+index).innerHTML = '<a href="./music.php?id='+result.id+'">'+result.titre+'</href>';
-      }
-      else
-        if (table == 'album')
-        for (let result of results){
-          index = index + 1;
-          document.getElementById('result'+index).innerHTML = '<a href="./album.php?id='+result.id+'">'+result.titre+'</href>';
-      }
-      else
-        for (let result of results){
-          index = index + 1;
-          document.getElementById('result'+index).innerHTML = '<a href="./artiste.php?id='+result.id+'">'+result.nom+' '+result.prenom+'</href>';
-      }
-  }
-}
 
 function ajaxRequest(type, url, callback, data = null)
 {

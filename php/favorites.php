@@ -78,7 +78,7 @@
                         $inc = $inc + 1;
                             $musique = $ligneAlt['chemin_musique'];
         //<!-- un morceau : -->
-            echo '<li>';
+            echo '<li id="'.$idSon.'">';
                 echo '<div class="card-music">';
                     echo '<div class="card-music-description">';
                         echo '<div class="card-music-description--cover">';
