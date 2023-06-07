@@ -45,8 +45,32 @@ session_start();
  
 include "./db.php";
 
-if ($_GET['reset'] == 1)
+if ($_GET['reset'] == 1){
+    try
+    {
+        $request = 'SELECT email FROM compte WHERE token = "'.$_SESSION['token'].'"';
+        $statement = $dbCnx->prepare($request);
+        $statement->execute();
+        $result = $statement->fetchAll();
+    }
+    catch (PDOException $exception)
+    {
+        error_log('Request error: '.$exception->getMessage());
+    }
+    foreach ( $result as $ligne) 
+        $email = $ligne['email'];
+    try
+    {
+        $request = 'DELETE FROM ecoute WHERE email="'.$email.'"';
+        $statement = $dbCnx->prepare($request);
+        $statement->execute();
+    }
+    catch (PDOException $exception)
+    {
+        error_log('Request error: '.$exception->getMessage());
+    }
     $_SESSION['token']=0;
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = htmlspecialchars($_POST['email']);

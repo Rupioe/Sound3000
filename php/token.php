@@ -5,8 +5,6 @@ include "./db.php";
 // Vérifie si l'utilisateur est déjà authentifié avec un token valide
 if (isset($_SESSION['token']) && verifyToken($_SESSION['token'])) {
 
-
-
     // on réinitialise son timestamp
     try
     {
@@ -24,6 +22,16 @@ if (isset($_SESSION['token']) && verifyToken($_SESSION['token'])) {
     exit;
 } else {
     $_SESSION['token']=0;
+    try
+    {
+        $request = 'DELETE FROM ecoute WHERE email="'.$email.'"';
+        $statement = $dbCnx->prepare($request);
+        $statement->execute();
+    }
+    catch (PDOException $exception)
+    {
+        error_log('Request error: '.$exception->getMessage());
+    }
     header('Location: connection.php');
     exit;
 }

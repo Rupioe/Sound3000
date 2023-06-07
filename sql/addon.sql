@@ -48,3 +48,5 @@ INSERT INTO ecoute (email,id,date_ecoute) VALUES ('b@b.b',87351,3000);
 INSERT INTO ecoute (email,id,date_ecoute) VALUES ('b@b.b',11170,4000);
 INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",87351,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
 DELETE FROM ajouter_favoris WHERE id=11134 AND email ="b@b.b"
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",40445,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",49811,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
