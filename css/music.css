@@ -68,10 +68,22 @@ html, body{/*style de la page*/
 
 /*################################################################################"*/
 /*telephone*/
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 900px) {
 	header {
 		flex-direction:column;
 	}
+
+    .image{
+        top: 60%;
+    }
+
+    .element{
+        top: 105%;
+        
+    }
+    .title2 {
+        left: 5%;
+    }
 }
 
 
