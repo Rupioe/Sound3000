@@ -57,6 +57,7 @@
         </div>
     
         <!-- <div class="music"><h2>music : </h2></div>  -->
+        <div class="all-music">
         <ol class="list-card-music">   
 
         <?php
@@ -140,6 +141,7 @@
 
 
         </ol>
+        </div>
     </div>
 
     <section>

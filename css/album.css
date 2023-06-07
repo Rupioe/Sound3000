@@ -73,20 +73,10 @@ html, body{/*style de la page*/
         top: 50%;   
     }
 
-    .list-card-music {
+    .all-music{
         margin-left: 5%;
         top: 60%; 
     }
-
-    .list-card-music > li::before {
-        margin-left: 5%;
-        top: 60%; 
-      }
-
-      .list-card-music > li {
-        margin-left: 5%;
-        top: 60%; 
-        }
 }
 
 
