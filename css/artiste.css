@@ -98,6 +98,11 @@ html, body{/*style de la page*/
         display: flex;
         left: 2%;
     }
+
+    .album{
+        top: 75%;
+        left: 5%;
+    }
 }
 
 
