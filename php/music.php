@@ -63,7 +63,10 @@
 
         <div class="title2">
             <h2>Title : <?php echo $titreGet ?></h2>
-            <a href="#" class="play-music2"></a>
+            <?php
+            //<a href="#" class="play-music2"></a>
+            echo '<a class="play-music2" id="solo" href="'.$musique.'//'.$titreGet.'//'.$image.'//'.$pseudo.'//'.$dureeGet.'"></a>';
+            ?>
         </div>
 
 
