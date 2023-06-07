@@ -22,6 +22,14 @@
 
   .popup a {
     margin-bottom: 10px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    font-weight: 800;
+    font-size: 35px;
+    letter-spacing: 1px;
+    
   }
 
   .popup-label {
