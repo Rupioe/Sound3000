@@ -8,7 +8,7 @@ html, body{/*style de la page*/
     flex-direction:column;
 }
 /*################################################################################*/
-
+/*page*/
 
 
 .title{
@@ -24,7 +24,7 @@ html, body{/*style de la page*/
     
 }
 
-.element{
+.element{/*name, last name, date, email ,psw*/
 	display:flex;
 	text-decoration: none;
     color:#699bf7;
@@ -50,7 +50,7 @@ html, body{/*style de la page*/
     
 }
 
-.image{
+.image{/*profil*/
     margin-top: 2vh;
     position: absolute;
     width: 100%;
@@ -84,7 +84,7 @@ html, body{/*style de la page*/
 
 
 
-.bouton{
+.bouton{/*save*/
 	
 	background: #699bf7;
     color: white;
