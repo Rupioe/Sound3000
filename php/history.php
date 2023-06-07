@@ -55,7 +55,7 @@ $result = $statement->fetchAll();
         $inc = 0;
     try
     {
-        $request = 'SELECT * FROM ajouter_favoris WHERE email ="'.$emailToken.'"';
+        $request = 'SELECT * FROM ecoute WHERE email ="'.$emailToken.'" ORDER BY date_ecoute DESC';
         $statement = $dbCnx->prepare($request);
         $statement->execute();
         $result = $statement->fetchAll();
@@ -97,11 +97,40 @@ $result = $statement->fetchAll();
                             echo '<li><a href="" class="add-playlist" onclick="openPopup()"><img src="../html/image/add.png"></a></li>';
 
                             // SECTION FAVORIS --------------
-                            echo '<li><a id="keur" href="" class="add-favorite '.$idSon.' added '.$emailToken.'"></a></li>';
+                            $maybeAdded = '';
+                                try // on va récuperer la liste des favoris existants pour l'utilisateur connecté afin de mettre en place les coeurs
+                                {
+                                                try // on récup d'abord l'email
+                                                {
+                                                    $request = 'SELECT email FROM compte WHERE token ="'.$_SESSION['token'].'"';
+                                                    $statement = $dbCnx->prepare($request);
+                                                    $statement->execute();
+                                                    $result = $statement->fetchAll();
+                                                }
+                                                catch (PDOException $exception)
+                                                {
+                                                    error_log('Request error: '.$exception->getMessage());
+                                                }
+                                                foreach ( $result as $ligne){ 
+                                                    $emailToken = $ligne['email'];
+                                                }
+                                    $request = 'SELECT * FROM ajouter_favoris WHERE email ="'.$emailToken.'"';
+                                    $statement = $dbCnx->prepare($request);
+                                    $statement->execute();
+                                    $result = $statement->fetchAll();
+                                }
+                                catch (PDOException $exception)
+                                {
+                                    error_log('Request error: '.$exception->getMessage());
+                                }
+                                foreach ( $result as $ligne){ 
+                                    if($ligne['id'] == $idSon) $maybeAdded = ' added';
+                                }
+                            echo '<li><a id="keur" href="" class="add-favorite '.$idSon.$maybeAdded.' '.$emailToken.'"></a></li>';
                             // $maybeAdded sera soit "" soit " added" en fonction de si le morceau est dans la base favoris ou non 
                             // ------------------------------
 
-                            echo '<li><a href="'.$musique.'//'.' '.'//'.$ligneAlt['chemin_image'].'//'.$ligneAlt['titre'].'//'.$ligneAlt['duree'].'" class="playkk'.$inc.' countPlay" id="playykk'.$inc.'"><img src="../html/image/play.png"></a></li>';
+                            echo '<li><a href="'.$musique.'//'.' '.'//'.$ligneAlt['chemin_image'].'//'.$ligneAlt['titre'].'//'.$ligneAlt['duree'].'//'.$emailToken.'" class="playkk'.$inc.' countPlay" id="playykk'.$inc.'"><img src="../html/image/play.png"></a></li>';
                         echo '</ul>';
                     echo '</div>';
                 echo '</div>';

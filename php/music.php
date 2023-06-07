@@ -18,6 +18,20 @@
     error_reporting(0);
     ini_set('display_errors', 0);
  
+            try // on récup d'abord l'email
+            {
+                $request = 'SELECT email FROM compte WHERE token ="'.$_SESSION['token'].'"';
+                $statement = $dbCnx->prepare($request);
+                $statement->execute();
+                $result = $statement->fetchAll();
+            }
+            catch (PDOException $exception)
+            {
+                error_log('Request error: '.$exception->getMessage());
+            }
+            foreach ( $result as $ligne){ 
+                $emailToken = $ligne['email'];
+            }
 
     try
     {
@@ -65,7 +79,7 @@
             <h2>Title : <?php echo $titreGet ?></h2>
             <?php
             //<a href="#" class="play-music2"></a>
-            echo '<a class="play-music2" id="solo" href="'.$musique.'//'.$titreGet.'//'.$image.'//'.$pseudo.'//'.$dureeGet.'"></a>';
+            echo '<a class="play-music2" id="solo" href="'.$musique.'//'.$titreGet.'//'.$image.'//'.$pseudo.'//'.$dureeGet.'//'.$emailToken.'"></a>';
             ?>
         </div>
 
