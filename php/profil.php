@@ -57,7 +57,7 @@
                 Last Name : <input type="text" id="last_name" name="last_name" value="<?php echo $nomGet ?>"><s></s>         <br><br>
                 Date : <input type="date" id="date" name="date" value="<?php echo $dateGet ?>"><s></s>              <br><br>
                 Email : <input type="email" id="email" name="email" value="<?php echo $emailGet ?>" readonly><s></s>             <br><br>
-                Password : <input type="password" id="password" name="password" value=""><s></s>             <br><br>
+                Password : <input type="password" id="password" name="password" value=""><s></s>
             </h2>
 
                 <button type="submit" class="btn">Save</button>
