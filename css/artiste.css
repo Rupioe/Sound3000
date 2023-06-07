@@ -107,6 +107,7 @@ html, body{/*style de la page*/
     .artiste-container{
         top: 100%;
         left: 5%;
+        margin-right: 5%;
    }
 
    .artiste-container img {
