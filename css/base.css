@@ -25,7 +25,7 @@ html, body{/*style de la page*/
 .music-container {
 	display: flex;
 	margin: 0px;
-  margin-right: 2%;
+
   overflow: scroll;
   -ms-overflow-style:none;
   overflow-x: auto;
@@ -40,7 +40,15 @@ html, body{/*style de la page*/
   overflow-x: auto;
 }*/
 
+.music-container a {
+	max-height:200px;
+	max-width:200px;
+	margin-right: 2%;
+	border-radius:5%; 
 
+	/*flex-direction: column;
+  flex-wrap: wrap;*/
+}
 
 .music-container img {
 	max-height:200px;
