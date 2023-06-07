@@ -1,6 +1,6 @@
 // --------------------------- AUDIO
 
-// dans source on a chemin_musique//titre//chemin_image//pseudo
+// dans source on a chemin_musique//titre//chemin_image//pseudo//email
 
 const audio = document.getElementById("myAudio");
 const imgID = document.getElementById("poster_master_play");

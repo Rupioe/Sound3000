@@ -47,9 +47,6 @@
             foreach ( $result as $ligne){ 
                 $emailToken = $ligne['email'];
             }
-$statement = $dbCnx->prepare($request);
-$statement->execute();
-$result = $statement->fetchAll();
 ?>
         <?php
         $inc = 0;
@@ -101,7 +98,7 @@ $result = $statement->fetchAll();
                             // $maybeAdded sera soit "" soit " added" en fonction de si le morceau est dans la base favoris ou non 
                             // ------------------------------
 
-                            echo '<li><a href="'.$musique.'//'.' '.'//'.$ligneAlt['chemin_image'].'//'.$ligneAlt['titre'].'//'.$ligneAlt['duree'].'" class="playkk'.$inc.' countPlay" id="playykk'.$inc.'"><img src="../html/image/play.png"></a></li>';
+                            echo '<li><a href="'.$musique.'//'.' '.'//'.$ligneAlt['chemin_image'].'//'.$ligneAlt['titre'].'//'.$ligneAlt['duree'].'//'.$emailToken.'" class="playkk'.$inc.' countPlay" id="playykk'.$inc.'"><img src="../html/image/play.png"></a></li>';
                         echo '</ul>';
                     echo '</div>';
                 echo '</div>';
