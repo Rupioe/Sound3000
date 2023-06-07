@@ -66,6 +66,7 @@
     fwrite($file, $request);
     fclose($file);
 
+    $result = $id;
     return $result;
   }
 

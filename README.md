@@ -17,44 +17,222 @@ $cd Sound 3000
 #chmod +x install.sh && ./install.sh # Le script est un peu violent, fait des maj tout seul et écrase des fichiers de config
  ```
 
-### Arborescence :
-```sh
-./
-|-- LICENSE
-|-- README.md
-|-- Scripts
-|   |-- add.sh
-|   |-- addon.sql
-|   `-- update.sh
-|-- config
-|   `-- sound3000.conf
-|-- css
-|   `-- base.css
-|-- html
-|   |-- history.html
-|   `-- index.html
-|-- index.html
-|-- js
-|   `-- ajax.js
-|-- php
-|   |-- constants.php
-|   |-- database.php
-|   `-- request.php
-|-- resources  		# contient les ressources stockées loclement par l'utilisateur (upload de photo de profil)
-|   |-- images
-|   |   |-- album
-|   |   |-- compte
-|   |   `-- morceau
-|   `-- sounds
-|-- sql
-|   |-- bdd3000.sql
-|   `-- init.sql
-|-- test.html
-`-- test.php
-```
-
 ### NB :
 Pour les regex complexes chatGPT a été utilisé.
 Pour les scripts bash, Quentin a tout fait à la main.
 Du code a été inspiré de chatGPT et des exercices faits en cours.
 Le code d'AJAX est en grande partie pris des codes d'Imothep
+Sur le serveur, la connection ne marchait plus à partir de 18:00 et remarchait le matin, à bon entendeur.
+
+### Arborescence :
+```sh
+.
+├── config
+│   ├── php.ini
+│   └── sound3000.conf
+├── css
+│   ├── album.css
+│   ├── artiste.css
+│   ├── base.css
+│   ├── connection.css
+│   ├── header_footer.css
+│   ├── history.css
+│   ├── image
+│   │   ├── calendar.svg
+│   │   ├── key.svg
+│   │   ├── mail2.svg
+│   │   ├── mail.svg
+│   │   ├── name.svg
+│   │   └── password.svg
+│   ├── music.css
+│   ├── playlist.css
+│   ├── pop-up.css
+│   └── profil.css
+├── favicon.ico
+├── html
+│   ├── footer.html
+│   ├── header.html
+│   └── image
+│       ├── add.png
+│       ├── download.svg
+│       ├── end_fill.svg
+│       ├── exit.png
+│       ├── heart.png
+│       ├── heart.svg
+│       ├── music.png
+│       ├── music.svg
+│       ├── pause.png
+│       ├── pause.svg
+│       ├── play.png
+│       ├── play.svg
+│       ├── profil.png
+│       ├── rectangle.jpg
+│       ├── red_heart.png
+│       ├── search.png
+│       ├── start_fill.svg
+│       └── volume.svg
+├── index.html
+├── install.sh
+├── js
+│   ├── ajax_favorites.js
+│   ├── ajax.js
+│   ├── compte.js
+│   ├── header.js
+│   ├── heart.js
+│   ├── play.js
+│   ├── pop-up.js
+│   └── profil.js
+├── LICENSE
+├── php
+│   ├── album.php
+│   ├── artiste.php
+│   ├── connection.php
+│   ├── constants.php
+│   ├── creer.php
+│   ├── db.php
+│   ├── favorites.php
+│   ├── history.php
+│   ├── index.php
+│   ├── music.php
+│   ├── PasDeTokenPasDeChocolat.php
+│   ├── profil.php
+│   ├── request_favorites.php
+│   ├── request_history.php
+│   ├── request.php
+│   └── token.php
+├── README.md
+├── resources
+│   ├── images
+│   │   ├── album
+│   │   │   ├── album.png
+│   │   │   ├── butter.png
+│   │   │   ├── certified_lover_boy.png
+│   │   │   ├── divide.png
+│   │   │   ├── fearless.png
+│   │   │   ├── futur_nostalgia.png
+│   │   │   ├── happier_than_ever.png
+│   │   │   ├── justice.png
+│   │   │   ├── map_of_the_soul_7.png
+│   │   │   ├── no_6_collaborations_project.png
+│   │   │   ├── positions.png
+│   │   │   ├── red.png
+│   │   │   ├── reputation.png
+│   │   │   ├── scorpion.png
+│   │   │   ├── sweetener.png
+│   │   │   └── when_we_all_fall_asleep.png
+│   │   ├── artiste
+│   │   │   ├── ariana_grande.png
+│   │   │   ├── artiste.png
+│   │   │   ├── bieber.png
+│   │   │   ├── billie.png
+│   │   │   ├── bts.png
+│   │   │   ├── camila_cabello.png
+│   │   │   ├── drake.png
+│   │   │   ├── dua_lipa.png
+│   │   │   ├── ed_sheeran.png
+│   │   │   ├── enrique_iglesias.png
+│   │   │   ├── lana_del_rey.png
+│   │   │   ├── lil_nas_x.png
+│   │   │   ├── megan_thee_stallion.png
+│   │   │   ├── post_malone.png
+│   │   │   ├── taylor_swift.png
+│   │   │   └── travis_scott.png
+│   │   ├── compte
+│   │   │   ├── compte.png
+│   │   │   ├── doom.jpg
+│   │   │   ├── evilcorp.jpg
+│   │   │   ├── fmahand.jpg
+│   │   │   ├── fma.jpg
+│   │   │   ├── fromage_bite.jpg
+│   │   │   ├── hellwarrior2.PNG
+│   │   │   ├── LFSforbabies.jpg
+│   │   │   ├── maserati.png
+│   │   │   ├── neofetchelliot.png.old
+│   │   │   ├── neon.jpg
+│   │   │   ├── philosopher_stone_circle.jpg
+│   │   │   ├── pparch.jpg
+│   │   │   ├── retrowave.jpg
+│   │   │   ├── theyacide.jpg
+│   │   │   ├── unbroken.jpg
+│   │   │   ├── unlocked.png
+│   │   │   └── winscreen.jpg
+│   │   └── morceau
+│   │       ├── 34_35.png
+│   │       ├── anyone.png
+│   │       ├── break_my_heart.png
+│   │       ├── castle_on_the_hill.png
+│   │       ├── club.png
+│   │       ├── delicate.png
+│   │       ├── dont_start_now.png
+│   │       ├── galway_girl.png
+│   │       ├── getaway_car.png
+│   │       ├── goldwing.png
+│   │       ├── gorgeous.png
+│   │       ├── hallucinate.png
+│   │       ├── happier.png
+│   │       ├── hold_on.png
+│   │       ├── holy.png
+│   │       ├── levitating.png
+│   │       ├── lonely.png
+│   │       ├── look_what_you_made_me_do.png
+│   │       ├── lost_cause.png
+│   │       ├── love_again.png
+│   │       ├── musique.png
+│   │       ├── my_future.png
+│   │       ├── oxytocin.png
+│   │       ├── peaches.png
+│   │       ├── perfect.png
+│   │       ├── physical.png
+│   │       ├── positions.png
+│   │       ├── pov.png
+│   │       ├── ready_for_it.png
+│   │       ├── shape_of_you.png
+│   │       └── therefore_i_am.png
+│   └── sounds
+│       ├── 34_35.mp3
+│       ├── anyone.mp3
+│       ├── break_my_heart.mp3
+│       ├── castle_on_the_hill.mp3
+│       ├── club.mp3
+│       ├── delicate.mp3
+│       ├── dont_start_now.mp3
+│       ├── galway_girl.mp3
+│       ├── getaway_car.mp3
+│       ├── goldwing.mp3
+│       ├── gorgeous.mp3
+│       ├── hallucinate.mp3
+│       ├── happier.mp3
+│       ├── hold_on.mp3
+│       ├── holy.mp3
+│       ├── levitating.mp3
+│       ├── lonely.mp3
+│       ├── look_what_you_made_me_do.mp3
+│       ├── lost_cause.mp3
+│       ├── love_again.mp3
+│       ├── my_future.mp3
+│       ├── oxytocin.mp3
+│       ├── peaches.mp3
+│       ├── perfect.mp3
+│       ├── physical.mp3
+│       ├── positions.mp3
+│       ├── pov.mp3
+│       ├── ready_for_it.mp3
+│       ├── shape_of_you.mp3
+│       └── therefore_i_am.mp3
+├── Scripts
+│   ├── add.sh
+│   └── update.sh
+└── sql
+    ├── addon.sql
+    ├── albumsGPT.sql
+    ├── artistesGPT.sql
+    ├── bdd3000.sql
+    ├── init.sql
+    ├── morceauxGPT.sql
+    ├── patchArtisteImg.sql
+    ├── patchHistory.sql
+    ├── patchToken.sql
+    └── profilPic.sql
+
+17 directories, 190 files
+```

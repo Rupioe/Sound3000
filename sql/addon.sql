@@ -50,3 +50,40 @@ INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",87351,STR_TO_D
 DELETE FROM ajouter_favoris WHERE id=11134 AND email ="b@b.b"
 INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",40445,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
 INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",49811,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+DELETE FROM ajouter_favoris WHERE id=666 AND email ="b@b.b"
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",666,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+DELETE FROM ajouter_favoris WHERE id=29694 AND email ="b@b.b"
+DELETE FROM ajouter_favoris WHERE id=49811 AND email ="b@b.b"
+DELETE FROM ajouter_favoris WHERE id=40445 AND email ="b@b.b"
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",40445,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+DELETE FROM ajouter_favoris WHERE id=40445 AND email ="b@b.b"
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",40445,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+DELETE FROM ajouter_favoris WHERE id=43003 AND email ="b@b.b"
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",43003,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+DELETE FROM ajouter_favoris WHERE id=9105 AND email ="b@b.b"
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",9105,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+DELETE FROM ajouter_favoris WHERE id=87351 AND email ="b@b.b"
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",87351,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+DELETE FROM ajouter_favoris WHERE id=666 AND email ="b@b.b"
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",666,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+DELETE FROM ajouter_favoris WHERE id=40445 AND email ="b@b.b"
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",40445,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+DELETE FROM ajouter_favoris WHERE id=40445 AND email ="b@b.b"
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",40445,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+DELETE FROM ajouter_favoris WHERE id=40445 AND email ="b@b.b"
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",40445,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+DELETE FROM ajouter_favoris WHERE id=666 AND email ="b@b.b"
+DELETE FROM ajouter_favoris WHERE id=87351 AND email ="b@b.b"
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",87351,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+DELETE FROM ajouter_favoris WHERE id=87351 AND email ="b@b.b"
+DELETE FROM ajouter_favoris WHERE id=43003 AND email ="b@b.b"
+DELETE FROM ajouter_favoris WHERE id=55764 AND email ="b@b.b"
+DELETE FROM ajouter_favoris WHERE id=40445 AND email ="b@b.b"
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",11170,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",11134,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+DELETE FROM ajouter_favoris WHERE id=11134 AND email ="b@b.b"
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",11134,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",666,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",48914,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+DELETE FROM ajouter_favoris WHERE id=9105 AND email ="b@b.b"
+DELETE FROM ajouter_favoris WHERE id=11170 AND email ="b@b.b"
