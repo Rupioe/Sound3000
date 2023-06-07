@@ -114,6 +114,8 @@ function cleanElements() {
 
 
 // ---------------------------------- FOOTER 
+
+/*ajoute la class play, et change l'image en pause, et inversement*/
 const play = document.getElementsByClassName('play-music')[0];
 var isPlaying = false;
 var firstplay = 0;

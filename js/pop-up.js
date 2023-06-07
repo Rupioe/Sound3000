@@ -1,4 +1,5 @@
 
+/*supprime l'effet de recharge de la page d'un lien*/
 const suppr_link = document.getElementsByClassName('add-playlist');
 
 console.log(suppr_link);
