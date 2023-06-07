@@ -1,4 +1,5 @@
 #!/bin/bash
+# C'est un script pour installer sur un serveur vierge Debian (non testé)
 chmod 777 resources/images/compte
 chmod 666 sql/addon.sql
 if lsb_release -d | grep -q "Debian"; then
