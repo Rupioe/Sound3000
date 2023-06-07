@@ -107,9 +107,8 @@ html, body{/*style de la page*/
     .artiste-container{
         top: 100%;
         left: 5%;
-           
-    }
-
+   }
+}
 
 .flex{
     flex-direction:column;
