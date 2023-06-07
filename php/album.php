@@ -4,6 +4,7 @@
 <head>
 <link href="../css/album.css" rel="stylesheet" type="text/css"/>
 <link href="../css/header_footer.css" rel="stylesheet" type="text/css"/>
+<link href="../css/pop-up.css" rel="stylesheet" type="text/css"/>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -92,7 +93,7 @@
                     echo '</div>';
                     echo '<div class="card-music-actions">';
                         echo '<ul>'; // On aura l'ID du morceau en parentChild du coeur cliqué
-                            echo '<li><a href="" class="add-playlist"><img src="../html/image/add.png"></a></li>';
+                            echo '<li><a href="" class="add-playlist"><img src="../html/image/add.png" onclick="openPopup()"></a></li>';
 
                             // SECTION FAVORIS --------------
                             $maybeAdded = '';
@@ -147,6 +148,7 @@
 </section>
 
         <?php include "../html/footer.html" ?>
+        <script src="../js/pop-up.js" defer></script>
         <script src="../js/play.js" defer></script>
 
     </body>    
