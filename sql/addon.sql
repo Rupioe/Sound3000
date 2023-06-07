@@ -40,3 +40,9 @@ INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",11134,STR_TO_D
 DELETE FROM ajouter_favoris WHERE id=11134 AND email ="b@b.b"
 INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",11134,STR_TO_DATE("2023-06-06", "%Y-%m-%d"))
 USE bddSound; INSERT INTO morceau (id, titre, duree, chemin_musique, chemin_image,id_album) VALUES (666,'Welcome to the club',357,'../resources/sounds/club.mp3','../resources/images/morceau/club.png',15);
+INSERT INTO ajouter_favoris (email,id,date_ajout) VALUES ("b@b.b",666,STR_TO_DATE("2023-06-07", "%Y-%m-%d"))
+INSERT INTO ecoute (email,id,date_ecoute) VALUES ('b@b.b',666,3);
+INSERT INTO ecoute (email,id,date_ecoute) VALUES ('b@b.b',651617,300);
+INSERT INTO ecoute (email,id,date_ecoute) VALUES ('b@b.b',51617,300);
+INSERT INTO ecoute (email,id,date_ecoute) VALUES ('b@b.b',87351,3000);
+INSERT INTO ecoute (email,id,date_ecoute) VALUES ('b@b.b',11170,4000);
