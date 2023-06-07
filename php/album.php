@@ -75,6 +75,9 @@
         $inc = $inc + 1;
         $musique = $ligne['chemin_musique'];
         $idSon = $ligne['id'];
+        $titreSon = $ligne['titre'];
+        $cheminImg = $ligne['chemin_image'];
+        $dureeSon = $ligne['duree'];
         //<!-- un morceau : -->
             echo '<li>';
                 echo '<div class="card-music">';
@@ -125,7 +128,7 @@
                             // $maybeAdded sera soit "" soit " added" en fonction de si le morceau est dans la base favoris ou non 
                             // ------------------------------
 
-                            echo '<li><a href="'.$musique.'" class="playkk'.$inc.' countPlay" id="playykk'.$inc.'"><img src="../html/image/play.png"></a></li>';
+                            echo '<li><a href="'.$musique.'//'.$titreSon.'//'.$cheminImg.'//'.$pseudo.'//'.$dureeSon.'" class="playkk'.$inc.' countPlay" id="playykk'.$inc.'"><img src="../html/image/play.png"></a></li>';
                         echo '</ul>';
                     echo '</div>';
                 echo '</div>';

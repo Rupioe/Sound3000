@@ -52,6 +52,7 @@ $statement->execute();
 $result = $statement->fetchAll();
 ?>
         <?php
+        $inc = 0;
     try
     {
         $request = 'SELECT * FROM ajouter_favoris WHERE email ="'.$emailToken.'"';
@@ -77,6 +78,7 @@ $result = $statement->fetchAll();
                             error_log('Request error: '.$exception->getMessage());
                         }
                         foreach ( $result as $ligneAlt){ 
+                        $inc = $inc + 1;
                             $musique = $ligneAlt['chemin_musique'];
         //<!-- un morceau : -->
             echo '<li>';
@@ -99,7 +101,7 @@ $result = $statement->fetchAll();
                             // $maybeAdded sera soit "" soit " added" en fonction de si le morceau est dans la base favoris ou non 
                             // ------------------------------
 
-                            echo '<li><a href="#" class="play-music3"></a></li>';
+                            echo '<li><a href="'.$musique.'//'.' '.'//'.$ligneAlt['chemin_image'].'//'.$ligneAlt['titre'].'//'.$ligneAlt['duree'].'" class="playkk'.$inc.' countPlay" id="playykk'.$inc.'"><img src="../html/image/play.png"></a></li>';
                         echo '</ul>';
                     echo '</div>';
                 echo '</div>';

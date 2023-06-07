@@ -1,14 +1,34 @@
 // --------------------------- AUDIO
 
+// dans source on a chemin_musique//titre//chemin_image//pseudo
+
 const audio = document.getElementById("myAudio");
+const imgID = document.getElementById("poster_master_play");
+const hcinq = document.getElementById("titre");
+const duree = document.getElementById("currentEnd");
 
 function audioPlay(source){
 audio.currentTime = 0;
-audio.src = source;
+var tableau = source.split("//");
+audio.src = tableau[0];
 audio.pause();
 audio.load();
 audio.play();
+}
 
+function imageSet(source){
+var tableau = source.split("//");
+console.log(tableau);
+imgID.src = tableau[2];
+}
+function titreSet(source){
+var tableau = source.split("//");
+hcinq.innerHTML = tableau[3]+'<div class="subtitle">'+tableau[1]+'</div>';
+}
+
+function dureeSet(source){
+var tableau = source.split("//");
+duree.innerHTML = Math.floor(tableau[4]/60)+':'+tableau[4]%60;
 }
 
 //if (audio.paused) {
@@ -39,6 +59,9 @@ document.getElementsByClassName('playkk'+inc)[0].addEventListener("click", funct
   this.classList.toggle("play");
     if (this.classList.contains('play')) 
   audioPlay(this.getAttribute("href"));
+  imageSet(this.getAttribute("href"));
+  titreSet(this.getAttribute("href"));
+  dureeSet(this.getAttribute("href"));
   if(!donotclean){
   clickFooter();
   donotclean=1;
