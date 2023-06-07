@@ -9,7 +9,7 @@ html, body{/*style de la page*/
 }
 
 /*################################################################################*/
-
+/*page*/
 
 
 .title{
@@ -24,7 +24,7 @@ html, body{/*style de la page*/
     
 }
 
-.element{
+.element{/*name, style, type*/
     position: absolute;
 	text-decoration: none;
     color:#699bf7;
@@ -38,7 +38,7 @@ html, body{/*style de la page*/
     
 }
 
-.image{
+.image{/*artiste*/
     position: absolute;
     left: 5%;
     top: 20%;
@@ -51,7 +51,7 @@ html, body{/*style de la page*/
     max-width: 300px;
 }
 
-.album{
+.album{/*liste des musique*/
     position: absolute;
 	text-decoration: none;
     color:#699bf7;
@@ -64,15 +64,6 @@ html, body{/*style de la page*/
     top: 20%;
     left: 30%;
 }
-
-/*.artiste-container {
-	display: flex;
-	margin: 0px;
-
-    overflow: scroll;
-    -ms-overflow-style:none;
-    overflow-y: auto;
-}*/
 
 .artiste-container{
 	margin: 0px;
