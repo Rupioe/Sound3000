@@ -74,7 +74,9 @@ html, body{/*style de la page*/
     }
 
     .all-music{
+        margin-top: 500px;
         top: 60%; 
+        margin-bottom: 80px;
     }
 }
 

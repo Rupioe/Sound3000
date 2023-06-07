@@ -128,7 +128,7 @@ cursor: pointer;
  }
 
 
-@media screen and (max-width:760px) {
+@media screen and (max-width:900px) {
     .list-card-music > li {
         flex:1;
     }
