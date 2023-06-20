@@ -19,11 +19,7 @@ $cd Sound 3000
  ```
 
 ### NB :
-Pour les regex complexes chatGPT a été utilisé.
-Pour les scripts bash, Quentin a tout fait à la main.
-Du code a été inspiré de chatGPT et des exercices faits en cours.
 Le code d'AJAX est en grande partie pris des codes d'Imothep
-Sur le serveur, la connection ne marchait plus à partir de 18:00 et remarchait le matin, à bon entendeur.
 Le code est à moitié commenté en anglais et en français, les variables aussi. Il n'y a pas de raisons particulières à cela.
 
 ### Arborescence :
